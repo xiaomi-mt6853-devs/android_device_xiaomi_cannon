@@ -323,6 +323,12 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service \
     android.hardware.gatekeeper@1.0-impl:64
 
+PRODUCT_PACKAGES += \
+    libkeymaster41.vendor \
+    libkeymaster4_1support.vendor \
+    libpuresoftkeymasterdevice.vendor \
+    libsoft_attestation_cert.vendor
+
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light-service.cannon
@@ -441,6 +447,10 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant@1.2.vendor \
     android.hardware.wifi.supplicant@1.3.vendor \
     android.hardware.wifi.supplicant@1.4.vendor
+
+PRODUCT_PACKAGES += \
+    libkeystore-wifi-hidl \
+    libkeystore-engine-wifi-hidl
 
 PRODUCT_PACKAGES += \
     WifiResCommon \

@@ -989,11 +989,7 @@ vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
 vendor/lib64/hw/kmsetkey.beanpod.so
 vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib64/libTEECommon.so
-vendor/lib64/libkeymaster4.so
-vendor/lib64/libkeymaster41.so
-vendor/lib64/libkeymaster4_1support.so
 vendor/lib64/libkmsetkey.so
-vendor/lib64/libsoft_attestation_cert.so
 vendor/lib64/libteei_daemon_vfs.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
@@ -1437,12 +1433,9 @@ vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/tetheroffloadservice.rc
 vendor/etc/init/wlan_assistant.rc
 -vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
-vendor/lib/libkeystore-wifi-hidl.so
 vendor/lib/libwapi.so
 vendor/lib/meta_wifi_data.so
 vendor/lib64/libforkexecwrap.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/libwapi.so
 vendor/lib64/libwifi-hal.so
 vendor/lib64/libwifitest.so
