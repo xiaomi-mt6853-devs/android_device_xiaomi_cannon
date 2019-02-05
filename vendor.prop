@@ -124,6 +124,10 @@ ro.vendor.xiaomi.bl.poll=true
 sys.displayfeature_hidl=true
 vendor.displayfeature.entry.enable=true
 
+# Display (Color mode)
+persist.sys.sf.color_saturation=1.1
+persist.sys.sf.native_mode=0
+
 # Crypto
 ro.hardware.gatekeeper=beanpod
 ro.hardware.kmsetkey=beanpod
