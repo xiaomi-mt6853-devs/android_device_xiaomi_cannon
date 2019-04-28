@@ -12,10 +12,19 @@
 # limitations under the License.
 
 import common
+import re
+
+def FullOTA_InstallEnd(info):
+  OTA_InstallEnd(info)
+  return
 
 def FullOTA_Assertions(info):
     CheckRecovery(info)
     return
+
+def IncrementalOTA_InstallEnd(info):
+  OTA_InstallEnd(info)
+  return
 
 def IncrementalOTA_Assertions(info):
     CheckRecovery(info)
@@ -25,3 +34,14 @@ def CheckRecovery(info):
     info.script.AppendExtra('assert(getprop("ro.orangefox.version") == "" || abort("ERROR: OrangeFox is not supported! "););')
     info.script.AppendExtra('assert(getprop("ro.twrp.boot") == "" || abort("ERROR: TWRP is not supported! "););')
     return
+
+def AddImage(info, basename, dest):
+  name = basename
+  data = info.input_zip.read("IMAGES/" + basename)
+  common.ZipWriteStr(info.output_zip, name, data)
+  info.script.AppendExtra('package_extract_file("%s", "%s");' % (name, dest))
+
+def OTA_InstallEnd(info):
+  info.script.Print("Patching firmware images...")
+  AddImage(info, "vbmeta.img", "/dev/block/platform/bootdevice/by-name/vbmeta")
+  return
