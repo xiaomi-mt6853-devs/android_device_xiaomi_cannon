@@ -6,9 +6,12 @@
  */
 
 #include <cstdlib>
+#include <fstream>
+#include <string.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 #include <sys/sysinfo.h>
+#include <unistd.h>
 
 #include <android-base/properties.h>
 #include "property_service.h"
@@ -16,6 +19,13 @@
 
 using android::base::GetProperty;
 using std::string;
+
+char const *heapstartsize;
+char const *heapgrowthlimit;
+char const *heapsize;
+char const *heapminfree;
+char const *heapmaxfree;
+char const *heaptargetutilization;
 
 void property_override(string prop, string value)
 {
@@ -31,6 +41,9 @@ void vendor_load_properties()
 {
     string device, model;
 
+    struct sysinfo sys;
+    sysinfo(&sys);
+
     string region = GetProperty("ro.boot.hwc", "");
     string hwversion = GetProperty("ro.boot.hwversion", "");
 
@@ -44,6 +57,32 @@ void vendor_load_properties()
         // default to cannon
         device = "cannon";
         model = "Redmi Note 9 5G";
+    }
+
+    if (sys.totalram >= 7ull * 1024 * 1024 * 1024) {
+        // from - phone-xhdpi-8192-dalvik-heap.mk
+        heapstartsize = "24m";
+        heapgrowthlimit = "256m";
+        heapsize = "512m";
+        heaptargetutilization = "0.46";
+        heapminfree = "8m";
+        heapmaxfree = "48m";
+    } else if (sys.totalram >= 5ull * 1024 * 1024 * 1024) {
+        // from - phone-xhdpi-6144-dalvik-heap.mk
+        heapstartsize = "16m";
+        heapgrowthlimit = "256m";
+        heapsize = "512m";
+        heaptargetutilization = "0.5";
+        heapminfree = "8m";
+        heapmaxfree = "32m";
+    } else if (sys.totalram >= 3ull * 1024 * 1024 * 1024) {
+        // from - phone-xhdpi-4096-dalvik-heap.mk
+        heapstartsize = "8m";
+        heapgrowthlimit = "192m";
+        heapsize = "512m";
+        heaptargetutilization = "0.6";
+        heapminfree = "8m";
+        heapmaxfree = "16m";
     }
 
     // Override all partitions' props
@@ -65,5 +104,13 @@ void vendor_load_properties()
 
     // Set camera model for EXIF data
     property_override("persist.vendor.camera.model", model);
+
+    // Set dalvik VM configs
+    property_override("dalvik.vm.heapstartsize", heapstartsize);
+    property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    property_override("dalvik.vm.heapsize", heapsize);
+    property_override("dalvik.vm.heaptargetutilization", heaptargetutilization);
+    property_override("dalvik.vm.heapminfree", heapminfree);
+    property_override("dalvik.vm.heapmaxfree", heapmaxfree);
 
 }
