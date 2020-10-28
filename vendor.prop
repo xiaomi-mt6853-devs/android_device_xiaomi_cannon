@@ -307,6 +307,9 @@ ro.vendor.mtk_ufs_support=1
 ro.vendor.system.mtk_dmc_support=1
 ro.vendor.system.mtk_mapi_support=1
 
+# Zygote
+zygote.critical_window.minute=10
+
 # Miscellaneous
 persist.lm.em.enabled=1
 persist.sys.spc.enabled=true
