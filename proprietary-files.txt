@@ -766,11 +766,6 @@ vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1_vendor.so
 
-# Configstore
-vendor/bin/hw/android.hardware.configstore@1.1-service
-vendor/etc/init/android.hardware.configstore@1.1-service.rc
-vendor/lib64/libhwminijail.so
-
 # ConsumerIr
 vendor/lib64/hw/consumerir.common.so
 
