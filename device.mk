@@ -88,7 +88,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0.vendor \
     android.hardware.audio@7.0.vendor \
     android.hardware.audio.service \
-    android.hardware.audio@7.0-impl \
+    android.hardware.audio@7.0-impl:32 \
     android.hardware.audio.common-util.vendor \
     android.hardware.audio.common@7.0-util.vendor \
     android.hardware.audio.effect@7.0-impl:32 \
@@ -123,7 +123,7 @@ PRODUCT_PACKAGES += \
 
 # ConsumerIr
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl \
+    android.hardware.ir@1.0-impl:64 \
     android.hardware.ir@1.0-service
 
 # DT2W
@@ -132,7 +132,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-impl:64 \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.composer@2.1-resources \
     android.hardware.memtrack@1.0-service \
@@ -155,7 +155,7 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-impl:64 \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
 
@@ -299,7 +299,7 @@ PRODUCT_COPY_FILES += \
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service \
-    android.hardware.gatekeeper@1.0-impl
+    android.hardware.gatekeeper@1.0-impl:64
 
 # Light
 PRODUCT_PACKAGES += \
@@ -323,8 +323,8 @@ PRODUCT_COPY_FILES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.0-impl-2.1
+    android.hardware.health@2.1-impl:64 \
+    android.hardware.health@2.0-impl-2.1:64
 
 # Rootdir
 PRODUCT_PACKAGES += \
