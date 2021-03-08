@@ -921,6 +921,9 @@ on boot
 #Power Manager
     write /sys/power/pm_freeze_timeout 2000
 
+# Disable serial console
+    stop console
+
 on property:vold.decrypt=trigger_reset_main
     write /proc/bootprof "INIT:vold.decrypt=trigger_reset_main"
     setprop sys.boot_completed 0
