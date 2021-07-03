@@ -76,6 +76,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.nfc.rc",
+    src: "etc/init.nfc.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "ueventd.mtk.rc",
     filename: "ueventd.rc",
     src: "etc/ueventd.mtk.rc",

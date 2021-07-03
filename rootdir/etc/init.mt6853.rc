@@ -5,6 +5,7 @@ import /vendor/etc/init/hw/init.mt6853.usb.rc
 import /vendor/etc/init/hw/init.project.rc
 import /vendor/etc/init/hw/init.aee.rc
 import /vendor/etc/init/hw/init.sensor_2_0.rc
+import /vendor/etc/init/hw/init.nfc.rc
 
 # init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
 import /vendor/etc/init/hw/init.modem.rc
