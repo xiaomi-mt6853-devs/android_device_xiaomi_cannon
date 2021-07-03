@@ -135,6 +135,8 @@ BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 2
 
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+ODM_MANIFEST_SKUS += cannong
+ODM_MANIFEST_CANNONG_FILES := $(DEVICE_PATH)/manifest_gl.xml
 
 # Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk

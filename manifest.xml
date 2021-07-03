@@ -71,11 +71,6 @@
         <fqname>@1.0::IMemtrack/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.nfc</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.2::INfc/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
         <fqname>@1.2::IRadio/em1</fqname>
@@ -290,10 +285,5 @@
         <name>vendor.microtrust.hardware.thh</name>
         <transport>hwbinder</transport>
         <fqname>@2.0::IThhDevice/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.nxp.hardware.nfc</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.1::INqNfc/default</fqname>
     </hal>
 </manifest>
