@@ -145,6 +145,9 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 ODM_MANIFEST_SKUS += cannong
 ODM_MANIFEST_CANNONG_FILES := $(DEVICE_PATH)/manifest_gl.xml
 
+# MTK FM
+BOARD_HAVE_MTK_FM := true
+
 # Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
