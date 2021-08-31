@@ -324,6 +324,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsensorndkbridge
 
+# GPS
+PRODUCT_PACKAGES += \
+    libcurl
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor
