@@ -14,7 +14,7 @@
 // limitations under the License.
 
 cc_binary {
-    name: "android.hardware.sensors@2.1-service.multihal",
+    name: "android.hardware.sensors@2.1-service.cannon-multihal",
     defaults: [
         "hidl_defaults",
     ],
