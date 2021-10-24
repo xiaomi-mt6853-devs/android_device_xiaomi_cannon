@@ -61,6 +61,11 @@ function blob_fixup() {
     vendor/lib64/libmtkcam_stdutils.so)
         "${PATCHELF}" --replace-needed "libutils.so" "libutils-v30.so" "${2}"
         ;;
+    vendor/lib/hw/audio.primary.mt6853.so)
+        ;&
+    vendor/lib64/hw/audio.primary.mt6853.so)
+        "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v30.so" "${2}"
+        ;;
     vendor/lib64/libmtkcam_featurepolicy.so)
         sed -i "s|\xE8\x87\x40\xB9|\x28\x02\x80\x52|g" "${2}"
         ;;
