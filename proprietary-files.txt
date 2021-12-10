@@ -24,9 +24,6 @@ vendor/bin/rt5512_calibration
 vendor/etc/init/android.hardware.audio.service.mediatek.rc
 vendor/etc/aurisys_config.xml
 vendor/etc/aurisys_config_hifi3.xml
-vendor/etc/misound_res.bin
-vendor/etc/misound_res_headphone.bin
-vendor/etc/misound_res_spk.bin
 vendor/lib/hw/android.hardware.audio.effect@6.0-impl.so
 vendor/lib/hw/android.hardware.audio.effect@7.0-impl.so
 vendor/lib/hw/audio.primary.default.so
@@ -59,7 +56,6 @@ vendor/lib/libbwc.so
 vendor/lib/libcvsd_mtk.so
 vendor/lib/libfvaudio.so
 vendor/lib/libladder.so
-vendor/lib/libmisound.so
 vendor/lib/librt_extamp_intf.so
 vendor/lib/libshmemcompat.so
 vendor/lib/libshmemutil.so
@@ -104,7 +100,6 @@ vendor/lib64/libcvsd_mtk.so
 vendor/lib64/libfvaudio.so
 vendor/lib64/libladder.so
 vendor/lib64/libmiStereoFactoryRemapLib.so
-vendor/lib64/libmisound.so
 vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libshmemcompat.so
 vendor/lib64/libshmemutil.so
@@ -121,10 +116,8 @@ vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 # Audio (FX modules)
 vendor/lib/soundfx/libdynproc.so
 vendor/lib/soundfx/libhapticgenerator.so
-vendor/lib/soundfx/libmisoundfx.so
 vendor/lib64/soundfx/libdynproc.so
 vendor/lib64/soundfx/libhapticgenerator.so
-vendor/lib64/soundfx/libmisoundfx.so
 
 # Audio configs
 vendor/etc/apdb/APDB_MT6853_S01__W2145
