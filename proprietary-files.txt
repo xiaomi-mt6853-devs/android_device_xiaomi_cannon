@@ -119,11 +119,9 @@ vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 
 # Audio (FX modules)
-vendor/lib/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib/soundfx/libdynproc.so
 vendor/lib/soundfx/libhapticgenerator.so
 vendor/lib/soundfx/libmisoundfx.so
-vendor/lib64/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib64/soundfx/libdynproc.so
 vendor/lib64/soundfx/libhapticgenerator.so
 vendor/lib64/soundfx/libmisoundfx.so

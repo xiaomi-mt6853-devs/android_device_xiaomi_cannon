@@ -93,6 +93,7 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl:32
 
 PRODUCT_PACKAGES += \
+    libaudiopreprocessing \
     libalsautils \
     libnbaio_mono \
     libtinycompress \
