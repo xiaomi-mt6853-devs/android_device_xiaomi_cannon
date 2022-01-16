@@ -1765,7 +1765,3 @@ vendor/lib/modules/met.ko
 vendor/lib/modules/wlan_drv_gen4m.ko
 vendor/lib/modules/wmt_chrdev_wifi.ko
 vendor/lib/modules/wmt_drv.ko
-
-# Miscellaneous
-vendor/lib/libpcap.so
-vendor/lib64/libpcap.so
