@@ -19,6 +19,7 @@ ro.vendor.mtk_audio_alac_support=1
 ro.vendor.mtk_audio_ape_support=1
 ro.vendor.mtk_audio_tuning_tool_ver=V2.2
 ro.vendor.mtk_hifiaudio_support=1
+ro.config.media_vol_steps=25
 
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
