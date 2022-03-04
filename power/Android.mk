@@ -11,7 +11,7 @@ LOCAL_SRC_FILES := Power.cpp
 LOCAL_SHARED_LIBRARIES := \
     libbase \
     libbinder_ndk \
-    android.hardware.power-V2-ndk_platform
+    android.hardware.power-V2-ndk
 
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
