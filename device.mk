@@ -338,6 +338,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.mt6853:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6853
 
+# Properties
+include $(LOCAL_PATH)/configs/vendor_logtag.mk
+PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
