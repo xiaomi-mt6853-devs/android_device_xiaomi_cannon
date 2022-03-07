@@ -23,8 +23,8 @@ cc_binary {
     srcs: [
         "service.cpp",
     ],
-    init_rc: ["android.hardware.sensors@2.1-service-multihal.rc"],
-    vintf_fragments: ["android.hardware.sensors@2.1-multihal.xml"],
+    init_rc: ["android.hardware.sensors@2.1-service.cannon-multihal.rc"],
+    vintf_fragments: ["android.hardware.sensors@2.1-cannon-multihal.xml"],
     header_libs: [
         "android.hardware.sensors@2.X-shared-utils",
     ],
