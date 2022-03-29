@@ -387,6 +387,10 @@ PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.mlipay@1.1.vendor \
     vendor.xiaomi.hardware.mtdservice@1.2.vendor
 
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libavservices_minijail.vendor
+
 # Tetheroffload
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor \
