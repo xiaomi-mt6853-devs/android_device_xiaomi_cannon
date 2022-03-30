@@ -18,8 +18,8 @@
 -->
 <device name="Android">
     <item name="ambient.on">0.1</item>
-    <item name="screen.on">70.84</item>
-    <item name="screen.full">293.13</item>
+    <item name="screen.on.display0">70.84</item>
+    <item name="screen.full.display0">293.13</item>
     <item name="bluetooth.active">32.66</item>
     <item name="bluetooth.on">1.63</item>
     <item name="wifi.on">0.3</item>
