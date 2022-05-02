@@ -384,6 +384,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     IFAAService
 
+# Mlipay
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.mlipay@1.1.vendor
+
 # Tetheroffload
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor \
