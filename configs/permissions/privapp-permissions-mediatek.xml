@@ -20,4 +20,7 @@
         <permission name="android.permission.MODIFY_PHONE_STATE"/>
         <permission name="android.permission.UPDATE_DEVICE_STATS"/>
     </privapp-permissions>
+    <privapp-permissions package="com.android.cellbroadcastreceiver.module">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+    </privapp-permissions>
 </permissions>
