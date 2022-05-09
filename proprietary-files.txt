@@ -903,7 +903,6 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.6.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.7.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
--vendor/priv-app/GpuGameDriver.mt6853/GpuGameDriver.mt6853.apk
 
 # HotwordEnrollment
 -product/priv-app/HotwordEnrollmentOKGoogleRISCV/HotwordEnrollmentOKGoogleRISCV.apk

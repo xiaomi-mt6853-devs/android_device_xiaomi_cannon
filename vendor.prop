@@ -55,7 +55,6 @@ vendor.mtk.camera.app.fd.video=1
 # Display
 debug.mediatek.appgamepq_compress=1
 debug.mediatek.disp_decompress=1
-ro.gfx.driver.0=com.mediatek.mt6853.gamedriver
 ro.hardware.egl=meow
 ro.hardware.hwcomposer=mtk_common
 ro.hardware.vulkan=mali
