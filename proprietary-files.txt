@@ -1354,9 +1354,6 @@ vendor/lib64/libhfmanager.so
 vendor/lib64/libksensor.so
 vendor/lib64/libsensor_custom.so
 
-# Sensors configs
-vendor/etc/sensors/hals.conf
-
 # Soter (Tencent)
 -vendor/app/SoterService/SoterService.apk:system_ext/app/SoterService/SoterService.apk
 vendor/bin/hw/vendor.microtrust.hardware.soter@1.0-service
