@@ -1,0 +1,27 @@
+libOpenCL.so
+libneuron_platform.so 64
+libion_mtk.so 64
+libvpu.so 64
+libapusys.so 64
+libmpbase.so 64
+libmialgoengine.so 64
+libarcsoft_beautyshot.so 64
+libarcsoft_dualcam_refocus.so 64
+libarcsoft_portrait_lighting.so 64
+libarcsoft_portrait_lighting_c.so 64
+libarcsoft_high_dynamic_range.so 64
+libarcsoft_low_light_hdr.so 64
+libarcsoft_hdr_detection.so 64
+libarcsoft_supernight.so 64
+libalCFR.so 64
+libmibokeh_mt6873.so 64
+libalhLDC.so 64
+android.hidl.allocator@1.0.so 64
+vendor.mediatek.hardware.apuware.apusys@1.0.so 64
+vendor.mediatek.hardware.apuware.utils@1.0.so 64
+vendor.mediatek.hardware.apuware.xrp@1.0.so 64
+libSuperSensor.so 64
+libSuperSensorCPU.so 64
+libSuperSensorProcessor.so 64
+vendor.mediatek.hardware.camera.isphal@1.0.so 64
+libmtkisp_metadata.so 64

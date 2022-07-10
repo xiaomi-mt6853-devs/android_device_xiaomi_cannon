@@ -1,0 +1,114 @@
+# MTK project .rc configure
+
+import /vendor/etc/init/init.batteryd.rc
+import /vendor/etc/init/init.charge_logger.rc
+import /vendor/etc/init/init.mishow.ctl.rc
+
+import init.mi_thermald.rc
+
+on init
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+    write /sys/module/musb_hdrc/parameters/mu3d_force_on 1
+
+on post-fs-data
+    mkdir /data/vendor/thermal 0771 root system
+    mkdir /data/vendor/thermal/config 0771 root system
+
+#Turbo sched
+    chmod 0666 /sys/module/migt/parameters/mi_viptask
+    restorecon /sys/module/migt/parameters/mi_viptask
+
+#thermal
+chown system system /sys/class/thermal/thermal_message/sconfig
+
+#Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+
+    chmod 0660 /dev/LC898212AF
+    chown system camera /dev/LC898212AF
+
+    chmod 0660 /dev/BU64745GWZAF
+    chown system camera /dev/BU64745GWZAF
+
+#cit led
+    chown system system /sys/class/leds/torch-light0/brightness
+    chown system system /sys/class/leds/torch-light1/brightness
+
+#XIAOMI_DUAL_CAM_BIN
+    mkdir /mnt/vendor/persist/camera/ 0777 system camera
+    mkdir /data/vendor/camera/ 0777 system camera
+# for intsense bokeh use
+    mkdir /data/vendor/camera/model 0777 system camera
+    mkdir /data/vendor/camera/model/dof_model 0777 system camera
+    mkdir /data/vendor/camera/model/rt_model 0777 system camera
+    copy /vendor/etc/camera/model/dof_model/cache_data /data/vendor/camera/model/dof_model/cache_data
+    copy /vendor/etc/camera/model/dof_model/model_mdl_cache /data/vendor/camera/model/dof_model/model_mdl_cache
+    copy /vendor/etc/camera/model/dof_model/segment_model /data/vendor/camera/model/dof_model/segment_model
+    chmod 0777 /data/vendor/camera/model/dof_model/cache_data
+    chmod 0777 /data/vendor/camera/model/dof_model/model_mdl_cache
+    chmod 0777 /data/vendor/camera/model/dof_model/segment_model
+    chown system camera /data/vendor/camera/model/dof_model/cache_data
+    chown system camera /data/vendor/camera/model/dof_model/model_mdl_cache
+    chown system camera /data/vendor/camera/model/dof_model/segment_model
+# for mibokeh use
+    mkdir /data/vendor/camera/mibokeh 0777 system camera
+#SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+#NFC
+    chmod 0660 /dev/nq-nci
+    chown nfc nfc /dev/nq-nci
+    chmod 0660 /dev/p73
+    chown nfc nfc /dev/p73
+
+on init
+    # Refer to http://source.android.com/devices/tech/storage/index.html
+    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
+    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
+    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
+    #           Developers expect data stored in these locations to be available over long periods of time."
+    # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
+    #
+    # export SECONDARY_STORAGE /storage/sdcard1
+
+service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+    class late_start
+    disabled
+
+#touch
+service panel-info-sh /system/vendor/bin/sh /vendor/etc/init_panel_info.sh
+    class core
+    user root
+    oneshot
+
+service displayfeature /system/bin/displayfeature
+    class late_start
+    user root
+    group root
+
+on property:init.svc.surfaceflinger=stopped
+    stop displayfeature
+
+on property:init.svc.surfaceflinger=running
+    start displayfeature
+
+on property:init.svc.surfaceflinger=restarting
+    stop displayfeature
