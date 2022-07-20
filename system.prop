@@ -1,3 +1,6 @@
+# Audio
+ro.config.vc_call_vol_steps=7
+
 # Watchdog
 persist.sys.oom_crash_on_watchdog=true
 persist.sys.watchdog_enhanced=true

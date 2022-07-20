@@ -98,6 +98,9 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libtinyxml
 
+PRODUCT_PACKAGES += \
+    MtkInCallService
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor
