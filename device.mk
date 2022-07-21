@@ -241,6 +241,10 @@ PRODUCT_BOOT_JARS += \
     mediatek-ims-base
 
 # Power
+
+PRODUCT_PACKAGES += \
+    android.hardware.power-service-mediatek.cannon
+
 PRODUCT_PACKAGES += \
     android.hardware.power-V1.vendor \
     android.hardware.power-V1-ndk_platform.vendor \
