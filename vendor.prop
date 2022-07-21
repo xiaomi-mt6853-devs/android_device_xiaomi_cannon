@@ -286,6 +286,4 @@ persist.vendor.anr.enhancement=0
 persist.vendor.quick.charge=1
 ro.vendor.cabc.enable=true
 ro.vendor.efuse_writer_enable=1
-ro.vendor.init.sensor.rc=init.sensor_2_0.rc
-ro.vendor.rc=/vendor/etc/init/hw/
 ro.vendor.system.mtk_mapi_support=1

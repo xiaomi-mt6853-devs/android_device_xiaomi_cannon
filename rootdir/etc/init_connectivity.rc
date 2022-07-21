@@ -18,18 +18,6 @@ service wmt_launcher /vendor/bin/wmt_launcher -p /vendor/firmware/ -o 1
     user system
     group system
 
-on property:ro.build.type=eng
-    write /sys/kernel/debug/tracing/tracing_on 1
-
-on property:persist.vendor.connsys.coredump.mode=1
-    start stp_dump
-
-on property:persist.vendor.connsys.coredump.mode=2
-    start stp_dump
-
-on property:persist.vendor.connsys.coredump.mode=0
-    stop stp_dump
-
 on property:vendor.connsys.driver.ready=yes && property:persist.vendor.connsys.coredump.mode=*
     write /proc/driver/wmt_user_proc "0x1 ${persist.vendor.connsys.coredump.mode}"
 
@@ -38,9 +26,3 @@ on property:vendor.connsys.driver.ready=yes && property:debug.vendor.connsys.sus
 
 on property:persist.vendor.em.dy.debug=1
     setprop persist.vendor.connsys.coredump.mode 0
-
-service stp_dump /vendor/bin/stp_dump3
-    user system
-    group system sdcard_rw misc
-    class core
-    disabled

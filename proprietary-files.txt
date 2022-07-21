@@ -1523,6 +1523,7 @@ vendor/lib64/hw/android.hardware.soundtrigger@2.3-impl.so
 vendor/lib64/hw/sound_trigger.primary.default.so
 
 # Thermal
+system/init.mi_thermald.rc:vendor/etc/init/init.mi_thermald.rc
 vendor/bin/hw/android.hardware.thermal@2.0-service.mtk
 vendor/bin/mi_thermald
 vendor/bin/thermal

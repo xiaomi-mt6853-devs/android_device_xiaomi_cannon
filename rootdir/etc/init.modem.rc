@@ -30,11 +30,7 @@ on early-init
     write /proc/sys/net/ipv4/ipfrag_high_thresh 20971520
 
 on post-fs-data
-
     write /proc/bootprof "post-fs-data: on modem start"
 
 # Encrypt phone function
     setprop vold.post_fs_data_done 1
-
-
-
