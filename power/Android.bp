@@ -15,6 +15,7 @@
 cc_library_shared {
     name: "android.hardware.power-service-mediatek",
     vendor: true,
+    compile_multilib: "64",
     vintf_fragments: ["power-mediatek.xml"],
     shared_libs: [
         "libbase",
