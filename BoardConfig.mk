@@ -155,5 +155,9 @@ BOARD_HAVE_MTK_FM := true
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
+# WiFi
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_HOSTAPD_DRIVER := NL80211
+
 # Inherit the proprietary files
 include vendor/xiaomi/cannon/BoardConfigVendor.mk
