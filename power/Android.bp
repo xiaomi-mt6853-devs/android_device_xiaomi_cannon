@@ -16,6 +16,7 @@ cc_library_shared {
     name: "android.hardware.power-service-mediatek.cannon",
     stem: "android.hardware.power-service-mediatek",
     vendor: true,
+    compile_multilib: "64",
     shared_libs: [
         "libbase",
         "libbinder_ndk",
