@@ -1228,7 +1228,6 @@ vendor/bin/gbe
 vendor/etc/init/gbe.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-init.rc
 vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc
--vendor/etc/vintf/manifest/power-default.xml
 vendor/etc/cgroups.json
 vendor/etc/fstb.cfg
 vendor/etc/gbe.cfg
@@ -1239,7 +1238,6 @@ vendor/lib/vendor.mediatek.hardware.mtkpower@1.1.so
 vendor/lib/vendor.mediatek.hardware.mtkpower@1.2.so
 vendor/lib64/hw/power.default.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
-vendor/lib64/android.hardware.power-service-mediatek.so
 vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libperfctl_vendor.so
 vendor/lib64/libpower_timer.so
