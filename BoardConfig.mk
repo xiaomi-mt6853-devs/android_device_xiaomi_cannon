@@ -151,5 +151,8 @@ BOARD_HAVE_MTK_FM := true
 # Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+
 # Inherit the proprietary files
 include vendor/xiaomi/cannon/BoardConfigVendor.mk
