@@ -1,0 +1,17 @@
+//
+// Copyright (c) 2021, StatiXOS
+//           (c) 2021, Vaisakh Murali
+//           (c) 2022, LineageOS
+// SPDX-License-Identifer: GPL-2.0-only
+//
+
+cc_library_static {
+    name: "libinit_cannon",
+    recovery_available: true,
+    srcs: ["libinit_cannon.cpp"],
+    include_dirs: [
+        "system/libbase/include",
+        "system/core/init"
+    ],
+    shared_libs: ["libbase"]
+}
