@@ -1128,6 +1128,8 @@ vendor/etc/init/lights-mtk-default.rc
 vendor/lib64/hw/lights.mt6853.so
 
 # Media
+lib64/libvcodec_cap.so
+lib64/libvcodec_capenc.so
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
 vendor/bin/hw/android.hardware.media.omx@1.0-service
@@ -1328,6 +1330,7 @@ vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so
 vendor/lib64/wechat.beanpod.so
 
 # Power
+lib64/libmtkperf_client.so
 vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
 vendor/bin/gbe
 vendor/etc/init/gbe.rc
@@ -1361,7 +1364,6 @@ system_ext/lib/vendor.mediatek.hardware.mtkradioex@3.0.so
 system_ext/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 vendor/bin/hw/mtkfusionrild
 vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
-vendor/bin/hw/vtservice_hidl
 vendor/bin/bip_ap
 vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
@@ -1383,7 +1385,6 @@ vendor/etc/init/init.bip_ap.rc
 vendor/etc/init/init.cccimdinit.rc
 vendor/etc/init/init.cccirpcd.rc
 vendor/etc/init/init.connfem.rc
-vendor/etc/init/init.vtservice_hidl.rc
 vendor/etc/init/init.wmt_drv.rc
 vendor/etc/init/ipsec_mon.rc
 vendor/etc/init/md_monitor.rc
@@ -1398,7 +1399,6 @@ vendor/etc/init/volte_clientapi_ua.rc
 vendor/etc/init/volte_rcs_ua.rc
 vendor/etc/device_sar_config.xml
 vendor/etc/smsdbvisitor.xml
-vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib/libasn1c_core.so
 vendor/lib/libasn1c_mapi.so
 vendor/lib/libasn1c_mdmi.so
@@ -1428,8 +1428,6 @@ vendor/lib/libtranslator_mdmi_v2.8.2.so
 vendor/lib/libtranslator_utils.so
 vendor/lib/libvt_custom.so
 vendor/lib/vendor.mediatek.hardware.nwk_opt@1.0.so
-vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so
-vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib64/libacdk.so
 vendor/lib64/libasn1c_core.so
 vendor/lib64/libasn1c_mapi.so
@@ -1475,6 +1473,30 @@ vendor/lib64/nwk_opt_imp.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 vendor/lib64/vendor.mediatek.hardware.nwk_opt@1.0.so
+
+# Radio (IMS)
+bin/vtservice
+etc/init/init.vtservice.rc
+lib64/libcomutils.so
+lib64/libimsma.so
+lib64/libimsma_rtp.so
+lib64/libimsma_socketwrapper.so
+lib64/libimsma_adapt.so
+lib64/libmtk_vt_service.so
+lib64/libmtk_vt_wrapper.so
+lib64/libmtkavenhancements.so
+lib64/libsignal.so
+lib64/libsink.so
+lib64/libsource.so
+lib64/libvt_avsync.so
+-priv-app/ImsService/ImsService.apk
+system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
+system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+vendor/bin/hw/vtservice_hidl
+vendor/etc/init/init.vtservice_hidl.rc
+vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
+vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so
+vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # Radio configs
@@ -1700,6 +1722,7 @@ vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.2.so
 -framework/mediatek-framework.jar
 -framework/mediatek-ims-base.jar
 -framework/mediatek-ims-common.jar
+-framework/mediatek-ims-extension-plugin.jar 
 -framework/mediatek-services.jar
 -framework/mediatek-telecom-common.jar
 -framework/mediatek-telephony-base.jar
