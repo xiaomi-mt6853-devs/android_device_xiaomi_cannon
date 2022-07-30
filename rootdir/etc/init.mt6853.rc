@@ -523,10 +523,6 @@ on post-fs-data
     chmod 0660 /dev/sec
     chown root system /dev/sec
 
-    # FM Radio device node
-    chmod 0660 /dev/fm
-    chown media media /dev/fm
-
     # device apc settings
 
     # device info /proc interface
