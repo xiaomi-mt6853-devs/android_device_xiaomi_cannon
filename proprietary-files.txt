@@ -1521,6 +1521,10 @@ vendor/etc/virtual-spn-conf-by-efpnn.xml
 vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
 
+# FM Radio
+-system_ext/lib64/libfmjni.so:lib64/libfmjni.so
+vendor/etc/init/init.fmradio_drv.rc
+
 # Sensors
 vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
 vendor/etc/init/android.hardware.sensors@2.0-service.multihal-mediatek.rc
