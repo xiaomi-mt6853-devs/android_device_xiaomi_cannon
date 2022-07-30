@@ -4,6 +4,8 @@ aaudio.mmap_policy=2
 persist.audio.button_jack.profile=volume
 persist.audio.button_jack.switch=0
 ro.audio.monitorRotation=true
+ro.audio.silent=0
+ro.audio.usb.period_us=16000
 ro.vendor.audio.game.effect=true
 ro.vendor.audio.game.vibrate=true
 ro.vendor.audio.hifi=true
@@ -31,6 +33,8 @@ persist.bg.dexopt.enable=true
 
 # AEE
 ro.vendor.aee.convert64=0
+ro.vendor.aee.enforcing=no
+ro.vendor.have_aee_feature=1
 ro.vendor.have_aeev_feature=1
 
 # Bluetooth
@@ -68,21 +72,17 @@ vendor.mtk.camera.app.fd.video=1
 # Display
 debug.mediatek.appgamepq_compress=1
 debug.mediatek.disp_decompress=1
-debug.sf.disable_backpressure=1
 ro.gfx.driver.0=com.mediatek.mt6853.gamedriver
 ro.hardware.egl=meow
 ro.hardware.hwcomposer=mtk_common
 ro.hardware.vulkan=mali
 ro.opengles.version=196610
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-ro.surface_flinger.primary_display_orientation=ORIENTATION_0
-ro.surface_flinger.protected_contents=true
 ro.vendor.all_modes.colorpick_adjust=true
 ro.vendor.colorpick_adjust=true
 ro.vendor.composer_version=2.3
 ro.vendor.eyecare.threshold=-1
 ro.vendor.mtk_aal_support=1
+ro.vendor.mtk_flv_playback_support=1
 ro.vendor.mtk_pq_color_mode=1
 ro.vendor.mtk_pq_support=2
 ro.vendor.mtk_wfd_support=1
@@ -117,12 +117,22 @@ ro.vendor.smvr.p2batch.hd=8
 ro.vendor.smvr.p2batch.vga=16
 ro.vendor.wfd.dummy.enable=0
 ro.vendor.wfd.iframesize.level=0
+vendor.mtk_thumbnail_optimization=true
 
-# Display (Xiaomi)
-ro.vendor.touchfeature.type=2
-ro.vendor.xiaomi.bl.poll=true
-sys.displayfeature_hidl=true
-vendor.displayfeature.entry.enable=true
+# Display (Surfaceflinger)
+debug.sf.disable_backpressure=1
+debug.sf.early.app.duration=20000000
+debug.sf.early.sf.duration=27600000
+debug.sf.earlyGl.app.duration=20000000
+debug.sf.earlyGl.sf.duration=27600000
+debug.sf.hwc.min.duration=17000000
+debug.sf.late.app.duration=20000000
+debug.sf.late.sf.duration=27600000
+debug.sf.use_phase_offsets_as_durations=1
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.primary_display_orientation=ORIENTATION_0
+ro.surface_flinger.protected_contents=true
 
 # Display (Color mode)
 persist.sys.sf.color_saturation=1.1
@@ -131,12 +141,11 @@ persist.sys.sf.native_mode=0
 # Crypto
 ro.hardware.gatekeeper=beanpod
 ro.hardware.kmsetkey=beanpod
-ro.vendor.mtk_microtrust_tee_support=1
-ro.vendor.mtk_mvpu_security_support=0
-ro.vendor.mtk_tee_gp_support=1
 
 # Media
+debug.stagefright.c2inputsurface=-1
 media.c2.dmabuf.padding=3072
+media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.vendor.jpeg_decode_sw_opt=1
 ro.vendor.mtk_hdr_video_support=1
 ro.vendor.mtk_video_hevc_enc_support=1
@@ -154,6 +163,10 @@ ro.vendor.mtk_nn_quant_preferred=1
 ro.vendor.mtk_nn_support=1
 
 # Radio
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+persist.radio.apm_sim_not_pwdn=1
 persist.radio.multisim.config=dsds
 persist.sys.mmms.reclaim_switch=0
 persist.sys.mmms.switch=true
@@ -182,6 +195,8 @@ persist.vendor.radio.smart.data.switch=1
 persist.vendor.vilte_support=1
 persist.vendor.viwifi_support=1
 persist.vendor.volte_support=1
+persist.vendor.vzw_device_type=0
+persist.vendor.wfc.sys_wfc_support=1
 ro.telephony.default_network=32,32,32,32
 ro.telephony.iwlan_operation_mode=AP-assisted
 ro.telephony.sim.count=2
@@ -192,6 +207,7 @@ ro.vendor.md_auto_setup_ims=1
 ro.vendor.md_log_memdump_wait=15
 ro.vendor.md_prop_ver=1
 ro.vendor.mtk_c2k_lte_mode=0
+ro.vendor.mtk_cta_set=1
 ro.vendor.mtk_data_config=1
 ro.vendor.mtk_eccci_c2k=1
 ro.vendor.mtk_embms_support=1
@@ -210,6 +226,7 @@ ro.vendor.mtk_rild_read_imsi=1
 ro.vendor.mtk_sim_card_onoff=3
 ro.vendor.mtk_sim_hot_swap_common_slot=1
 ro.vendor.mtk_single_bin_modem_support=1
+ro.vendor.mtk_telephony_add_on_policy=0
 ro.vendor.mtk_uicc_clf=1
 ro.vendor.mtk_wapi_support=1
 ro.vendor.mtk_wappush_support=1
@@ -217,11 +234,9 @@ ro.vendor.mtk_world_phone_policy=0
 ro.vendor.mtk_zsdhdr_support=1
 ro.vendor.num_md_protocol=2
 ro.vendor.radio.5g=3
+ro.vendor.radio.features_common=2
 ro.vendor.radio.max.multisim=dsds
 telephony.active_modems.max_count=2
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
 
 # Fingerprint
 ro.hardware.fp.sideCap=true
@@ -284,7 +299,13 @@ ro.vendor.mtk_dmc_support=1
 ro.vendor.mtk_emmc_support=1
 ro.vendor.mtk_f2fs_enable=1
 ro.vendor.mtk_mapi_support=1
+ro.vendor.mtk_microtrust_tee_support=1
+ro.vendor.mtk_mvpu_security_support=0
+ro.vendor.mtk_omacp_support=1
+ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_ufs_support=1
+ro.vendor.system.mtk_dmc_support=1
+ro.vendor.system.mtk_mapi_support=1
 
 # Miscellaneous
 persist.lm.em.enabled=1
@@ -293,4 +314,3 @@ persist.vendor.anr.enhancement=0
 persist.vendor.quick.charge=1
 ro.vendor.cabc.enable=true
 ro.vendor.efuse_writer_enable=1
-ro.vendor.system.mtk_mapi_support=1

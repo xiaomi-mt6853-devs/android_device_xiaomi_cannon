@@ -1,52 +1,3 @@
-# Audio
-ro.audio.silent=0
-ro.audio.usb.period_us=16000
-
-# AEE
-persist.vendor.aeev.core.dump=enable
-ro.vendor.aee.enforcing=no
-ro.vendor.have_aee_feature=1
-
-# Display
-debug.atrace.tags.enableflags=0
-debug.sf.early.app.duration=20000000
-debug.sf.early.sf.duration=27600000
-debug.sf.earlyGl.app.duration=20000000
-debug.sf.earlyGl.sf.duration=27600000
-debug.sf.hwc.min.duration=17000000
-debug.sf.late.app.duration=20000000
-debug.sf.late.sf.duration=27600000
-debug.sf.use_phase_offsets_as_durations=1
-persist.enable_task_snapshots=false
-persist.power.useautobrightadj=true
-
-# Media
-debug.stagefright.c2inputsurface=-1
-media.stagefright.thumbnail.prefer_hw_codecs=true
-ro.vendor.mtk_flv_playback_support=1
-vendor.mtk_thumbnail_optimization=true
-
-# VM
-persist.sys.debug.fdtrack_abort_threshold=4096
-persist.sys.slab.threshold=256000,358400,460800,665600,819200
-persist.vm.stackdump.threshold=0
-ro.dalvik.vm.native.bridge=0
-
-# Radio
-persist.radio.apm_sim_not_pwdn=1
-persist.vendor.vzw_device_type=0
-persist.vendor.wfc.sys_wfc_support=1
-ro.vendor.mtk_cta_set=1
-ro.vendor.mtk_telephony_add_on_policy=0
-ro.vendor.radio.features_common=2
-
-# Kernel
-ro.kernel.zio=38,108,105,16
-
-# Binder
-persist.binder.check.enable=true
-persist.binder.check.size=200
-
 # Watchdog
 persist.sys.oom_crash_on_watchdog=true
 persist.sys.watchdog_enhanced=true
@@ -60,15 +11,3 @@ ro.mtk_perf_simple_start_win=1
 ro.netflix.bsp_rev=MTK6853-32100-1
 ro.netflix.channel=497730f0-ad4b-11e7-95a4-c7ad113ce187
 ro.netflix.signup=1
-
-# Wi-Fi
-mediatek.wlan.ctia=0
-ro.mediatek.wlan.p2p=1
-ro.mediatek.wlan.wsc=1
-wifi.direct.interface=p2p0
-wifi.interface=wlan0
-wifi.tethering.interface=ap0
-
-# Mediatek
-ro.vendor.mtk_omacp_support=1
-ro.vendor.system.mtk_dmc_support=1
