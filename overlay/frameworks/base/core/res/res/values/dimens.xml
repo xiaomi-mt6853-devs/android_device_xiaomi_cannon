@@ -22,7 +22,7 @@
     <!-- Height of the status bar -->
     <dimen name="status_bar_height_default">111.0px</dimen>
     <dimen name="status_bar_height_portrait">111.0px</dimen>
-    <dimen name="status_bar_height_landscape">75.0px</dimen>
+    <dimen name="status_bar_height_landscape">111.0px</dimen>
     <!-- Radius of the software rounded corners at the top of the display in its natural
         orientation. If zero, the value of rounded_corner_radius is used. -->
     <dimen name="rounded_corner_radius_top">106.0px</dimen>
