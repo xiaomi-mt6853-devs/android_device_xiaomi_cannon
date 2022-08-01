@@ -1,7 +1,6 @@
 #
-# Copyright (C) 2021 The LineageOS Project
-#
-# SPDX-License-Identifier: Apache-2.0
+# Copyright (C) 2022 The LineageOS Project
+# SPDX-License-Identifier: GPL-2.0-only
 #
 
 service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service

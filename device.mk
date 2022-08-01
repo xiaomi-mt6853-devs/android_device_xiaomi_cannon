@@ -320,8 +320,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     fstab.mt6853 \
-    init.nfc.rc \
     init.aee.rc \
+    init.cannon.rc \
     init.connectivity.common.rc \
     init.connectivity.rc \
     init.modem.rc \

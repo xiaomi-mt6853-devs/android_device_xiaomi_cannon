@@ -76,8 +76,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.nfc.rc",
-    src: "etc/init.nfc.rc",
+    name: "init.cannon.rc",
+    src: "etc/init.cannon.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
