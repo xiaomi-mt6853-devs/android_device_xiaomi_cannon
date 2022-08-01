@@ -10,5 +10,29 @@ service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
     group nfc
     disabled
 
+service nqnfc_1_2_hal_service /vendor/bin/hw/vendor.nxp.hardware.nfc@1.2-service
+    override
+    class hal
+    user nfc
+    group nfc
+    disabled
+
+service vendor.secure_element /vendor/bin/hw/vendor.microtrust.hardware.se@1.0-service
+    override
+    class late_start
+    user system
+    group nfc
+    disabled
+
+service mtk_secure_element_hal_service /vendor/bin/hw/android.hardware.secure_element@1.0-service-mediatek
+    override
+    class hal
+    user secure_element
+    group secure_element
+    disabled
+
 on boot && property:ro.boot.product.hardware.sku=cannong
+    enable vendor.secure_element
+    enable mtk_secure_element_hal_service
     enable vendor.nfc_hal_service
+    enable nqnfc_1_2_hal_service
