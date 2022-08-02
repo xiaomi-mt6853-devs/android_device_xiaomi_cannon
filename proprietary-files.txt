@@ -1526,12 +1526,9 @@ vendor/etc/virtual-spn-conf-by-imsi.xml
 vendor/etc/init/init.fmradio_drv.rc
 
 # Sensors
-vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
-vendor/etc/init/android.hardware.sensors@2.0-service.multihal-mediatek.rc
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.mt6853.so
 vendor/lib64/hw/sensors.touch.detect.so
-vendor/lib64/android.hardware.sensors@2.0-ScopedWakelock.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libksensor.so
 vendor/lib64/libsensor_custom.so
