@@ -18,12 +18,8 @@ vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 
 # Audio
-vendor/bin/hw/android.hardware.audio.service.mediatek
 vendor/bin/mt6660_calibration
 vendor/bin/rt5512_calibration
-vendor/etc/init/android.hardware.audio.service.mediatek.rc
-vendor/etc/aurisys_config.xml
-vendor/etc/aurisys_config_hifi3.xml
 vendor/lib/hw/android.hardware.audio.effect@6.0-impl.so
 vendor/lib/hw/android.hardware.audio.effect@7.0-impl.so
 vendor/lib/hw/audio.primary.default.so
@@ -120,6 +116,8 @@ vendor/lib64/soundfx/libdynproc.so
 vendor/lib64/soundfx/libhapticgenerator.so
 
 # Audio configs
+vendor/etc/aurisys_config.xml
+vendor/etc/aurisys_config_hifi3.xml
 vendor/etc/apdb/APDB_MT6853_S01__W2145
 vendor/etc/apdb/APDB_MT6853_S01__W2145_ENUM
 vendor/etc/audio_param/AudioParamOptions.xml
