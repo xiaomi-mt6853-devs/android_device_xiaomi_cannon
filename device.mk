@@ -380,6 +380,10 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.3.vendor \
     android.hardware.usb.gadget@1.1.vendor
 
+# IFAA
+PRODUCT_PACKAGES += \
+    IFAAService
+
 # Tetheroffload
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor \
