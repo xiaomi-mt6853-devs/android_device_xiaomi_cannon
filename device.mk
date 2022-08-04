@@ -329,16 +329,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     fstab.mt6853 \
-    init.aee.rc \
     init.cannon.rc \
-    init.connectivity.common.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6853.rc \
     init.mt6853.usb.rc \
     init.project.rc \
     init.sensor_2_0.rc \
-    init_connectivity.rc \
     ueventd.mtk.rc
 
 PRODUCT_COPY_FILES += \

@@ -13,20 +13,6 @@ sh_binary {
 
 // Init configuration files
 prebuilt_etc {
-    name: "init.aee.rc",
-    src: "etc/init.aee.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.connectivity.common.rc",
-    src: "etc/init.connectivity.common.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.connectivity.rc",
     src: "etc/init.connectivity.rc",
     sub_dir: "init/hw",
@@ -64,13 +50,6 @@ prebuilt_etc {
 prebuilt_etc {
     name: "init.sensor_2_0.rc",
     src: "etc/init.sensor_2_0.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init_connectivity.rc",
-    src: "etc/init_connectivity.rc",
     sub_dir: "init/hw",
     vendor: true,
 }

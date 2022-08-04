@@ -1,4 +1,73 @@
 # MTK connectivity .rc configure
 
-import /vendor/etc/init/hw/init_connectivity.rc
-import /vendor/etc/init/hw/init.connectivity.common.rc
+#
+# Connectivity related device nodes & configuration (begin)
+#
+
+on post-fs-data
+
+#/dev/ttyMT2 for Connectivity BT/FM/GPS usage
+    chmod 0660 /dev/ttyMT2
+    chown system system /dev/ttyMT2
+
+#/dev/ttyMT1 for GPS 3337 usage
+    chmod 0660 /dev/ttyMT1
+    chown system system /dev/ttyMT1
+
+# GPS
+    mkdir /data/vendor/gps 0770 gps system
+    mkdir /data/vendor/log 0770 gps system
+    mkdir /data/vendor/log/gps 0770 gps system
+
+# GPS EMI
+    chmod 0660 /dev/gps_emi
+
+# WiFi
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+
+# BT relayer mode used VCOM
+    chown bluetooth bluetooth /dev/ttyGS2
+    chmod 0660 /dev/ttyGS2
+
+on property:vendor.connsys.driver.ready=yes && property:persist.vendor.connsys.coredump.mode=*
+    write /proc/driver/wmt_user_proc "0x1 ${persist.vendor.connsys.coredump.mode}"
+
+on property:vendor.connsys.driver.ready=yes && property:debug.vendor.connsys.suspend.alarm=*
+    write /proc/driver/wmt_user_proc "0x2 ${debug.vendor.connsys.suspend.alarm}"
+
+on property:persist.vendor.em.dy.debug=1
+    setprop persist.vendor.connsys.coredump.mode 0
+
+#
+# Connectivity related device nodes & configuration (end)
+#
+
+#
+# Connectivity related services (Begin)
+#
+
+# GPS
+service mnld /vendor/bin/mnld
+    class main
+    user gps
+    capabilities WAKE_ALARM
+    group gps inet misc sdcard_rw sdcard_r media_rw system radio wakelock
+    socket mnld stream 660 gps system
+
+# WMT
+service wmt_loader /vendor/bin/wmt_loader
+    class early_hal
+    user system
+    group system
+    oneshot
+
+service wmt_launcher /vendor/bin/wmt_launcher -p /vendor/firmware/ -o 1
+    class early_hal
+    user system
+    group system
+
+#
+# Connectivity related services (End)
+#
