@@ -1250,8 +1250,6 @@ vendor/lib64/libtflite_mtk.so
 # Secure element
 vendor/bin/hw/android.hardware.secure_element@1.0-service-mediatek
 vendor/bin/hw/vendor.microtrust.hardware.se@1.0-service
-vendor/etc/init/android.hardware.secure_element@1.0-service-mediatek.rc
-vendor/etc/init/vendor.microtrust.hardware.se@1.0-service.rc
 vendor/lib64/se_extn_client.so
 vendor/lib64/secure_element-impl.so
 
@@ -1262,7 +1260,6 @@ system_ext/lib64/vendor.nxp.hardware.nfc@1.0.so
 system_ext/lib64/vendor.nxp.hardware.nfc@1.1.so
 vendor/bin/hw/vendor.nxp.hardware.nfc@1.2-service
 vendor/bin/pnscr
-vendor/etc/init/vendor.nxp.hardware.nfc@1.2-service.rc
 -vendor/framework/com.nxp.sems.jar
 vendor/lib/jcos_client.so
 vendor/lib/libnxp_extamp_intf.so
