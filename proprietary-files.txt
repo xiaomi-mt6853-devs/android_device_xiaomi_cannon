@@ -52,6 +52,9 @@ vendor/lib/libbwc.so
 vendor/lib/libcvsd_mtk.so
 vendor/lib/libfvaudio.so
 vendor/lib/libladder.so
+vendor/lib/libnxp_extamp_intf.so
+vendor/lib/libnxprecord.so
+vendor/lib/libnxpspeech.so
 vendor/lib/librt_extamp_intf.so
 vendor/lib/libshmemcompat.so
 vendor/lib/libshmemutil.so
@@ -1262,16 +1265,10 @@ vendor/bin/hw/vendor.nxp.hardware.nfc@1.2-service
 vendor/bin/pnscr
 -vendor/framework/com.nxp.sems.jar
 vendor/lib/jcos_client.so
-vendor/lib/libnxp_extamp_intf.so
-vendor/lib/libnxprecord.so
-vendor/lib/libnxpspeech.so
 vendor/lib/libsn100u_fw.so
 vendor/lib/ls_client.so
 vendor/lib/nfc_nci.nqx.default.hw.so
 vendor/lib64/jcos_client.so
-vendor/lib64/libnxp_extamp_intf.so
-vendor/lib64/libnxprecord.so
-vendor/lib64/libnxpspeech.so
 vendor/lib64/ls_client.so
 vendor/lib64/nfc_nci.nqx.default.hw.so
 vendor/lib64/vendor.nxp.hardware.nfc@1.0.so
@@ -1460,9 +1457,9 @@ bin/vtservice
 etc/init/init.vtservice.rc
 lib64/libcomutils.so
 lib64/libimsma.so
+lib64/libimsma_adapt.so
 lib64/libimsma_rtp.so
 lib64/libimsma_socketwrapper.so
-lib64/libimsma_adapt.so
 lib64/libmtk_vt_service.so
 lib64/libmtk_vt_wrapper.so
 lib64/libmtkavenhancements.so
@@ -1704,7 +1701,7 @@ vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.2.so
 -framework/mediatek-framework.jar
 -framework/mediatek-ims-base.jar
 -framework/mediatek-ims-common.jar
--framework/mediatek-ims-extension-plugin.jar 
+-framework/mediatek-ims-extension-plugin.jar
 -framework/mediatek-services.jar
 -framework/mediatek-telecom-common.jar
 -framework/mediatek-telephony-base.jar
