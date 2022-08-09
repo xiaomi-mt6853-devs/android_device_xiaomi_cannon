@@ -49,14 +49,14 @@ void vendor_load_properties()
 
     if (region == "GL") {
         device = "cannong";
-        model = "Redmi Note 9T";
+        model = "M2007J22G";
     } else if (region == "CN") {
         device = "cannon";
-        model = "Redmi Note 9 5G";
+        model = "M2007J22C";
     } else {
         // default to cannon
         device = "cannon";
-        model = "Redmi Note 9 5G";
+        model = "M2007J22C";
     }
 
     if (sys.totalram >= 7ull * 1024 * 1024 * 1024) {

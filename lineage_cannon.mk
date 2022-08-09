@@ -17,8 +17,8 @@ $(call inherit-product, device/xiaomi/cannon/device.mk)
 PRODUCT_DEVICE := cannon
 PRODUCT_NAME := lineage_cannon
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := Redmi Note 9 5G
-PRODUCT_MANUFACTURER := xiaomi
+PRODUCT_MODEL := M2007J22C
+PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
