@@ -20,8 +20,6 @@ vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 # Audio
 vendor/bin/mt6660_calibration
 vendor/bin/rt5512_calibration
-vendor/lib/hw/android.hardware.audio.effect@6.0-impl.so
-vendor/lib/hw/android.hardware.audio.effect@7.0-impl.so
 vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.mt6853.so
 vendor/lib/hw/audio.r_submix.default.so
@@ -48,10 +46,8 @@ vendor/lib/libaurisysdemo.so
 vendor/lib/libawinicsmartpaparse.so
 vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/libblisrc32_vendor.so
-vendor/lib/libbwc.so
 vendor/lib/libcvsd_mtk.so
 vendor/lib/libfvaudio.so
-vendor/lib/libladder.so
 vendor/lib/libnxp_extamp_intf.so
 vendor/lib/libnxprecord.so
 vendor/lib/libnxpspeech.so
@@ -66,57 +62,7 @@ vendor/lib/libvow_ap_test_hh.so
 vendor/lib/libvow_ap_test_nn.so
 vendor/lib/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib/vendor.mediatek.hardware.audio@7.1.so
-vendor/lib64/hw/android.hardware.audio.effect@6.0-impl.so
-vendor/lib64/hw/android.hardware.audio.effect@7.0-impl.so
-vendor/lib64/hw/audio.primary.default.so
-vendor/lib64/hw/audio.primary.mt6853.so
-vendor/lib64/hw/audio.r_submix.default.so
-vendor/lib64/hw/audio.r_submix.mt6853.so
-vendor/lib64/hw/audio.usb.default.so
-vendor/lib64/hw/audio_policy.stub.so
-vendor/lib64/lib_iir.so
-vendor/lib64/lib_speech_enh.so
-vendor/lib64/libalsautils.so
-vendor/lib64/libaudio_param_parser-vnd.so
-vendor/lib64/libaudioclient_aidl_conversion.so
-vendor/lib64/libaudiocompensationfilter_vendor.so
-vendor/lib64/libaudiocompensationfilterc.so
-vendor/lib64/libaudiocomponentengine_vendor.so
-vendor/lib64/libaudiocomponentenginec.so
-vendor/lib64/libaudiocustparam_vendor.so
-vendor/lib64/libaudiodcrflt_vendor.so
-vendor/lib64/libaudiofmtconv.so
-vendor/lib64/libaudiofoundation.so
-vendor/lib64/libaudioloudc.so
-vendor/lib64/libaudioprimarydevicehalifclient.so
-vendor/lib64/libaudiotoolkit_vendor.so
-vendor/lib64/libaurisysdemo.so
-vendor/lib64/libawinicsmartpaparse.so
-vendor/lib64/libbessound_hd_mtk_vendor.so
-vendor/lib64/libblisrc32_vendor.so
-vendor/lib64/libbwc.so
-vendor/lib64/libcvsd_mtk.so
-vendor/lib64/libfvaudio.so
-vendor/lib64/libladder.so
 vendor/lib64/libmiStereoFactoryRemapLib.so
-vendor/lib64/librt_extamp_intf.so
-vendor/lib64/libshmemcompat.so
-vendor/lib64/libshmemutil.so
-vendor/lib64/libspeech_enh_lib.so
-vendor/lib64/libspeechparser_vendor.so
-vendor/lib64/libvow_ap_test_aa.so
-vendor/lib64/libvow_ap_test_ha.so
-vendor/lib64/libvow_ap_test_hh.so
-vendor/lib64/libvow_ap_test_nn.so
-vendor/lib64/shared-file-region-aidl-cpp.so
-vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
-vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
-
-# Audio (FX modules)
-vendor/lib/soundfx/libdynproc.so
-vendor/lib/soundfx/libhapticgenerator.so
-vendor/lib64/soundfx/libdynproc.so
-vendor/lib64/soundfx/libhapticgenerator.so
 
 # Audio configs
 vendor/etc/apdb/APDB_MT6853_S01__W2145
@@ -238,6 +184,10 @@ vendor/etc/aurisys_param/AW_DSP.bin
 vendor/etc/aurisys_param/FV-SAM-MTKXX.dat
 vendor/etc/aurisys_param/Speech_AudioParam.xml
 
+# AEE
+vendor/lib/libaedv.so
+vendor/lib64/libaedv.so
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
@@ -279,7 +229,6 @@ lib64/libaptX_encoder.so:system_ext/lib64/libaptX_encoder.so
 vendor/bin/hw/camerahalserver
 vendor/bin/rttv
 vendor/etc/init/camerahalserver.rc
-vendor/lib/libaedv.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.ccap@1.0-impl.so
@@ -475,7 +424,6 @@ vendor/lib64/libSuperSensorProcessor.so
 vendor/lib64/lib_bsscore.so
 vendor/lib64/libaaa_ltm.so
 vendor/lib64/libaaa_ltmx.so
-vendor/lib64/libaedv.so
 vendor/lib64/libaiawb_moon.so
 vendor/lib64/libaiawb_moon_model.so
 vendor/lib64/libaiawb_p1ggm.so
@@ -832,8 +780,6 @@ vendor/bin/batteryd
 vendor/etc/init/init.batteryd.rc
 
 # Charger
-lib/vendor.xiaomi.hardware.micharge@1.0.so
-lib64/vendor.xiaomi.hardware.micharge@1.0.so
 vendor/bin/hw/vendor.xiaomi.hardware.micharge@1.0-service
 vendor/bin/charge_logger
 vendor/etc/init/init.charge_logger.rc
@@ -861,7 +807,6 @@ vendor/etc/init/android.hardware.configstore@1.1-service.rc
 vendor/lib64/libhwminijail.so
 
 # ConsumerIr
-vendor/lib/hw/consumerir.common.so
 vendor/lib64/hw/consumerir.common.so
 
 # Display
@@ -910,6 +855,7 @@ vendor/lib/libgralloc_metadata.so
 vendor/lib/libgralloctypes_mtk.so
 vendor/lib/libion_mtk.so
 vendor/lib/libion_ulit.so
+vendor/lib/libladder.so
 vendor/lib/libminiui.so
 vendor/lib/libmml.so
 vendor/lib/libpixelflinger.so
@@ -969,6 +915,7 @@ vendor/lib64/libgralloctypes_mtk.so
 vendor/lib64/libhwc2onfbadapter.so
 vendor/lib64/libion_mtk.so
 vendor/lib64/libion_ulit.so
+vendor/lib64/libladder.so
 vendor/lib64/libminiui.so
 vendor/lib64/libmml.so
 vendor/lib64/libpixelflinger.so
@@ -1079,8 +1026,6 @@ vendor/lib64/libgoodixhwfingerprint.so
 vendor/lib64/vendor.goodix.hardware.cap.biometrics.fingerprint@2.1.so
 
 # Gatekeeper
-vendor/lib/hw/gatekeeper.beanpod.so
-vendor/lib/hw/libSoftGatekeeper.so
 vendor/lib64/hw/gatekeeper.beanpod.so
 vendor/lib64/hw/libSoftGatekeeper.so
 
@@ -1151,6 +1096,7 @@ vendor/lib/libOpenCL.so
 vendor/lib/libadpcmdec_mtk.so
 vendor/lib/libalacdec_mtk.so
 vendor/lib/libavservices_minijail_vendor.so
+vendor/lib/libbwc.so
 vendor/lib/libcodec2_hidl@1.1.so
 vendor/lib/libcodec2_hidl@1.2.so
 vendor/lib/libcodec2_hidl_plugin.so
@@ -1200,6 +1146,7 @@ vendor/lib64/libOpenCL.so
 vendor/lib64/libadpcmdec_mtk.so
 vendor/lib64/libalacdec_mtk.so
 vendor/lib64/libavservices_minijail_vendor.so
+vendor/lib64/libbwc.so
 vendor/lib64/libcodec2_hidl@1.1.so
 vendor/lib64/libcodec2_hidl@1.2.so
 vendor/lib64/libcodec2_hidl_plugin.so
@@ -1257,10 +1204,6 @@ vendor/lib64/se_extn_client.so
 vendor/lib64/secure_element-impl.so
 
 # NFC
-system_ext/lib/vendor.nxp.hardware.nfc@1.0.so
-system_ext/lib/vendor.nxp.hardware.nfc@1.1.so
-system_ext/lib64/vendor.nxp.hardware.nfc@1.0.so
-system_ext/lib64/vendor.nxp.hardware.nfc@1.1.so
 vendor/bin/hw/vendor.nxp.hardware.nfc@1.2-service
 vendor/bin/pnscr
 -vendor/framework/com.nxp.sems.jar
@@ -1338,8 +1281,6 @@ vendor/lib64/vendor.mediatek.hardware.power@1.1.so
 vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 
 # Radio
-system_ext/lib/vendor.mediatek.hardware.mtkradioex@3.0.so
-system_ext/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 vendor/bin/hw/mtkfusionrild
 vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
 vendor/bin/bip_ap
@@ -1478,6 +1419,7 @@ vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # Radio configs
+vendor/etc/device_sar_config.xml
 vendor/etc/ecc_list.xml
 vendor/etc/ecc_list_OP01.xml
 vendor/etc/ecc_list_OP02.xml
@@ -1488,6 +1430,7 @@ vendor/etc/ecc_list_OP18.xml
 vendor/etc/ecc_list_OP20.xml
 vendor/etc/ecc_list_OP236.xml
 vendor/etc/ecc_list_preference.xml
+vendor/etc/smsdbvisitor.xml
 vendor/etc/special_pws_channel.xml
 vendor/etc/vendor-apns-conf.xml
 vendor/etc/virtual-spn-conf-by-efgid1.xml
@@ -1640,20 +1583,6 @@ vendor/bin/hw/android.hardware.gnss-service.mediatek
 vendor/bin/lbs_hidl_service
 vendor/bin/mnld
 vendor/bin/mtk_agpsd
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_CT.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Entel_Peru.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_KDDI.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SK_Telecom.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SoftBank.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Sprint.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_T-Mobile_US.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
-vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
-vendor/etc/gnss/agps_profiles_conf2.xml
 vendor/etc/init/android.hardware.gnss-service.mediatek.rc
 vendor/etc/init/init.gps_drv.rc
 vendor/etc/init/init.gps_drv.rc
@@ -1675,6 +1604,22 @@ vendor/lib64/libDR.so
 vendor/lib64/libapmonitor_vendor.so
 vendor/lib64/libmnl.so
 vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
+
+# GPS configs
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_CT.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Entel_Peru.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_KDDI.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SK_Telecom.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_SoftBank.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Sprint.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_T-Mobile_US.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
+vendor/etc/gnss/agps_profiles_conf2.xml
 
 # MM Agent
 vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
