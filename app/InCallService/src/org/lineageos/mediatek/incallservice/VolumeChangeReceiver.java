@@ -24,6 +24,10 @@ public class VolumeChangeReceiver extends BroadcastReceiver {
         int streamType = intent.getIntExtra(AudioManager.EXTRA_VOLUME_STREAM_TYPE, -1);
         if (streamType == AudioSystem.STREAM_VOICE_CALL) {
             AudioDeviceInfo callDevice = mAudioManager.getCommunicationDevice();
+            if (callDevice.getInternalType() != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE || callDevice.getInternalType() != AudioDeviceInfo.TYPE_BUILTIN_SPEAKER) {
+                // Device is not the built in earpiece or the speaker, we don't need to do anything.
+                return;
+            }
 
             // Start building parameters
             String parameters = "volumeDevice=" + (callDevice.getId() - 1) + ";";
