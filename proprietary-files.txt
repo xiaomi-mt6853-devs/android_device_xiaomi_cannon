@@ -1037,12 +1037,6 @@ vendor/bin/teei_daemon
 vendor/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc
 vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
 vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
-vendor/lib/hw/kmsetkey.beanpod.so
-vendor/lib/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
-vendor/lib/libTEECommon.so
-vendor/lib/libteei_daemon_vfs.so
-vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so
-vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 vendor/lib64/hw/kmsetkey.beanpod.so
 vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib64/libTEECommon.so
@@ -1051,7 +1045,6 @@ vendor/lib64/libkeymaster41.so
 vendor/lib64/libkeymaster4_1support.so
 vendor/lib64/libkmsetkey.so
 vendor/lib64/libsoft_attestation_cert.so
-vendor/lib64/libteei_daemon_vfs.so
 vendor/lib64/libteei_daemon_vfs.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
