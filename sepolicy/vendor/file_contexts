@@ -24,3 +24,6 @@
 # Thermals
 /vendor/bin/mi_thermald       u:object_r:mi_thermald_exec:s0
 /data/vendor/thermal(/.*)?    u:object_r:thermal_data_file:s0
+
+# Mlipay
+/vendor/bin/mlipayd@1\.1                                                u:object_r:hal_mlipay_default_exec:s0

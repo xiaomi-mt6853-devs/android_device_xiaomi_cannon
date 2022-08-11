@@ -20,3 +20,6 @@ vendor.fps_hal.                                         u:object_r:vendor_finger
 
 # Thermal
 vendor.sys.thermal.     u:object_r:thermal_engine_prop:s0
+
+# Mlipay
+persist.vendor.sys.pay                          u:object_r:vendor_tee_listener_prop:s0
