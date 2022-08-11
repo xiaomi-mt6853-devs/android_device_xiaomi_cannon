@@ -8,6 +8,7 @@ init_daemon_domain(hal_mlipay_default)
 allow hal_mlipay_default {
   ion_device
   tee_device
+  teei_client_device
 }:chr_file rw_file_perms;
 
 r_dir_file(hal_mlipay_default, firmware_file)
