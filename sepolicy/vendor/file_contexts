@@ -1,0 +1,22 @@
+# Camera devices
+/dev/camera_eeprom0                                u:object_r:camera_device:s0
+/dev/camera_eeprom1                                u:object_r:camera_device:s0
+/dev/camera_eeprom2                                u:object_r:camera_device:s0
+/dev/camera_eeprom3                                u:object_r:camera_device:s0
+
+# Fingerprint
+/dev/goodix_fp                                     u:object_r:vendor_fingerprint_device:s0
+/mnt/vendor/persist/goodix(/.*)?                   u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/fpc(/.*)?                             u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/goodix(/.*)?                          u:object_r:vendor_fingerprint_data_file:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
+
+# NFC
+/dev/p73                                                       u:object_r:nfc_device:s0
+/vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.2-service         u:object_r:hal_nfc_default_exec:s0
+
+# Lights
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.cannon                          u:object_r:hal_light_default_exec:s0
+
+# Sensors
+/vendor/bin/hw/android\.hardware\.sensors@2.1-service\.cannon-multihal                           u:object_r:hal_sensors_default_exec:s0

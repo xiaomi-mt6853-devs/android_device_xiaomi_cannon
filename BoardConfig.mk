@@ -116,6 +116,10 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_UI_BLANK_UNBLANK_ON_INIT := true
 
+# Sepolicy
+include device/mediatek/sepolicy_vndr/SEPolicy.mk
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
@@ -147,9 +151,6 @@ ODM_MANIFEST_CANNONG_FILES := $(DEVICE_PATH)/manifest_gl.xml
 
 # MTK FM
 BOARD_HAVE_MTK_FM := true
-
-# Sepolicy
-include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
