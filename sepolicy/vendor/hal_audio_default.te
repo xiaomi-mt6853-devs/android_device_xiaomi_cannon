@@ -21,6 +21,7 @@ allow hal_audio_default sysfs_boot_mode:file r_file_perms;
 allow hal_audio_default audiohal_prop:property_service set;
 get_prop(hal_audio_default, audiohal_prop)
 get_prop(hal_audio_default, mtk_default_prop)
+get_prop(hal_audio_default, mtk_bluetooth_prop)
 get_prop(hal_audio_default, tel_switch_prop)
 get_prop(hal_audio_default, vendor_audio_prop)
 set_prop(hal_audio_default, vendor_audio_prop)
