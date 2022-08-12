@@ -37,6 +37,8 @@
             <kctl name="DAC In Mux" value="Normal Path" />
             <kctl name="RCV Mux" value="Voice Playback" />
             <kctl name="Ext_Receiver_Amp Switch" value="1" />
+            <kctl name="Handset_PGA_GAIN" value="-1Db" />
+            <kctl name="Lineout_PGAL_GAIN" value="-1Db" />
         </path>
         <path name="two_in_one_speaker_output" value="turnoff">
             <kctl name="RCV Mux" value="Open" />
@@ -49,6 +51,8 @@
             <kctl name="LOL Mux" value="Playback" />
             <kctl name="RCV Mux" value="Voice Playback" />
             <kctl name="RCV_AMP_MODE" value="SPEAKER_MODE" />
+            <kctl name="Handset_PGA_GAIN" value="-1Db" />
+            <kctl name="Lineout_PGAL_GAIN" value="-1Db" />
         </path>
         <path name="speaker_output" value="turnoff">
             <kctl name="LOL Mux" value="Open" />
@@ -61,6 +65,8 @@
             <kctl name="HPL Mux" value="LoudSPK Playback" />
             <kctl name="HPR Mux" value="LoudSPK Playback" />
             <kctl name="RCV_AMP_MODE" value="SPEAKER_MODE" />
+            <kctl name="Handset_PGA_GAIN" value="-1Db" />
+            <kctl name="Lineout_PGAL_GAIN" value="-1Db" />
         </path>
         <path name="headphoneSpeaker_output" value="turnoff">
             <kctl name="HPL Mux" value="Open" />
