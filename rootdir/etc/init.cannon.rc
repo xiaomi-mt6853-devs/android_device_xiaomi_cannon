@@ -53,9 +53,3 @@ on boot && property:ro.boot.product.hardware.sku=cannong
     enable mtk_secure_element_hal_service
     enable vendor.nfc_hal_service
     enable nqnfc_1_2_hal_service
-
-on property:persist.sys.cannon.dt2w=0
-    exec /system/bin/sendevent /dev/input/event2 0 1 4
-
-on property:persist.sys.cannon.dt2w=1
-    exec /system/bin/sendevent /dev/input/event2 0 1 5

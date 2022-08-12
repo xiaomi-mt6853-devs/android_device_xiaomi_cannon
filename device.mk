@@ -124,10 +124,6 @@ PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl:64 \
     android.hardware.ir@1.0-service
 
-# DT2W
-PRODUCT_PACKAGES += \
-    DoubleTapService
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl:64 \
