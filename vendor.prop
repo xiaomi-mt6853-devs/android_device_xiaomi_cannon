@@ -1,10 +1,7 @@
 # Audio
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
-persist.audio.button_jack.profile=volume
-persist.audio.button_jack.switch=0
 ro.audio.monitorRotation=true
-ro.audio.silent=0
 ro.audio.usb.period_us=16000
 ro.vendor.audio.game.vibrate=true
 ro.vendor.audio.hifi=true
@@ -22,10 +19,6 @@ ro.vendor.mtk_audio_alac_support=1
 ro.vendor.mtk_audio_ape_support=1
 ro.vendor.mtk_audio_tuning_tool_ver=V2.2
 ro.vendor.mtk_hifiaudio_support=1
-vendor.audio.spkcal.copy.inhal=true
-
-# Dex
-persist.bg.dexopt.enable=true
 
 # AEE
 ro.vendor.aee.convert64=0
@@ -162,7 +155,6 @@ ro.vendor.mtk_nn_support=1
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
-persist.radio.apm_sim_not_pwdn=1
 persist.radio.multisim.config=dsds
 persist.sys.mmms.reclaim_switch=0
 persist.sys.mmms.switch=true

@@ -1,5 +1,15 @@
 # Audio
+persist.audio.button_jack.profile=volume
+persist.audio.button_jack.switch=0
+ro.audio.silent=0
 ro.config.vc_call_vol_steps=7
+vendor.audio.spkcal.copy.inhal=true
+
+# Dex
+persist.bg.dexopt.enable=true
+
+# Radio
+persist.radio.apm_sim_not_pwdn=1
 
 # Watchdog
 persist.sys.oom_crash_on_watchdog=true
