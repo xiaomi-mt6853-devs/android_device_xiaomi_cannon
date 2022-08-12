@@ -775,22 +775,6 @@ vendor/firmware/soc2_0_ram_wifi_3d_1_hdr.bin
 vendor/firmware/txpowerctrl.cfg
 vendor/firmware/wifi.cfg
 
-# Battery
-vendor/bin/batteryd
-vendor/etc/init/init.batteryd.rc
-
-# Charger
-vendor/bin/hw/vendor.xiaomi.hardware.micharge@1.0-service
-vendor/bin/charge_logger
-vendor/etc/init/init.charge_logger.rc
-vendor/etc/init/vendor.xiaomi.hardware.micharge@1.0-service.rc
--vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge@1.0.xml
-vendor/lib/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so
-vendor/lib/libfgauge_gm30.so
-vendor/lib/vendor.xiaomi.hardware.micharge@1.0.so
-vendor/lib64/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so
-vendor/lib64/vendor.xiaomi.hardware.micharge@1.0.so
-
 # CIT
 vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0.so
 vendor/lib/vendor.xiaomi.hardware.citsensorservice@1.0_vendor.so
@@ -1564,6 +1548,7 @@ vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
 vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
+vendor/lib/libfgauge_gm30.so
 
 # GPS
 vendor/bin/hw/android.hardware.gnss-service.mediatek
