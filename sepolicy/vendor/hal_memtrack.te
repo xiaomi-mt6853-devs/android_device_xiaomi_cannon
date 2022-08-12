@@ -1,0 +1,1 @@
+allow hal_memtrack proc_gpu_memory:file r_file_perms;

@@ -12,6 +12,9 @@ genfscon sysfs /devices/platform/mt_charger/power_supply/usb/input_current_now  
 genfscon sysfs /devices/platform/mt_charger/power_supply/usb/type                 u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/mt_charger/power_supply/usb/voltage_now          u:object_r:sysfs_batteryinfo:s0
 
+# Mali
+genfscon proc /mtk_mali/gpu_memory             u:object_r:proc_gpu_memory:s0
+
 # LED
 genfscon sysfs /devices/platform/disp_leds/leds/lcd-backlight/brightness              u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/disp_leds/leds/lcd-backlight/max_brightness          u:object_r:sysfs_leds:s0
