@@ -1,1 +1,0 @@
-allow hal_health_default sysfs_batteryinfo:file r_file_perms; 

@@ -1,17 +1,3 @@
-# Battery
-genfscon sysfs /devices/platform/battery/power_supply/battery/current_now         u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/battery/power_supply/battery/cycle_count         u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/battery/power_supply/battery/charge_full         u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/battery/power_supply/battery/capacity            u:object_r:sysfs_batteryinfo:s0 
-genfscon sysfs /devices/platform/battery/power_supply/battery/status              u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/battery/power_supply/battery/type                u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/battery/power_supply/battery/voltage_now         u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/mt_charger/power_supply/ac/type                  u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/mt_charger/power_supply/usb/online               u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/mt_charger/power_supply/usb/input_current_now    u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/mt_charger/power_supply/usb/type                 u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/mt_charger/power_supply/usb/voltage_now          u:object_r:sysfs_batteryinfo:s0
-
 # Mali
 genfscon proc /mtk_mali/gpu_memory             u:object_r:proc_gpu_memory:s0
 
