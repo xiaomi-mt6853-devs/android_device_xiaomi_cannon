@@ -1,5 +1,4 @@
 allow hal_sensors_default sensor_device:chr_file rw_file_perms;
-allow hal_sensors_default mnt_vendor_file:dir search;
 allow hal_sensors_default sysfs_scp:dir search;
 allow hal_sensors_default sensor_data_file:file create_file_perms;
 allow hal_sensors_default sensor_data_file:dir create_dir_perms;
