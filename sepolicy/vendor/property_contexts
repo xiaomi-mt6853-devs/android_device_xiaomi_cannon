@@ -21,9 +21,6 @@ vendor.fps_hal.                                         u:object_r:vendor_finger
 # IMEI
 ro.vendor.oem.sno                               u:object_r:vendor_deviceid_prop:s0
 ro.vendor.oem.psno                              u:object_r:vendor_deviceid_prop:s0
-ro.vendor.oem.imei                              u:object_r:vendor_deviceid_prop:s0
-ro.vendor.oem.imei1                             u:object_r:vendor_deviceid_prop:s0
-ro.vendor.oem.imei2                             u:object_r:vendor_deviceid_prop:s0
 
 # Thermal
 vendor.sys.thermal.     u:object_r:thermal_engine_prop:s0
