@@ -384,7 +384,8 @@ PRODUCT_PACKAGES += \
 
 # Mlipay
 PRODUCT_PACKAGES += \
-    vendor.xiaomi.hardware.mlipay@1.1.vendor
+    vendor.xiaomi.hardware.mlipay@1.1.vendor \
+    vendor.xiaomi.hardware.mtdservice@1.2.vendor
 
 # Tetheroffload
 PRODUCT_PACKAGES += \
