@@ -39,7 +39,7 @@ vendor      /vendor        ext4        ro wait,avb,logical,first_stage_mount
 product     /product       ext4        ro wait,avb,logical,first_stage_mount
 
 /dev/block/by-name/metadata         /metadata               ext4        noatime,nosuid,nodev,discard                                        wait,check,formattable,first_stage_mount
-/dev/block/by-name/userdata         /data                   f2fs        noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt     wait,check,formattable,quota,reservedsize=128m,latemount,resize,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v1
+/dev/block/by-name/userdata         /data                   f2fs        noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt wait,check,formattable,quota,reservedsize=128m,latemount,resize,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v1
 /dev/block/by-name/cache            /cache                  ext4        noatime,nosuid,nodev,noauto_da_alloc,discard                        wait,check,formattable
 /dev/block/by-name/protect1         /mnt/vendor/protect_f   ext4        noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc            wait,check,formattable
 /dev/block/by-name/protect2         /mnt/vendor/protect_s   ext4        noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc            wait,check,formattable
@@ -87,6 +87,7 @@ product     /product       ext4        ro wait,avb,logical,first_stage_mount
 /dev/block/by-name/odmdtbo          /odmdtbo                emmc        defaults                                                            defaults
 /dev/block/by-name/dtbo             /dtbo                   emmc        defaults                                                            defaults
 /dev/block/by-name/otp              /otp                    emmc        defaults                                                            defaults
+/dev/block/zram0                    none                    swap        defaults                                                            zramsize=55%
 
 /devices/platform/externdevice*     auto       auto        defaults        voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/usb_xhci*         auto       vfat        defaults        voldmanaged=usbotg:auto

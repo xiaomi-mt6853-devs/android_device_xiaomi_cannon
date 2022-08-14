@@ -114,7 +114,7 @@ on fs
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 60
     write /sys/kernel/mm/swap/vma_ra_enabled false
-    swapon_all /vendor/etc/fstab.enableswap
+    swapon_all /vendor/etc/fstab.mt6853
     chmod 0666 /dev/xlog
 
 on late-fs
