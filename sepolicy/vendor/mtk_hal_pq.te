@@ -1,0 +1,2 @@
+# Allow PQ HAL to read panel nodes
+allow mtk_hal_pq vendor_sysfs_panel:file { read open getattr };

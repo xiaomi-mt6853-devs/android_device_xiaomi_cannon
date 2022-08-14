@@ -1,3 +1,7 @@
+# Panel
+genfscon sysfs /devices/platform/14000000.dispsys_config/drm/card0/card0-DSI-1/panel_event                 u:object_r:vendor_sysfs_panel:s0
+genfscon sysfs /devices/platform/14000000.dispsys_config/drm/card0/card0-DSI-1/panel_info                  u:object_r:vendor_sysfs_panel:s0
+
 # Mali
 genfscon proc /mtk_mali/gpu_memory             u:object_r:proc_gpu_memory:s0
 
