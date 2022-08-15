@@ -12,3 +12,7 @@ genfscon sysfs /devices/platform/disp_leds/leds/lcd-backlight/max_brightness    
 # Vibrator
 genfscon sysfs /devices/platform/haptic_pwm/activate                                  u:object_r:sysfs_vibrator:s0
 genfscon sysfs /devices/platform/haptic_pwm/duration                                  u:object_r:sysfs_vibrator:s0
+
+# Performance
+genfscon proc /sys/vm/dirty_writeback_centisecs      										u:object_r:proc_vm_dirty:s0
+genfscon proc /sys/kernel/sched_stune_task_threshold 										u:object_r:proc_sched_stune:s0

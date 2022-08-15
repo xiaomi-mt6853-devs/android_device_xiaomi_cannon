@@ -6,3 +6,6 @@ allow vendor_init vendor_fingerprint_device:file { rw_file_perms setattr };
 
 # Allow vendor_init to create NFC dirs
 allow vendor_init nfc_data_file:dir { r_dir_perms create_dir_perms };
+
+allow vendor_init proc_sched_stune:file w_file_perms;
+allow vendor_init proc_vm_dirty:file w_file_perms;
