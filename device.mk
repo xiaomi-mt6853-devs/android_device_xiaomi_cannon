@@ -422,7 +422,8 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant@1.4.vendor
 
 PRODUCT_PACKAGES += \
-    WifiResCommon
+    WifiResCommon \
+    TetheringResCommon
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
