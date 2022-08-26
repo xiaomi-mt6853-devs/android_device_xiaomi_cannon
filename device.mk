@@ -339,6 +339,7 @@ PRODUCT_PACKAGES += \
     ueventd.mtk.rc
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.recovery.mt6853.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6853.rc \
     $(LOCAL_PATH)/rootdir/etc/fstab.mt6853:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6853
 
 # Properties
