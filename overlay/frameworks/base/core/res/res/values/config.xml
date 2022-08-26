@@ -206,133 +206,53 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>24</item>
-        <item>24</item>
-        <item>81</item>
-        <item>114</item>
-        <item>148</item>
-        <item>162</item>
-        <item>219</item>
-        <item>281</item>
-        <item>362</item>
-        <item>386</item>
-        <item>390</item>
-        <item>390</item>
-        <item>390</item>
-        <item>395</item>
-        <item>395</item>
-        <item>395</item>
-        <item>400</item>
-        <item>400</item>
-        <item>405</item>
-        <item>405</item>
-        <item>405</item>
-        <item>405</item>
-        <item>409</item>
-        <item>409</item>
-        <item>414</item>
-        <item>424</item>
-        <item>428</item>
-        <item>433</item>
-        <item>442</item>
-        <item>447</item>
-        <item>457</item>
-        <item>462</item>
-        <item>471</item>
-        <item>476</item>
-        <item>480</item>
-        <item>495</item>
-        <item>500</item>
-        <item>505</item>
-        <item>514</item>
-        <item>519</item>
-        <item>528</item>
-        <item>533</item>
-        <item>543</item>
-        <item>552</item>
-        <item>652</item>
-        <item>747</item>
-        <item>857</item>
-        <item>976</item>
-        <item>1076</item>
-        <item>1223</item>
-        <item>1333</item>
-        <item>1404</item>
-        <item>1757</item>
-        <item>2047</item>
-        <item>2047</item>
-        <item>2047</item>
-        <item>2047</item>
-        <item>2047</item>
+        <item>8</item>
+        <item>64</item>
+        <item>98</item>
+        <item>104</item>
+        <item>110</item>
+        <item>116</item>
+        <item>122</item>
+        <item>128</item>
+        <item>134</item>
+        <item>182</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
     </integer-array>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
-         The N entries of this array define N  1 zones as follows:
+      The N entries of this array define N  1 zones as follows:
          Zone 0:        0 <= LUX < array[0]
          Zone 1:        array[0] <= LUX < array[1]
          ...
          Zone N:        array[N - 1] <= LUX < array[N]
          Zone N + 1     array[N] <= LUX < infinity
          Must be overridden in platform specific overlays -->
-    <array name="config_autoBrightnessLevels">
-        <item>1</item>
-        <item>2</item>
-        <item>4</item>
-        <item>6</item>
-        <item>8</item>
-        <item>10</item>
-        <item>15</item>
-        <item>20</item>
-        <item>25</item>
-        <item>30</item>
-        <item>35</item>
-        <item>40</item>
-        <item>45</item>
-        <item>50</item>
-        <item>55</item>
-        <item>60</item>
-        <item>65</item>
-        <item>70</item>
-        <item>75</item>
-        <item>80</item>
-        <item>85</item>
-        <item>90</item>
-        <item>95</item>
-        <item>100</item>
-        <item>120</item>
-        <item>140</item>
-        <item>160</item>
-        <item>180</item>
-        <item>200</item>
-        <item>220</item>
-        <item>240</item>
-        <item>260</item>
-        <item>280</item>
-        <item>300</item>
-        <item>320</item>
-        <item>340</item>
-        <item>360</item>
-        <item>380</item>
-        <item>400</item>
-        <item>420</item>
-        <item>440</item>
-        <item>460</item>
-        <item>480</item>
-        <item>500</item>
-        <item>700</item>
-        <item>900</item>
-        <item>1100</item>
-        <item>1300</item>
-        <item>1500</item>
-        <item>1700</item>
-        <item>1900</item>
-        <item>2000</item>
-        <item>2500</item>
-        <item>3000</item>
-        <item>3500</item>
-        <item>4000</item>
-        <item>4500</item>
-    </array>
+    <integer-array name="config_autoBrightnessLevels">
+        <item>128</item>
+        <item>256</item>
+        <item>384</item>
+        <item>512</item>
+        <item>640</item>
+        <item>768</item>
+        <item>896</item>
+        <item>1024</item>
+        <item>2048</item>
+        <item>4096</item>
+        <item>6144</item>
+        <item>8192</item>
+        <item>10240</item>
+        <item>12288</item>
+        <item>14336</item>
+        <item>16384</item>
+        <item>18432</item>
+    </integer-array>
 
     <!-- The maximum range of gamma adjustment possible using the screen
          auto-brightness adjustment setting. -->
