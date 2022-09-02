@@ -298,10 +298,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service \
     android.hardware.gatekeeper@1.0-impl:64
 
-# Light
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.cannon
-
 # GNSS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl \

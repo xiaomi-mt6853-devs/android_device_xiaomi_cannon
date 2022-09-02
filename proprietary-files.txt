@@ -1039,6 +1039,12 @@ vendor/lib64/libteei_daemon_vfs.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
+# Light
+vendor/bin/hw/android.hardware.lights-service.mediatek
+vendor/etc/init/lights-mtk-default.rc
+-vendor/etc/vintf/manifest/lights-mtk-default.xml
+vendor/lib64/hw/lights.mt6853.so
+
 # Media
 lib64/libvcodec_cap.so
 lib64/libvcodec_capenc.so
