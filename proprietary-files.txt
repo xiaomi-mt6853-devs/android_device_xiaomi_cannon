@@ -1,11 +1,6 @@
 # Unpinned blobs from cannong-user 12 SP1A.210812.016 V13.0.2.0.SJEMIXM release-keys
 
 # APU
-vendor/lib/libapu_mdw.so
-vendor/lib/libapu_mdw_batch.so
-vendor/lib/libapusys.so
-vendor/lib/libapusys_edma.so
-vendor/lib/vendor.mediatek.hardware.apuware.utils@2.0.so
 vendor/lib64/APUWareApusysServer.so
 vendor/lib64/APUWareUtilsServer.so
 vendor/lib64/APUWareXrpServer_v2.so
@@ -18,8 +13,6 @@ vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 
 # Audio
-vendor/bin/mt6660_calibration
-vendor/bin/rt5512_calibration
 vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.mt6853.so
 vendor/lib/hw/audio.r_submix.default.so
@@ -1266,9 +1259,7 @@ vendor/bin/gsm0710muxd
 vendor/bin/ipsec_mon
 vendor/bin/md_monitor
 vendor/bin/md_monitor_ctrl
-vendor/bin/meta_tst
 vendor/bin/mtk_pkm_service
-vendor/bin/muxreport
 vendor/bin/netdagent
 vendor/bin/rcs_volte_stack
 vendor/bin/volte_clientapi_ua
@@ -1284,15 +1275,11 @@ vendor/etc/init/ipsec_mon.rc
 vendor/etc/init/md_monitor.rc
 vendor/etc/init/mtk_pkm_service.rc
 vendor/etc/init/mtkrild.rc
-vendor/etc/init/muxreport.rc
-vendor/etc/init/muxreport.rc
 vendor/etc/init/netdagent.rc
 vendor/etc/init/networksetting.rc
 vendor/etc/init/vendor.mediatek.hardware.nwk_opt@1.0-service.rc
 vendor/etc/init/volte_clientapi_ua.rc
 vendor/etc/init/volte_rcs_ua.rc
-vendor/etc/device_sar_config.xml
-vendor/etc/smsdbvisitor.xml
 vendor/lib/libasn1c_core.so
 vendor/lib/libasn1c_mapi.so
 vendor/lib/libasn1c_mdmi.so
@@ -1569,9 +1556,6 @@ vendor/etc/init/mtk_agpsd_p.rc
 -vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
 vendor/etc/mpe.conf
 vendor/etc/slp_conf
-vendor/lib/hw/gps.default.so
-vendor/lib/libapmonitor_vendor.so
-vendor/lib/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
 vendor/lib64/hw/gps.default.so
