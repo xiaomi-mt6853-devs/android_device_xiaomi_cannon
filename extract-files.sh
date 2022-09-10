@@ -72,6 +72,9 @@ function blob_fixup() {
     vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc)
         echo "$(cat ${2}) input" > "${2}"
         ;;
+    lib/libmtk_vt_service.so)
+       "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
+       ;;
     esac
 }
 
