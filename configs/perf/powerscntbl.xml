@@ -29,7 +29,6 @@
     <scenario powerhint="LAUNCH">
         <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>
         <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
-        <data cmd="PERF_RES_SCHED_BOOST" param1="3"></data>
         <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
         <data cmd="PERF_RES_SCHED_UCLAMP_MIN_TA" param1="100"></data>
         <data cmd="PERF_RES_PERF_TASK_TURBO" param1="15"></data>
@@ -70,7 +69,6 @@
         <data cmd="PERF_RES_SCHED_UCLAMP_MIN_TA" param1="100"></data>
         <data cmd="PERF_RES_SCHED_BOOST" param1="1"></data>
         <data cmd="PERF_RES_POWERHAL_SCREEN_OFF_STATE" param1="2"></data>
-        <data cmd="PERF_RES_POWER_HINT_INSTALL_MAX_DURATION" param1="90000"></data>
     </scenario>
     <scenario powerhint="MTKPOWER_HINT_APP_TOUCH">
         <data cmd="PERF_RES_POWERHAL_TOUCH_BOOST_NOTIFY_FBC" param1="1"></data>
@@ -99,12 +97,5 @@
     <scenario powerhint="MTKPOWER_HINT_AUDIO_DISABLE_WIFI_POWER_SAVE">
         <data cmd="PERF_RES_NET_WIFI_CAM" param1="1"></data>
         <data cmd="PERF_RES_POWERHAL_SCREEN_OFF_STATE" param1="1"></data>
-    </scenario>
-    <scenario powerhint="MTKPOWER_HINT_UX_SCROLLING">
-        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1075000"></data>
-        <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="1162000"></data>
-        <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_0" param1="3000000"></data>
-        <data cmd="PERF_RES_CPUFREQ_MAX_CLUSTER_1" param1="3000000"></data>
-        <data cmd="PERF_RES_SCHED_UCLAMP_MIN_TA" param1="50"></data>
     </scenario>
 </SCNTABLE>

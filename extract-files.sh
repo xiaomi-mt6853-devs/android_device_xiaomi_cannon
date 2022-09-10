@@ -55,12 +55,6 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-    vendor/lib64/hw/fingerprint.fpc.default.so)
-        sed -i "s|\xDD\xB0\x01\x94|\x1F\x20\x03\xD5|g;s|\xC8\xB0\x01\x94|\x1F\x20\x03\xD5|g" "${2}"
-        ;;
-    vendor/lib64/libgf_hal.so)
-        sed -i "s|\xBC\x9B\x00\x94|\x1F\x20\x03\xD5|g;s|\x9F\x9B\x00\x94|\x1F\x20\x03\xD5|g" "${2}"
-        ;;
     vendor/lib64/libmtkcam_featurepolicy.so)
         sed -i "s|\xE8\x87\x40\xB9|\x28\x02\x80\x52|g" "${2}"
         ;;

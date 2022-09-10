@@ -3,7 +3,7 @@ on early-init
 
 on post-fs
     setprop vendor.usb.vid "0x0E8D"
-    mkdir /dev/usb-ffs 0775 shell shell
+    mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell
     mkdir /config/usb_gadget/g1 0770 shell shell
     write /config/usb_gadget/g1/idVendor ${vendor.usb.vid}
@@ -17,9 +17,9 @@ on post-fs
     mkdir /config/usb_gadget/g1/functions/accessory.gs2
     mkdir /config/usb_gadget/g1/functions/audio_source.gs3
     mkdir /config/usb_gadget/g1/functions/ffs.adb
-    mkdir /config/usb_gadget/g1/functions/ffs.mtp
-    write /config/usb_gadget/g1/functions/ffs.mtp/os_desc/interface.MTP/compatible_id "MTP"
-    mkdir /config/usb_gadget/g1/functions/ffs.ptp
+    mkdir /config/usb_gadget/g1/functions/mtp.gs0
+    write /config/usb_gadget/g1/functions/mtp.gs0/os_desc/interface.MTP/compatible_id "MTP"
+    mkdir /config/usb_gadget/g1/functions/ptp.gs1
     mkdir /config/usb_gadget/g1/functions/rndis.gs4
     mkdir /config/usb_gadget/g1/functions/midi.gs5
     mkdir /config/usb_gadget/g1/functions/acm.gs0
@@ -37,15 +37,11 @@ on post-fs
     write /config/usb_gadget/g1/os_desc/qw_sign "MSFT100"
     write /config/usb_gadget/g1/configs/b.1/MaxPower 500
     symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1
-    mount functionfs adb /dev/usb-ffs/adb rmode=0770,fmode=0660,uid=2000,gid=2000,no_disconnect=1
-    mkdir /dev/usb-ffs/mtp 0770 mtp mtp
-    mkdir /dev/usb-ffs/ptp 0770 mtp mtp
-    mount functionfs mtp /dev/usb-ffs/mtp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1
-    mount functionfs ptp /dev/usb-ffs/ptp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1
+    mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
 
 on boot
     setprop sys.usb.configfs 1
-    setprop sys.usb.ffs.aio_compat 0
+    setprop sys.usb.ffs.aio_compat 1
     setprop vendor.usb.controller "musb-hdrc"
     setprop vendor.usb.acm_cnt 0
     setprop vendor.usb.acm_port0 ""
@@ -104,7 +100,7 @@ on charger
     write /config/usb_gadget/g1/configs/b.1/MaxPower 500
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
     setprop sys.usb.configfs 1
-    setprop sys.usb.ffs.aio_compat 0
+    setprop sys.usb.ffs.aio_compat 1
     setprop vendor.usb.controller "musb-hdrc"
     setprop vendor.usb.acm_cnt 0
     setprop vendor.usb.acm_port0 ""
@@ -114,7 +110,6 @@ on charger
 
 on property:dev.bootcomplete=1
     write /config/usb_gadget/g1/strings/0x409/product ${ro.product.marketname}
-
 
 ### more command at init.usb.configfs.rc ###
 on property:sys.usb.config=none && property:sys.usb.configfs=1
@@ -186,25 +181,25 @@ property:sys.usb.configfs=1
     setprop vendor.usb.pid 0x202A
 
 on property:sys.usb.config=mtp && property:vendor.usb.acm_enable=1 && \
-property:sys.usb.configfs=1 && property:vendor.usb.ffs.mtp.ready=1
+property:sys.usb.configfs=1
     setprop vendor.usb.state ${sys.usb.config}
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp_acm"
     write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
     write /config/usb_gadget/g1/os_desc/use 1
     write /sys/class/udc/musb-hdrc/device/saving 1
-    symlink /config/usb_gadget/g1/functions/ffs.mtp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port0} /config/usb_gadget/g1/configs/b.1/f2
     symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port1} /config/usb_gadget/g1/configs/b.1/f3
     write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mtp && property:vendor.usb.acm_enable=0 && \
-property:sys.usb.configfs=1 && property:vendor.usb.ffs.mtp.ready=1
+property:sys.usb.configfs=1
     setprop vendor.usb.state ${sys.usb.config}
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp"
     write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
     write /config/usb_gadget/g1/os_desc/use 1
-    symlink /config/usb_gadget/g1/functions/ffs.mtp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
@@ -222,13 +217,13 @@ property:sys.usb.configfs=1
     setprop vendor.usb.pid 0x2026
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && \
-property:vendor.usb.acm_enable=1 && property:sys.usb.configfs=1 && property:vendor.usb.ffs.mtp.ready=1
+property:vendor.usb.acm_enable=1 && property:sys.usb.configfs=1
     setprop vendor.usb.state ${sys.usb.config}
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp_adb_acm"
     write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
     write /config/usb_gadget/g1/os_desc/use 1
     write /sys/class/udc/musb-hdrc/device/saving 1
-    symlink /config/usb_gadget/g1/functions/ffs.mtp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
     symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port0} /config/usb_gadget/g1/configs/b.1/f3
     symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port1} /config/usb_gadget/g1/configs/b.1/f4
@@ -236,12 +231,12 @@ property:vendor.usb.acm_enable=1 && property:sys.usb.configfs=1 && property:vend
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mtp,adb && \
-property:vendor.usb.acm_enable=0 && property:sys.usb.configfs=1 && property:vendor.usb.ffs.mtp.ready=1
+property:vendor.usb.acm_enable=0 && property:sys.usb.configfs=1
     setprop vendor.usb.state ${sys.usb.config}
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp_adb"
     write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
     write /config/usb_gadget/g1/os_desc/use 1
-    symlink /config/usb_gadget/g1/functions/ffs.mtp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
@@ -260,23 +255,23 @@ property:sys.usb.configfs=1
     setprop vendor.usb.pid 0x202B
 
 on property:sys.usb.config=ptp && property:vendor.usb.acm_enable=1 && \
-property:sys.usb.configfs=1 && property:vendor.usb.ffs.ptp.ready=1
+property:sys.usb.configfs=1
     setprop vendor.usb.state ${sys.usb.config}
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "ptp_acm"
     write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
     write /sys/class/udc/musb-hdrc/device/saving 1
-    symlink /config/usb_gadget/g1/functions/ffs.ptp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/ptp.gs1 /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port0} /config/usb_gadget/g1/configs/b.1/f2
     symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port1} /config/usb_gadget/g1/configs/b.1/f3
     write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=ptp && property:vendor.usb.acm_enable=0 && \
-property:sys.usb.configfs=1 && property:vendor.usb.ffs.ptp.ready=1
+property:sys.usb.configfs=1
     setprop vendor.usb.state ${sys.usb.config}
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "ptp"
     write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
-    symlink /config/usb_gadget/g1/functions/ffs.ptp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/ptp.gs1 /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
@@ -294,12 +289,12 @@ property:sys.usb.configfs=1
     setprop vendor.usb.pid 0x2027
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=ptp,adb && \
-property:vendor.usb.acm_enable=1 && property:sys.usb.configfs=1 && property:vendor.usb.ffs.ptp.ready=1
+property:vendor.usb.acm_enable=1 && property:sys.usb.configfs=1
     setprop vendor.usb.state ${sys.usb.config}
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "ptp_adb_acm"
     write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
     write /sys/class/udc/musb-hdrc/device/saving 1
-    symlink /config/usb_gadget/g1/functions/ffs.ptp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/ptp.gs1 /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
     symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port0} /config/usb_gadget/g1/configs/b.1/f3
     symlink /config/usb_gadget/g1/functions/acm.gs${vendor.usb.acm_port1} /config/usb_gadget/g1/configs/b.1/f4
@@ -307,11 +302,11 @@ property:vendor.usb.acm_enable=1 && property:sys.usb.configfs=1 && property:vend
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=ptp,adb && \
-property:vendor.usb.acm_enable=0 && property:sys.usb.configfs=1 && property:vendor.usb.ffs.ptp.ready=1
+property:vendor.usb.acm_enable=0 && property:sys.usb.configfs=1
     setprop vendor.usb.state ${sys.usb.config}
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "ptp_adb"
     write /config/usb_gadget/g1/idProduct ${vendor.usb.pid}
-    symlink /config/usb_gadget/g1/functions/ffs.ptp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/ptp.gs1 /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
@@ -821,7 +816,7 @@ property:vendor.usb.clear=2 && property:sys.usb.configfs=1
     write /sys/class/udc/musb-hdrc/device/saving 1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "atm_gs0"
     write /config/usb_gadget/g1/idProduct 0x200A
-    symlink /config/usb_gadget/g1/functions/ffs.mtp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
     symlink /config/usb_gadget/g1/functions/acm.gs0 /config/usb_gadget/g1/configs/b.1/f3
     write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
@@ -864,7 +859,7 @@ on property:sys.usb.config=cdp && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "mtp"
     write /config/usb_gadget/g1/idProduct 0x2008
     write /config/usb_gadget/g1/os_desc/use 1
-    symlink /config/usb_gadget/g1/functions/ffs.mtp /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/mtp.gs0 /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${vendor.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
     setprop vendor.usb.pid 0x2008
@@ -897,21 +892,21 @@ on property:vendor.usb.port.mode=uart
 	write /sys/class/udc/musb-hdrc/device/portmode 1
 
 on property:vendor.em.usb.set=USB_DRIVING_CAPABILITY
-	write /proc/mtk_usb/usb20_phy/USB_DRIVING_CAPABILITY ${vendor.em.usb.value}
+	write /sys/kernel/debug/usb20_phy/USB_DRIVING_CAPABILITY ${vendor.em.usb.value}
 on property:vendor.em.usb.set=RG_USB20_TERM_VREF_SEL
-	write /proc/mtk_usb/usb20_phy/RG_USB20_TERM_VREF_SEL ${vendor.em.usb.value}
+	write /sys/kernel/debug/usb20_phy/RG_USB20_TERM_VREF_SEL ${vendor.em.usb.value}
 on property:vendor.em.usb.set=RG_USB20_HSTX_SRCTRL
-	write /proc/mtk_usb/usb20_phy/RG_USB20_HSTX_SRCTRL ${vendor.em.usb.value}
+	write /sys/kernel/debug/usb20_phy/RG_USB20_HSTX_SRCTRL ${vendor.em.usb.value}
 on property:vendor.em.usb.set=RG_USB20_VRT_VREF_SEL
-	write /proc/mtk_usb/usb20_phy/RG_USB20_VRT_VREF_SEL ${vendor.em.usb.value}
+	write /sys/kernel/debug/usb20_phy/RG_USB20_VRT_VREF_SEL ${vendor.em.usb.value}
 on property:vendor.em.usb.set=RG_USB20_INTR_EN
-	write /proc/mtk_usb/usb20_phy/RG_USB20_INTR_EN ${vendor.em.usb.value}
+	write /sys/kernel/debug/usb20_phy/RG_USB20_INTR_EN ${vendor.em.usb.value}
 on property:vendor.em.usb.set=RG_USB20_PHY_REV6
-	write /proc/mtk_usb/usb20_phy/RG_USB20_PHY_REV6 ${vendor.em.usb.value}
+	write /sys/kernel/debug/usb20_phy/RG_USB20_PHY_REV6 ${vendor.em.usb.value}
 on property:vendor.em.usb.set=RG_USB20_INTR_CAL
-	write /proc/mtk_usb/usb20_phy/RG_USB20_INTR_CAL ${vendor.em.usb.value}
+	write /sys/kernel/debug/usb20_phy/RG_USB20_INTR_CAL ${vendor.em.usb.value}
 on property:vendor.em.usb.set=RG_USB20_DISCTH
-	write /proc/mtk_usb/usb20_phy/RG_USB20_DISCTH ${vendor.em.usb.value}
+	write /sys/kernel/debug/usb20_phy/RG_USB20_DISCTH ${vendor.em.usb.value}
 
 on property:vendor.em.usb.bypass.enable=0
 	write /sys/class/usb_rawbulk/gps/enable 1
@@ -952,22 +947,22 @@ on property:persist.vendor.usb.printk=*
 	setprop vendor.usb.printk ${persist.vendor.usb.printk}
 
 on property:vendor.usb.speed.mode=u3
-	write /proc/mtk_usb/speed 1
+	write /sys/module/musb_hdrc/parameters/speed 1
 	write /sys/class/udc/musb-hdrc/device/cmode 0
 	write /sys/class/udc/musb-hdrc/device/cmode 1
 
 on property:vendor.usb.speed.mode=u2
-	write /proc/mtk_usb/speed 0
+	write /sys/module/musb_hdrc/parameters/speed 0
 	write /sys/class/udc/musb-hdrc/device/cmode 0
 	write /sys/class/udc/musb-hdrc/device/cmode 1
 
 on property:persist.vendor.usb.speed.mode=u3
-	write /proc/mtk_usb/speed 1
+	write /sys/module/musb_hdrc/parameters/speed 1
 	write /sys/class/udc/musb-hdrc/device/cmode 0
 	write /sys/class/udc/musb-hdrc/device/cmode 1
 
 on property:persist.vendor.usb.speed.mode=u2
-	write /proc/mtk_usb/speed 0
+	write /sys/module/musb_hdrc/parameters/speed 0
 	write /sys/class/udc/musb-hdrc/device/cmode 0
 	write /sys/class/udc/musb-hdrc/device/cmode 1
 
@@ -991,14 +986,4 @@ on property:persist.vendor.usb.dbg.lv=*
 on property:vendor.usb.dbg.lv=*
 	write /sys/module/musb_hdrc/parameters/debug_level ${vendor.usb.dbg.lv}
 
-on property:vendor.usb.testmode=0
-	write /proc/mtk_usb/testmode "0"
-on property:vendor.usb.testmode=1
-	write /proc/mtk_usb/testmode "test SE0 NAK"
-on property:vendor.usb.testmode=2
-	write /proc/mtk_usb/testmode "test J"
-on property:vendor.usb.testmode=3
-	write /proc/mtk_usb/testmode "test K"
-on property:vendor.usb.testmode=4
-	write /proc/mtk_usb/testmode "test packet"
 ### PLATFORM VARIANT, cat $rc_file | grep write | sort | grep -vE "android0|usb20_phy" | awk '{print $2}' | uniq ###

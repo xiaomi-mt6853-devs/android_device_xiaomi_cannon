@@ -76,7 +76,7 @@
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles cameraId="0">
         <EncoderProfile quality="low" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -87,7 +87,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -325,7 +325,7 @@
     </CamcorderProfiles>
     <CamcorderProfiles cameraId="1">
         <EncoderProfile quality="low" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -336,7 +336,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -509,7 +509,7 @@
     </CamcorderProfiles>
     <CamcorderProfiles cameraId="2">
         <EncoderProfile quality="low" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -520,7 +520,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -747,7 +747,7 @@
     </CamcorderProfiles>
     <CamcorderProfiles cameraId="3">
         <EncoderProfile quality="low" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -758,7 +758,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -909,7 +909,7 @@
     </CamcorderProfiles>
     <CamcorderProfiles cameraId="4">
         <EncoderProfile quality="low" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -920,7 +920,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -1069,7 +1069,7 @@
     </CamcorderProfiles>
     <CamcorderProfiles cameraId="5">
         <EncoderProfile quality="low" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -1080,7 +1080,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -1251,7 +1251,7 @@
     </CamcorderProfiles>
     <CamcorderProfiles cameraId="6">
         <EncoderProfile quality="low" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -1262,7 +1262,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -1433,7 +1433,7 @@
     </CamcorderProfiles>
     <CamcorderProfiles cameraId="7">
         <EncoderProfile quality="low" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"
@@ -1444,7 +1444,7 @@
                    channels="2" />
         </EncoderProfile>
         <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
-            <Video codec="h264"
+            <Video codec="h263"
                    bitRate="192000"
                    width="176"
                    height="144"

@@ -122,7 +122,6 @@
 /dev/ccci3_raw_audio            0660   audio      audio
 /dev/eemcs_aud            0660   audio      audio
 /dev/irtx                 0660   system     system
-/dev/lirc*                0660   root       system
 /dev/ir-learning          0660   system     system
 # SGX device node
 /dev/pvrsrvkm             0666   root       root
@@ -152,14 +151,6 @@
 # Change ION driver permission
 /dev/ion                  0666   system     graphics
 
-# Change DMA_HEAP deice permission
-#     refs: /system/core/rootdir/uevent.rc
-#           /dev/dma_heap/system      0444   system     system
-/dev/dma_heap/mtk_mm             0444   system     system
-/dev/dma_heap/mtk_mm-uncached    0444   system     system
-/dev/dma_heap/mtk_prot_region    0444   system     system
-/dev/dma_heap/mtk_svp_region     0444   system     system
-
 #touch
 /dev/touch                0660   root       system
 /dev/hotknot              0660   root       system
@@ -171,5 +162,3 @@
 
 #MTK In-House TEE
 /dev/ttyACM0              0660   radio      radio
-
-/dev/xlog                 0660   system     audio
