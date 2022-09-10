@@ -18,13 +18,13 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
-    # initialize vendor.all.modules.ready to 1 here to prevent NOT GKI project blocked
-    setprop vendor.all.modules.ready 1
-
 on init
     write /proc/bootprof "INIT:init"
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
+
+    # if primary storage is physical, set ro.vold.primary_physical to 1
+    # setprop ro.vold.primary_physical 1
 
 # change lk_env permission
     chown root system /proc/lk_env
@@ -38,7 +38,7 @@ on init
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 0-3
-    write /dev/cpuset/system-background/cpus 0-5
+    write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-7
 
 on late-init
@@ -100,7 +100,7 @@ on early-fs
 on fs
     write /proc/bootprof "INIT:fs"
 
-    start vendor.boot-hal-1-2
+    start vendor.boot-hal-1-1
 
     # mount fstab
     write /proc/bootprof "INIT:Mount_START"
@@ -115,11 +115,11 @@ on fs
     write /proc/sys/vm/swappiness 60
     write /sys/kernel/mm/swap/vma_ra_enabled false
     swapon_all /vendor/etc/fstab.mt6853
-    chmod 0666 /dev/xlog
 
 on late-fs
     write /proc/bootprof "INIT:late-fs"
     wait_for_prop hwservicemanager.ready "true"
+    exec_start wait_for_keymaster
 
     write /proc/bootprof "INIT:Mount_START --late"
     write /sys/kernel/tracing/trace_marker "B|1|Mount late"
@@ -172,11 +172,6 @@ on post-fs
     symlink /dev/block/by-name/preloader_a /dev/block/by-name/preloader_ufs_a
     symlink /dev/block/by-name/preloader_b /dev/block/by-name/preloader_ufs_b
 
-    symlink /dev/block/mapper/pl_a /dev/block/by-name/preloader_raw_a
-    symlink /dev/block/mapper/pl_b /dev/block/by-name/preloader_raw_b
-    symlink /dev/block/mapper/pl_a /dev/block/platform/bootdevice/by-name/preloader_raw_a
-    symlink /dev/block/mapper/pl_b /dev/block/platform/bootdevice/by-name/preloader_raw_b
-
 # change owner
     chown system system /proc/bootprof
     chmod 0664 /proc/bootprof
@@ -190,13 +185,8 @@ on post-fs
     chmod 0770 /mnt/vendor/protect_s
     chown root log /proc/ccci_sib
 
-    # allow ccci_mdinit access ccci_dump
-    chown root system /proc/ccci_dump
-
 on post-fs-data
     write /proc/bootprof "INIT:post-fs-data"
-    wait_for_prop vendor.all.modules.ready 1
-    write /proc/bootprof "modprobe: Load_Module_DONE"
 
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
@@ -249,6 +239,7 @@ on post-fs-data
     chown root system /data/vendor/AFObitTrue
     chmod 0771 /data/vendor/AFObitTrue
 
+
     #Create shading mount point
     mkdir /data/vendor/shading
     chown root system /data/vendor/shading
@@ -293,11 +284,11 @@ on post-fs-data
 # -----------------------
 # Add by MTK
     # SCP log
-    chmod 0660 /sys/class/misc/scp/scp_mobile_log
+    chmod 0664 /sys/class/misc/scp/scp_mobile_log
     chown root system /sys/class/misc/scp/scp_mobile_log
     chmod 0220 /sys/class/misc/scp/scp_log_flush
     chown root system /sys/class/misc/scp/scp_log_flush
-    chmod 0440 /dev/scp
+    chmod 0444 /dev/scp
     chown root system /dev/scp
     chmod 0664 /sys/class/misc/scp/scp_ee_force_ke
     chown root system /sys/class/misc/scp/scp_ee_force_ke
@@ -324,9 +315,7 @@ on post-fs-data
     chmod 444 /etc/radvd/radvd.conf
 
     # Mali 3D GPU driver
-    #insmod /vendor/lib/modules/mali.ko
     chmod 666 /dev/mali0
-    #chown system graphics /dev/mali
 
     # Touch Panel
     # chmod 0664 /dev/touch
@@ -360,8 +349,6 @@ on post-fs-data
 
     # M4U
     chmod 0444 /dev/m4u
-    chmod 0640 /proc/m4u
-    chown system media /proc/m4u
 
     #set mlock limit to infinate (for m4u operation)
     setrlimit 8 -1 -1
@@ -391,7 +378,7 @@ on post-fs-data
     #Aw8622 haptic
     chmod 0666 /sys/devices/platform/haptic_pwm/activate
     chmod 0666 /sys/devices/platform/haptic_pwm/duration
-
+    
     #Make MTU adjusting
     write /proc/sys/net/ipv4/tcp_mtu_probing 1
 
@@ -405,13 +392,12 @@ on post-fs-data
     chown media system /dev/video0
     chmod 0660 /dev/video1
     chown media system /dev/video1
-    mkdir /data/vendor/vcodec 0777 media system
+    mkdir /data/vendor/vcodec 0770 media system
     mkdir /data/vendor/vcodec/log 0770 media system
     mkdir /data/vendor/vcodec/in 0770 media system
     mkdir /data/vendor/vcodec/out 0770 media system
 
     #MJC
-    #insmod /vendor/lib/modules/mjc_kernel_driver.ko
     chmod 0660 /dev/MJC
     chown media system /dev/MJC
 
@@ -546,7 +532,6 @@ on post-fs-data
     chown media system /dev/hdmitx
     chmod 0664 /dev/hdmitx
 
-
     # JPEG
     chmod 0666 /proc/mtk_jpeg
 
@@ -562,12 +547,11 @@ on post-fs-data
 
     # gz device
     chmod 0660 /dev/gz_kree
-    chown system system /dev/gz_kree
+    chown system camera /dev/gz_kree
 
     #Camera
     chmod 0660 /dev/camera-sysram
     chmod 0660 /dev/camera-isp
-    chmod 0660 /dev/camera-mem
     chmod 0660 /dev/camera-dip
     chmod 0660 /dev/camera-tsf
     chmod 0660 /dev/camera-dpe
@@ -588,11 +572,10 @@ on post-fs-data
     chmod 0660 /dev/MAIN3AF
     chmod 0660 /dev/SUBAF
     chmod 0660 /dev/vpu
-    chmod 0666 /dev/apusys
+    chmod 0660 /dev/apusys
 
     chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
-    chown system camera /dev/camera-mem
     chown system camera /dev/camera-dip
     chown system camera /dev/camera-dpe
     chown system camera /dev/camera-mfb
@@ -733,7 +716,6 @@ on zygote-start
 
 on early-boot
     write /proc/bootprof "INIT:early-boot"
-    verity_update_state
 
 on boot
     write /proc/bootprof "INIT:boot"
@@ -776,32 +758,9 @@ on boot
     chmod 0770 /sys/power/tuxonice
     chmod 0220 /sys/power/tuxonice/do_hibernate
 
-
 # Smartbook Handler Framework
     chown system system /sys/power/sb_state
     chmod 0660 /sys/power/sb_state
-
-# HMP CPU hotplug strategy
-    chown system system /proc/hps/num_base_perf_serv
-    chmod 0660 /proc/hps/num_base_perf_serv
-    chown system system /proc/hps/num_limit_power_serv
-    chmod 0660 /proc/hps/num_limit_power_serv
-    chown system system /proc/hps/num_limit_ultra_power_saving
-    chmod 0660 /proc/hps/num_limit_ultra_power_saving
-    chown system system /proc/hps/down_threshold
-    chmod 0660 /proc/hps/down_threshold
-    chown system system /proc/hps/up_threshold
-    chmod 0660 /proc/hps/up_threshold
-    chown system system /proc/hps/rush_boost_enabled
-    chmod 0660 /proc/hps/rush_boost_enabled
-    chown system system /proc/hps/heavy_task_enabled
-    chmod 0660 /proc/hps/heavy_task_enabled
-    chown system system /proc/hps/power_mode
-    chmod 0660 /proc/hps/power_mode
-    chown system system /proc/hps/up_times
-    chmod 0660 /proc/hps/up_times
-    chown system system /proc/hps/down_times
-    chmod 0660 /proc/hps/down_times
 
 # PPM
     chown system system /proc/ppm/mode
@@ -964,6 +923,7 @@ on property:sys.boot_completed=1
     write /dev/stune/foreground/schedtune.prefer_idle 0
     write /dev/stune/top-app/schedtune.prefer_idle 0
     write /dev/stune/rt/schedtune.prefer_idle 0
+    write /dev/stune/top-app/schedtune.boost 1
     write /proc/sys/kernel/sched_migration_cost_ns 200000
 
     # restore perf. parameters
@@ -980,6 +940,10 @@ on property:sys.boot_completed=1
 
     # stop bootprof
     write /proc/bootprof 0
+
+#
+#  External Modme control related services
+#
 
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
@@ -1004,11 +968,10 @@ on property:persist.vendor.mediatek.fg.log.enable=1
 
 # add meta_tst for ATM
 service meta_tst /vendor/bin/meta_tst
-    class core
-    user root
+    class main
+    user system
     group radio gps system wifi audio bluetooth media
     capabilities NET_RAW NET_ADMIN
-    socket meta-atci stream 660 radio system
     disabled
     oneshot
 
@@ -1023,12 +986,9 @@ on property:vendor.mtk.md1.status=reset
 # for bokeh control
 on property:vendor.camera.bokeh.disable=1
     setprop vendor.camera.bokeh 1
+
 on property:vendor.camera.bokeh.disable=0
     setprop vendor.camera.bokeh 0
-
-# FPSGO FBT Game
-on boot
-    insmod /vendor/lib/modules/fpsgo.ko
 
 # add this link for cust mount
 on init
@@ -1040,4 +1000,3 @@ service charger /system/bin/charger
     #seclabel u:r:charger:s0
     group system graphics
     seclabel u:r:healthd:s0
-

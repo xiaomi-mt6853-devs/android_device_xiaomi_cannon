@@ -65,15 +65,14 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/configs/audio/audio_em.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_em.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    $(LOCAL_PATH)/configs/audio/bluetooth_offload_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_offload_audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     $(LOCAL_PATH)/configs/audio/usb_audio_accessory_only_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_accessory_only_policy_configuration.xml
 
@@ -82,18 +81,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/aurisys_config_hifi3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/aurisys_config_hifi3.xml
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 PRODUCT_PACKAGES += \
+    android.hardware.audio@5.0.vendor \
     android.hardware.audio@6.0.vendor \
-    android.hardware.audio@7.0.vendor \
     android.hardware.audio.service \
-    android.hardware.audio@7.0-impl:32 \
+    android.hardware.audio@6.0-impl:32 \
     android.hardware.audio.common-util.vendor \
-    android.hardware.audio.common@7.0-util.vendor \
-    android.hardware.audio.effect@7.0-impl:32 \
+    android.hardware.audio.common@6.0-util.vendor \
+    android.hardware.audio.effect@6.0-impl:32 \
     android.hardware.soundtrigger@2.3.vendor \
     android.hardware.soundtrigger@2.0-core:32 \
     android.hardware.soundtrigger@2.3-impl:32
@@ -130,7 +129,7 @@ PRODUCT_PACKAGES += \
 
 # ConfigStore
 PRODUCT_PACKAGES += \
-    disable_configstore
+    android.hardware.configstore@1.1-service
 
 # Display
 PRODUCT_PACKAGES += \
@@ -224,10 +223,9 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0.vendor \
     android.hidl.memory.block@1.0 \
     android.hidl.memory.block@1.0.vendor \
+    android.hidl.allocator@1.0.vendor \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder.vendor
@@ -246,13 +244,15 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 # Mediatek
 PRODUCT_BOOT_JARS += \
     mediatek-common \
+    mediatek-framework-net \
     mediatek-framework \
+    mediatek-ims-base \
+    mediatek-ims-common \
+    mediatek-ims-extension-plugin \
     mediatek-services \
     mediatek-telecom-common \
-    mediatek-telephony-common \
     mediatek-telephony-base \
-    mediatek-ims-common \
-    mediatek-ims-base
+    mediatek-telephony-common
 
 # Power
 PRODUCT_PACKAGES += \
@@ -274,12 +274,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.3.vendor \
     android.hardware.radio@1.4.vendor \
     android.hardware.radio@1.5.vendor \
-    android.hardware.radio@1.6.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.radio.config@1.0.vendor \
     android.hardware.radio.config@1.1.vendor \
     android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.config@1.3.vendor \
     android.hardware.radio-V1.4-java
 
 # IMS
@@ -329,9 +327,6 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    init.insmod.sh
-
-PRODUCT_PACKAGES += \
     fstab.mt6853 \
     init.cannon.rc \
     init.connectivity.rc \
@@ -355,8 +350,6 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/seccomp/android.hardware.media.c2@1.2-extended-seccomp-policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy \
-    $(LOCAL_PATH)/configs/seccomp/android.hardware.media.c2@1.2-mediatek-seccomp-policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy \
     $(LOCAL_PATH)/configs/seccomp/configstore@1.1.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/configstore@1.1.policy \
     $(LOCAL_PATH)/configs/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/configs/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy \
@@ -364,7 +357,6 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.cannon-multihal \
     android.hardware.sensors@2.0.vendor
 
 PRODUCT_PACKAGES += \
@@ -382,8 +374,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0.vendor \
     android.hardware.usb@1.1.vendor \
-    android.hardware.usb@1.2.vendor \
-    android.hardware.usb@1.3.vendor \
     android.hardware.usb.gadget@1.1.vendor
 
 # IFAA
@@ -399,12 +389,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail.vendor
 
-# Tetheroffload
-PRODUCT_PACKAGES += \
-    android.hardware.tetheroffload.config@1.0.vendor \
-    android.hardware.tetheroffload.control@1.0.vendor \
-    android.hardware.tetheroffload.control@1.1.vendor
-
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
@@ -412,7 +396,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_PACKAGES += \
-    hostapd \
     android.hardware.wifi@1.0.vendor \
     android.hardware.wifi@1.1.vendor \
     android.hardware.wifi@1.2.vendor \
@@ -420,11 +403,14 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.4.vendor \
     android.hardware.wifi@1.5.vendor \
     android.hardware.wifi@1.3-impl \
+    android.hardware.wifi.hostapd@1.0.vendor \
+    android.hardware.wifi.hostapd@1.1.vendor \
+    android.hardware.wifi.hostapd@1.2.vendor \
+    android.hardware.wifi.hostapd@1.3.vendor \
     android.hardware.wifi.supplicant@1.0.vendor \
     android.hardware.wifi.supplicant@1.1.vendor \
     android.hardware.wifi.supplicant@1.2.vendor \
-    android.hardware.wifi.supplicant@1.3.vendor \
-    android.hardware.wifi.supplicant@1.4.vendor
+    android.hardware.wifi.supplicant@1.3.vendor
 
 PRODUCT_PACKAGES += \
     WifiResCommon \

@@ -3,7 +3,6 @@
 #
 # Connectivity related device nodes & configuration (begin)
 #
-
 on post-fs-data
 
 #/dev/ttyMT2 for Connectivity BT/FM/GPS usage
@@ -31,22 +30,16 @@ on post-fs-data
     chown bluetooth bluetooth /dev/ttyGS2
     chmod 0660 /dev/ttyGS2
 
-on property:vendor.connsys.driver.ready=yes && property:persist.vendor.connsys.coredump.mode=*
-    write /proc/driver/wmt_user_proc "0x1 ${persist.vendor.connsys.coredump.mode}"
-
-on property:vendor.connsys.driver.ready=yes && property:debug.vendor.connsys.suspend.alarm=*
-    write /proc/driver/wmt_user_proc "0x2 ${debug.vendor.connsys.suspend.alarm}"
-
-on property:persist.vendor.em.dy.debug=1
-    setprop persist.vendor.connsys.coredump.mode 0
-
 #
 # Connectivity related device nodes & configuration (end)
 #
 
-#
-# Connectivity related services (Begin)
-#
+on property:vendor.connsys.driver.ready=yes
+    chown bluetooth bluetooth /proc/driver/bt_dbg
+    start wlan_assistant
+
+on property:vendor.connsys.driver.ready=yes && property:debug.vendor.connsys.suspend.alarm=*
+    write /proc/driver/wmt_user_proc "0x2 ${debug.vendor.connsys.suspend.alarm}"
 
 # GPS
 service mnld /vendor/bin/mnld
@@ -56,7 +49,6 @@ service mnld /vendor/bin/mnld
     group gps inet misc sdcard_rw sdcard_r media_rw system radio wakelock
     socket mnld stream 660 gps system
 
-# WMT
 service wmt_loader /vendor/bin/wmt_loader
     class early_hal
     user system
@@ -67,7 +59,3 @@ service wmt_launcher /vendor/bin/wmt_launcher -p /vendor/firmware/ -o 1
     class early_hal
     user system
     group system
-
-#
-# Connectivity related services (End)
-#

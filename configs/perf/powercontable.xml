@@ -85,7 +85,7 @@
     <CMD name="PERF_RES_SCHED_BOOST" id="0x01410000">
         <Entry path="/sys/devices/system/cpu/sched/sched_boost"></Entry>
         <Compare>more</Compare>
-        <MaxValue>6</MaxValue>
+        <MaxValue>2</MaxValue>
         <MinValue>0</MinValue>
     </CMD>
     <CMD name="PERF_RES_SCHED_MIGRATE_COST" id="0x01414000">
@@ -326,6 +326,20 @@
         <MaxValue>100</MaxValue>
         <MinValue>0</MinValue>
     </CMD>
+	<CMD name="PERF_RES_FPS_FBT_RESCUE_PERCENT_90" id="0x0200c200">
+        <Entry path="/sys/module/fbt_cpu/parameters/rescue_percent_90"></Entry>
+        <Compare>more</Compare>
+        <MaxValue>100</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>33</DefaultValue>
+    </CMD>
+    <CMD name="PERF_RES_FPS_FBT_RESCUE_PERCENT_120" id="0x0200c300">
+        <Entry path="/sys/module/fbt_cpu/parameters/rescue_percent_120"></Entry>
+        <Compare>more</Compare>
+        <MaxValue>100</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>33</DefaultValue>
+    </CMD>
     <CMD name="PERF_RES_GPU_GED_TIMER_BASE_DVFS_MARGIN" id="0x00c0c200">
         <Entry path="/sys/kernel/ged/hal/timer_base_dvfs_margin"></Entry>
         <Compare>more</Compare>
@@ -508,12 +522,6 @@
         <MinValue>0</MinValue>
         <DefaultValue>1</DefaultValue>
     </CMD>
-    <CMD name="PERF_RES_FPS_FPSGO_STOP_BOOST" id="0x02004200">
-        <Entry path="/sys/kernel/fpsgo/common/stop_boost"></Entry>
-        <Compare>more</Compare>
-        <MaxValue>65535</MaxValue>
-        <MinValue>0</MinValue>
-    </CMD>
     <CMD name="PERF_RES_POWER_CPUIDLE_MCDI_ENABLE" id="0x01c3c000">
         <Entry path="/proc/cpuidle/enable"></Entry>
         <Compare>less</Compare>
@@ -521,8 +529,22 @@
         <MinValue>0</MinValue>
         <DefaultValue>1</DefaultValue>
     </CMD>
-    <CMD name="PERF_RES_POWER_SYSLIMITER" id="0x01c40400">
-        <Entry path="/proc/perfmgr/syslimiter/syslimiter_limit_freq"></Entry>
+    <CMD name="PERF_RES_POWER_SYSLIMITER_60" id="0x01c40000">
+        <Entry path="/proc/perfmgr/syslimiter/syslimiter_fps_60"></Entry>
+        <Compare>less</Compare>
+        <MaxValue>3000000</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>-1</DefaultValue>
+    </CMD>
+    <CMD name="PERF_RES_POWER_SYSLIMITER_90" id="0x01c40100">
+        <Entry path="/proc/perfmgr/syslimiter/syslimiter_fps_90"></Entry>
+        <Compare>less</Compare>
+        <MaxValue>3000000</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>-1</DefaultValue>
+    </CMD>
+    <CMD name="PERF_RES_POWER_SYSLIMITER_120" id="0x01c40200">
+        <Entry path="/proc/perfmgr/syslimiter/syslimiter_fps_120"></Entry>
         <Compare>less</Compare>
         <MaxValue>3000000</MaxValue>
         <MinValue>0</MinValue>
@@ -537,4 +559,3 @@
         <Valid>1</Valid>
     </CMD>
 </CONTABLE>
-
