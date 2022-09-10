@@ -81,7 +81,7 @@
 /dev/t-base-tui           0666   system     system
 
 #v4l2 device
-/dev/video*      0660 camera system
+/dev/video*      0666 camera system
 /dev/media*      0660 camera system
 /dev/v4l-subdev* 0660 camera system
 
