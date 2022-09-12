@@ -92,6 +92,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@7.0-impl:32 \
     android.hardware.audio.common-util.vendor \
+    android.hardware.audio.common@5.0.vendor \
     android.hardware.audio.common@7.0-util.vendor \
     android.hardware.audio.effect@7.0-impl:32 \
     android.hardware.soundtrigger@2.3.vendor \
@@ -141,6 +142,9 @@ PRODUCT_PACKAGES += \
     libdrm.vendor \
     libhwc2on1adapter \
     libhwc2onfbadapter
+
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.displayfeature@1.0.vendor
 
 # HotwordEnrollment
 PRODUCT_COPY_FILES += \
@@ -201,7 +205,14 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
 PRODUCT_PACKAGES += \
-    libavservices_minijail
+    libcodec2_hidl@1.1.vendor \
+    libcodec2_hidl@1.2.vendor \
+    libcodec2_hidl_plugin.vendor \
+    libstagefright_softomx_plugin.vendor \
+    libsfplugin_ccodec_utils.vendor \
+    libcodec2_soft_common.vendor \
+    libavservices_minijail \
+    libavservices_minijail_vendor \
 
 # CAS
 PRODUCT_PACKAGES += \
@@ -221,6 +232,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0.vendor \
+    android.hidl.allocator@1.0.vendor \
     android.hidl.memory.block@1.0 \
     android.hidl.memory.block@1.0.vendor \
     libhidltransport \
