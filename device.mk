@@ -205,8 +205,7 @@ PRODUCT_PACKAGES += \
 
 # CAS
 PRODUCT_PACKAGES += \
-    android.hardware.cas@1.1.vendor \
-    android.hardware.cas@1.2.vendor
+    android.hardware.cas@1.2-service-lazy
 
 # Neural Networks
 PRODUCT_PACKAGES += \
