@@ -100,6 +100,9 @@ TARGET_BOARD_PLATFORM := mt6853
 BOARD_HAS_MTK_HARDWARE := true
 BOARD_HAVE_MTK_FM := true
 
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_cannon
 TARGET_RECOVERY_DEVICE_MODULES := init_cannon
