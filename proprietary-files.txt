@@ -1,4 +1,4 @@
-# Unpinned blobs from cannong-user 12 SP1A.210812.016 V13.0.2.0.SJEMIXM release-keys
+# Unpinned blobs from cannong-user 12 SP1A.210812.016 V13.0.3.0.SJEMIXM release-keys
 
 # APU
 vendor/lib64/APUWareApusysServer.so
