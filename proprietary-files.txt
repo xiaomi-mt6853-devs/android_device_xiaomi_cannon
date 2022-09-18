@@ -54,6 +54,8 @@ vendor/lib/vendor.mediatek.hardware.audio@7.1.so
 vendor/lib64/libmiStereoFactoryRemapLib.so
 
 # Audio configs
+vendor/etc/aurisys_config.xml
+vendor/etc/aurisys_config_hifi3.xml
 vendor/etc/apdb/APDB_MT6853_S01__W2145
 vendor/etc/apdb/APDB_MT6853_S01__W2145_ENUM
 vendor/etc/audio_param/AudioParamOptions.xml
