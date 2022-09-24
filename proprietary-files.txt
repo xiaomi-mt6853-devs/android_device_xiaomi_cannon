@@ -1138,8 +1138,6 @@ vendor/lib/nfc_nci.nqx.default.hw.so
 vendor/lib64/jcos_client.so
 vendor/lib64/ls_client.so
 vendor/lib64/nfc_nci.nqx.default.hw.so
-vendor/lib64/vendor.nxp.hardware.nfc@1.0.so
-vendor/lib64/vendor.nxp.hardware.nfc@1.1.so
 
 # NFC configs
 vendor/etc/libese-nxp.conf
