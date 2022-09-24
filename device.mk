@@ -215,7 +215,11 @@ PRODUCT_PACKAGES += \
     libsfplugin_ccodec_utils.vendor \
     libcodec2_soft_common.vendor \
     libavservices_minijail \
-    libavservices_minijail_vendor \
+    libavservices_minijail_vendor
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl:64
 
 # CAS
 PRODUCT_PACKAGES += \

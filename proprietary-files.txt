@@ -1416,7 +1416,6 @@ vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
 # Vibrator
 vendor/bin/hw/android.hardware.vibrator@1.0-service-mediatek
 vendor/etc/init/android.hardware.vibrator@1.0-service-mediatek.rc
-vendor/lib64/hw/android.hardware.vibrator@1.0-impl.so
 vendor/lib64/hw/vibrator.mt6853.so
 
 # Wi-Fi
