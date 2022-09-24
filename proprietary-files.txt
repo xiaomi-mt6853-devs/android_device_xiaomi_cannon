@@ -788,7 +788,7 @@ vendor/lib/egl/libMEOW_qt.so
 vendor/lib/egl/libMEOW_trace.so
 vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib/hw/memtrack.default.so
+vendor/lib/hw/memtrack.default.so:vendor/lib/hw/memtrack.mt6853.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so
 vendor/lib/hw/vulkan.mali.so
 vendor/lib/mt6853/libaiselector.so:vendor/lib/libaiselector.so
@@ -845,7 +845,7 @@ vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/hwcomposer.mt6853.so
-vendor/lib64/hw/memtrack.default.so
+vendor/lib64/hw/memtrack.default.so:vendor/lib64/hw/memtrack.mt6853.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so
 vendor/lib64/hw/vulkan.mali.so
 vendor/lib64/mt6853/libaiselector.so:vendor/lib64/libaiselector.so
@@ -1187,7 +1187,7 @@ vendor/lib/libmtkperf_client_vendor.so
 vendor/lib/vendor.mediatek.hardware.mtkpower@1.0.so
 vendor/lib/vendor.mediatek.hardware.mtkpower@1.1.so
 vendor/lib/vendor.mediatek.hardware.mtkpower@1.2.so
-vendor/lib64/hw/power.default.so
+vendor/lib64/hw/power.default.so:vendor/lib64/hw/power.mt6853.so
 vendor/lib64/hw/vendor.mediatek.hardware.mtkpower@1.2-impl.so
 vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libperfctl_vendor.so
@@ -1375,7 +1375,7 @@ vendor/etc/init/vendor.microtrust.hardware.soter@1.0-service.rc
 vendor/lib64/vendor.microtrust.hardware.soter@1.0.so
 
 # Soundtrigger
-vendor/lib/hw/sound_trigger.primary.default.so
+vendor/lib/hw/sound_trigger.primary.default.so:vendor/lib/hw/sound_trigger.primary.mt6853.so
 
 # Thermal
 system/init.mi_thermald.rc:vendor/etc/init/init.mi_thermald.rc
@@ -1492,7 +1492,7 @@ vendor/etc/mpe.conf
 vendor/etc/slp_conf
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
-vendor/lib64/hw/gps.default.so
+vendor/lib64/hw/gps.default.so:vendor/lib64/hw/gps.mt6853.so
 vendor/lib64/lbs_hidl_service-impl.so
 vendor/lib64/libDR.so
 vendor/lib64/libapmonitor_vendor.so
