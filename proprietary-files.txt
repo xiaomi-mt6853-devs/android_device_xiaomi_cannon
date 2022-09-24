@@ -13,9 +13,7 @@ vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 
 # Audio
-vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.mt6853.so
-vendor/lib/hw/audio.r_submix.default.so
 vendor/lib/hw/audio.r_submix.mt6853.so
 vendor/lib/hw/audio.usb.default.so
 vendor/lib/hw/audio_policy.stub.so
@@ -1419,7 +1417,6 @@ vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
 vendor/bin/hw/android.hardware.vibrator@1.0-service-mediatek
 vendor/etc/init/android.hardware.vibrator@1.0-service-mediatek.rc
 vendor/lib64/hw/android.hardware.vibrator@1.0-impl.so
-vendor/lib64/hw/vibrator.default.so
 vendor/lib64/hw/vibrator.mt6853.so
 
 # Wi-Fi
