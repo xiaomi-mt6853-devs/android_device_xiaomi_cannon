@@ -1007,9 +1007,7 @@ lib64/libvcodec_cap.so
 lib64/libvcodec_capenc.so
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
-vendor/bin/hw/android.hardware.media.omx@1.0-service
 vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
-vendor/etc/init/android.hardware.media.omx@1.0-service.rc
 -vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml
 vendor/etc/mtk_omx_core.cfg
 vendor/etc/mtk_platform_codecs_config.xml

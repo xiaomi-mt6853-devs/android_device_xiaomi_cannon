@@ -205,6 +205,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
 PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-service
+
+PRODUCT_PACKAGES += \
     libcodec2_hidl@1.1.vendor \
     libcodec2_hidl@1.2.vendor \
     libcodec2_hidl_plugin.vendor \
