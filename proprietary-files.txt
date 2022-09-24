@@ -42,7 +42,6 @@ vendor/lib/libnxp_extamp_intf.so
 vendor/lib/libnxprecord.so
 vendor/lib/libnxpspeech.so
 vendor/lib/librt_extamp_intf.so
-vendor/lib/libshmemutil.so
 vendor/lib/libspeech_enh_lib.so
 vendor/lib/libspeechparser_vendor.so
 vendor/lib/libvow_ap_test_aa.so
@@ -876,7 +875,6 @@ vendor/lib64/libgpudataproducer.so
 vendor/lib64/libgralloc_extra.so
 vendor/lib64/libgralloc_metadata.so
 vendor/lib64/libgralloctypes_mtk.so
-vendor/lib64/libhwc2onfbadapter.so
 vendor/lib64/libion_mtk.so
 vendor/lib64/libion_ulit.so
 vendor/lib64/libladder.so
@@ -1126,7 +1124,6 @@ vendor/lib64/libneuron_graph_delegate.mtk.so
 vendor/lib64/libneuron_platform.so
 vendor/lib64/libneuropilot_hal_utils.so
 vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so
-vendor/lib64/libruy.so
 vendor/lib64/libtflite_mtk.so
 
 # Secure element
@@ -1402,12 +1399,10 @@ vendor/etc/init/android.hardware.thermal@2.0-service.mtk.rc
 vendor/etc/init/init.thermal.rc
 vendor/etc/init/init.thermal_manager.rc
 vendor/etc/init/init.thermalloadalgod.rc
-vendor/lib/hw/android.hardware.thermal@1.0-impl.so
 vendor/lib/hw/android.hardware.thermal@2.0-impl.so
 vendor/lib/hw/thermal_hal.so
 vendor/lib/libmtcloader.so
 vendor/lib/libthermalalgo.so
-vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
 vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
 vendor/lib64/hw/thermal_hal.so
 vendor/lib64/libmtcloader.so
@@ -1498,7 +1493,7 @@ vendor/etc/init/init.gps_drv.rc
 vendor/etc/init/init.gps_drv.rc
 vendor/etc/init/lbs_hidl_service.rc
 vendor/etc/init/mtk_agpsd_p.rc
--vendor/etc/vintf/manifest/gnss@2.1-service.xml
+-vendor/etc/vintf/manifest/gnss@2.1-service.xml:vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-mediatek.xml
 -vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
 vendor/etc/mpe.conf
 vendor/etc/slp_conf
