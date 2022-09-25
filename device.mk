@@ -92,7 +92,9 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
     android.hardware.soundtrigger@2.3.vendor \
     android.hardware.soundtrigger@2.0-core:32 \
-    android.hardware.soundtrigger@2.3-impl:32
+    android.hardware.soundtrigger@2.3-impl:32 \
+    audio.usb.default:32 \
+    audio_policy.stub:32
 
 PRODUCT_PACKAGES += \
     libaudiopreprocessing \

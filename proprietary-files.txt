@@ -15,8 +15,6 @@ vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
 # Audio
 vendor/lib/hw/audio.primary.mt6853.so
 vendor/lib/hw/audio.r_submix.mt6853.so
-vendor/lib/hw/audio.usb.default.so
-vendor/lib/hw/audio_policy.stub.so
 vendor/lib/lib_iir.so
 vendor/lib/lib_speech_enh.so
 vendor/lib/libaudio_param_parser-vnd.so
