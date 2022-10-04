@@ -1157,19 +1157,16 @@ vendor/lib64/libteeclientjni@1.1.so
 vendor/lib64/wechat.beanpod.so
 
 # Power
-system/lib64/libmtkperf_client.so
 vendor/bin/gbe
 vendor/etc/init/gbe.rc
 vendor/etc/cgroups.json
 vendor/etc/fstb.cfg
 vendor/etc/gbe.cfg
 vendor/etc/task_profiles.json
-vendor/lib/libmtkperf_client_vendor.so
 vendor/lib/libpower_timer.so
 vendor/lib/vendor.mediatek.hardware.mtkpower@1.0.so
 vendor/lib/vendor.mediatek.hardware.mtkpower@1.1.so
 vendor/lib/vendor.mediatek.hardware.mtkpower@1.2.so
-vendor/lib64/libmtkperf_client_vendor.so
 vendor/lib64/libpower_timer.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower@1.1.so
