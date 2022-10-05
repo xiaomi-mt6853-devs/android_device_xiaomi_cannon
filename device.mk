@@ -274,6 +274,9 @@ PRODUCT_BOOT_JARS += \
     mediatek-ims-base
 
 # Power
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 PRODUCT_PACKAGES += \
     android.hardware.power-service.mediatek-libperfmgr
 
