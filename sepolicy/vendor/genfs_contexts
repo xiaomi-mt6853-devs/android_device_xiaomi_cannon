@@ -5,6 +5,9 @@ genfscon sysfs /devices/platform/14000000.dispsys_config/drm/card0/card0-DSI-1/p
 # Fingerprint
 genfscon sysfs /devices/platform/fingerprint                                          u:object_r:vendor_fingerprint_device:s0
 
+# Graphics
+genfscon sysfs /devices/platform/13000000.mali                                        u:object_r:sysfs_mali:s0
+
 # LED
 genfscon sysfs /devices/platform/disp_leds/leds/lcd-backlight/brightness              u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/disp_leds/leds/lcd-backlight/max_brightness          u:object_r:sysfs_leds:s0
