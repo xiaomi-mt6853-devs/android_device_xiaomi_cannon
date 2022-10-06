@@ -934,6 +934,10 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedplus"
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "schedplus"
 
+# Initialize powerHAL when boot is completed
+on property:sys.boot_completed=1
+    setprop vendor.mediatek.powerhal.init 1
+
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
     write /sys/devices/platform/battery_meter/FG_daemon_disable 1
