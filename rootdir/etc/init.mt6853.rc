@@ -887,6 +887,10 @@ on boot
 #Power Manager
     write /sys/power/pm_freeze_timeout 2000
 
+# DT2W
+    chown system system /sys/touchpanel/double_tap
+    chmod 0660 /sys/touchpanel/double_tap
+
 # Default country code
     setprop ro.boot.wificountrycode 00
 
