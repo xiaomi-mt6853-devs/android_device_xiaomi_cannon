@@ -15,7 +15,6 @@
  */
 
 #include "Power.h"
-#include "libpowerhal.h"
 
 #include <android-base/file.h>
 #include <android-base/logging.h>
@@ -24,6 +23,15 @@
 
 constexpr int kWakeupModeOff = 4;
 constexpr int kWakeupModeOn = 5;
+
+#include <dlfcn.h>
+
+#define POWERHAL_LIB_NAME "libpowerhal.so"
+#define LIBPOWERHAL_INIT "libpowerhal_Init"
+#define LIBPOWERHAL_CUSLOCKHINT "libpowerhal_CusLockHint"
+#define LIBPOWERHAL_LOCKREL "libpowerhal_LockRel"
+#define LIBPOWERHAL_USERSCNDISABLEALL "libpowerhal_UserScnDisableAll"
+#define LIBPOWERHAL_USERSCNRESTOREALL "libpowerhal_UserScnRestoreAll"
 
 namespace aidl {
 namespace android {
@@ -36,7 +44,55 @@ const std::vector<Boost> BOOST_RANGE{ndk::enum_range<Boost>().begin(),
                                      ndk::enum_range<Boost>().end()};
 const std::vector<Mode> MODE_RANGE{ndk::enum_range<Mode>().begin(), ndk::enum_range<Mode>().end()};
 
-Power::Power() { libpowerhal_Init(1); }
+Power::Power() {
+    powerHandle = dlopen(POWERHAL_LIB_NAME, RTLD_LAZY);
+    if (!powerHandle) {
+        LOG(ERROR) << "Could not dlopen " << POWERHAL_LIB_NAME;
+        abort();
+    }
+
+    libpowerhal_Init =
+        reinterpret_cast<libpowerhal_Init_handle>(dlsym(powerHandle, LIBPOWERHAL_INIT));
+
+    if (!libpowerhal_Init) {
+        LOG(ERROR) << "Could not locate symbol " << LIBPOWERHAL_INIT;
+        abort();
+    }
+
+    libpowerhal_CusLockHint =
+        reinterpret_cast<libpowerhal_CusLockHint_handle>(dlsym(powerHandle, LIBPOWERHAL_CUSLOCKHINT));
+
+    if (!libpowerhal_CusLockHint) {
+        LOG(ERROR) << "Could not locate symbol " << LIBPOWERHAL_CUSLOCKHINT;
+        abort();
+    }
+
+    libpowerhal_LockRel =
+        reinterpret_cast<libpowerhal_LockRel_handle>(dlsym(powerHandle, LIBPOWERHAL_LOCKREL));
+
+    if (!libpowerhal_LockRel) {
+        LOG(ERROR) << "Could not locate symbol " << LIBPOWERHAL_LOCKREL;
+        abort();
+    }
+
+    libpowerhal_UserScnDisableAll =
+         reinterpret_cast<libpowerhal_UserScnDisableAll_handle>(dlsym(powerHandle, LIBPOWERHAL_USERSCNDISABLEALL));
+
+    if (!libpowerhal_UserScnDisableAll) {
+        LOG(ERROR) << "Could not locate symbol " << LIBPOWERHAL_USERSCNDISABLEALL;
+        abort();
+    }
+
+    libpowerhal_UserScnRestoreAll =
+        reinterpret_cast<libpowerhal_UserScnRestoreAll_handle>(dlsym(powerHandle, LIBPOWERHAL_USERSCNRESTOREALL));
+
+    if (!libpowerhal_UserScnRestoreAll) {
+        LOG(ERROR) << "Could not locate symbol " << LIBPOWERHAL_USERSCNRESTOREALL;
+        abort();
+    }
+
+    libpowerhal_Init(1);
+}
 
 Power::~Power() { }
 
