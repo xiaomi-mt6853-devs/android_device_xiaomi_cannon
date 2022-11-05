@@ -48,7 +48,7 @@ service mtk_secure_element_hal_service /vendor/bin/hw/android.hardware.secure_el
     group secure_element
     disabled
 
-on boot && property:ro.boot.product.hardware.sku=cannong
+on boot && property:ro.boot.product.hardware.sku=nfc
     enable vendor.secure_element
     enable mtk_secure_element_hal_service
     enable vendor.nfc_hal_service

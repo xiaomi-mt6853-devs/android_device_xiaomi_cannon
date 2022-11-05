@@ -100,7 +100,9 @@ void vendor_load_properties()
     property_override("ro.boot.hardware.revision", hwversion);
 
     // Set hardware SKU prop
-    property_override("ro.boot.product.hardware.sku", device);
+    if (region == "GL") {
+    property_override("ro.boot.product.hardware.sku", "nfc");
+    }
 
     // Set camera model for EXIF data
     property_override("persist.vendor.camera.model", model);
