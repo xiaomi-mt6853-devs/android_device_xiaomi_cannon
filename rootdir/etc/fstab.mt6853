@@ -34,10 +34,11 @@
 # The filesystem that contains the filesystem checker binary (typically /system) cannot
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 
-system      /system        ext4        ro wait,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
-vendor      /vendor        ext4        ro wait,avb,logical,first_stage_mount
-product     /product       ext4        ro wait,avb,logical,first_stage_mount
-system_ext  /system_ext    ext4        ro wait,avb,logical,first_stage_mount
+#<src>                              <mnt_point>            <type>       <mnt_flags and options>                                             <fs_mgr_flags>
+system                              /system                 ext4        ro                                                                  wait,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+vendor                              /vendor                 ext4        ro                                                                  wait,avb,logical,first_stage_mount
+product                             /product                ext4        ro                                                                  wait,avb,logical,first_stage_mount
+system_ext                          /system_ext             ext4        ro                                                                  wait,avb,logical,first_stage_mount
 
 /dev/block/by-name/metadata         /metadata               ext4        noatime,nosuid,nodev,discard                                        wait,check,formattable,first_stage_mount
 /dev/block/by-name/userdata         /data                   f2fs        noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt wait,check,formattable,quota,reservedsize=128m,latemount,resize,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v1
@@ -90,5 +91,5 @@ system_ext  /system_ext    ext4        ro wait,avb,logical,first_stage_mount
 /dev/block/by-name/otp              /otp                    emmc        defaults                                                            defaults
 /dev/block/zram0                    none                    swap        defaults                                                            zramsize=55%,max_comp_streams=8
 
-/devices/platform/externdevice*     auto       auto        defaults        voldmanaged=sdcard1:auto,encryptable=userdata
-/devices/platform/usb_xhci*         auto       vfat        defaults        voldmanaged=usbotg:auto
+/devices/platform/externdevice*     auto                    auto        defaults                                                            voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/platform/usb_xhci*         auto                    vfat        defaults                                                            voldmanaged=usbotg:auto
