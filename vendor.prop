@@ -119,6 +119,7 @@ vendor.mtk_thumbnail_optimization=true
 
 # Display (Surfaceflinger)
 debug.sf.disable_backpressure=1
+debug.sf.disable_client_composition_cache=1
 debug.sf.early.app.duration=20000000
 debug.sf.early.sf.duration=27600000
 debug.sf.earlyGl.app.duration=20000000
