@@ -58,6 +58,9 @@ function blob_fixup() {
     vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
         "${PATCHELF}" --replace-needed "android.hardware.power-V2-ndk_platform.so" "android.hardware.power-V2-ndk.so" "${2}"
         ;;
+    vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
+        "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+        ;;
     vendor/lib64/libmtkcam_featurepolicy.so)
         sed -i "s|\xE8\x87\x40\xB9|\x28\x02\x80\x52|g" "${2}"
         ;;
