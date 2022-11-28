@@ -204,8 +204,8 @@ vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Bluetooth (AptX)
-lib64/libaptXHD_encoder.so:system_ext/lib64/libaptXHD_encoder.so
-lib64/libaptX_encoder.so:system_ext/lib64/libaptX_encoder.so
+system/lib64/libaptXHD_encoder.so:system_ext/lib64/libaptXHD_encoder.so
+system/lib64/libaptX_encoder.so:system_ext/lib64/libaptX_encoder.so
 
 # Camera
 vendor/bin/hw/camerahalserver
@@ -995,8 +995,8 @@ vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 
 # Media
-lib64/libvcodec_cap.so
-lib64/libvcodec_capenc.so
+system/lib64/libvcodec_cap.so
+system/lib64/libvcodec_capenc.so
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
 vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc
@@ -1090,14 +1090,14 @@ vendor/lib64/libvcodecdrv_header_stub.so
 vendor/lib64/libvideofilter_only.so
 
 # Media (Extractors)
-lib64/extractors/libmtkadpcmextractor.so
-lib64/extractors/libmtkalacextractor.so
-lib64/extractors/libmtkapeextractor.so
-lib64/extractors/libmtkasfextractor.so
-lib64/extractors/libmtkaviextractor.so
-lib64/extractors/libmtkflvextractor.so
-lib64/extractors/libmtkmp3extractor.so
-lib64/extractors/libmtkmpeg2extractor.so
+system/lib64/extractors/libmtkadpcmextractor.so
+system/lib64/extractors/libmtkalacextractor.so
+system/lib64/extractors/libmtkapeextractor.so
+system/lib64/extractors/libmtkasfextractor.so
+system/lib64/extractors/libmtkaviextractor.so
+system/lib64/extractors/libmtkflvextractor.so
+system/lib64/extractors/libmtkmp3extractor.so
+system/lib64/extractors/libmtkmpeg2extractor.so
 
 # Neural networks
 vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron
@@ -1173,7 +1173,7 @@ vendor/lib64/libteeclientjni@1.1.so
 vendor/lib64/wechat.beanpod.so
 
 # Power
-lib64/libmtkperf_client.so
+system/lib64/libmtkperf_client.so
 vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
 vendor/bin/gbe
 vendor/etc/init/gbe.rc
@@ -1308,21 +1308,21 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 vendor/lib64/vendor.mediatek.hardware.nwk_opt@1.0.so
 
 # Radio (IMS)
-bin/vtservice
-etc/init/init.vtservice.rc
-lib64/libcomutils.so
-lib64/libimsma.so
-lib64/libimsma_adapt.so
-lib64/libimsma_rtp.so
-lib64/libimsma_socketwrapper.so
-lib64/libmtk_vt_service.so
-lib64/libmtk_vt_wrapper.so
-lib64/libmtkavenhancements.so
-lib64/libsignal.so
-lib64/libsink.so
-lib64/libsource.so
-lib64/libvt_avsync.so
--priv-app/ImsService/ImsService.apk
+-system/priv-app/ImsService/ImsService.apk
+system/bin/vtservice
+system/etc/init/init.vtservice.rc
+system/lib64/libcomutils.so
+system/lib64/libimsma.so
+system/lib64/libimsma_adapt.so
+system/lib64/libimsma_rtp.so
+system/lib64/libimsma_socketwrapper.so
+system/lib64/libmtk_vt_service.so
+system/lib64/libmtk_vt_wrapper.so
+system/lib64/libmtkavenhancements.so
+system/lib64/libsignal.so
+system/lib64/libsink.so
+system/lib64/libsource.so
+system/lib64/libvt_avsync.so
 system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/bin/hw/vtservice_hidl
@@ -1353,7 +1353,7 @@ vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
 
 # FM Radio
--system_ext/lib64/libfmjni.so:lib64/libfmjni.so
+-system_ext/lib64/libfmjni.so:system/lib64/libfmjni.so
 vendor/etc/init/init.fmradio_drv.rc
 
 # Sensors
@@ -1548,15 +1548,15 @@ vendor/lib64/vendor.mediatek.hardware.engineermode@1.2.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.3.so
 
 # Mediatek
--framework/mediatek-common.jar
--framework/mediatek-framework.jar
--framework/mediatek-ims-base.jar
--framework/mediatek-ims-common.jar
--framework/mediatek-ims-extension-plugin.jar
--framework/mediatek-services.jar
--framework/mediatek-telecom-common.jar
--framework/mediatek-telephony-base.jar
--framework/mediatek-telephony-common.jar
+-system/framework/mediatek-common.jar
+-system/framework/mediatek-framework.jar
+-system/framework/mediatek-ims-base.jar
+-system/framework/mediatek-ims-common.jar
+-system/framework/mediatek-ims-extension-plugin.jar
+-system/framework/mediatek-services.jar
+-system/framework/mediatek-telecom-common.jar
+-system/framework/mediatek-telephony-base.jar
+-system/framework/mediatek-telephony-common.jar
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
 vendor/bin/dconfig
 vendor/bin/dexecutor
