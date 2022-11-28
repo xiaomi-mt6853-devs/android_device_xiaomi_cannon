@@ -1519,6 +1519,29 @@ vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
 
 # Engineer Mode
+-system/app/LocationEM2/LocationEM2.apk
+system/lib/libaudio_param_parser-sys.so
+system/lib/libaudioutilmtk.so
+system/lib/libem_aoltest_jni.so
+system/lib/libem_support_jni.so
+system/lib/libem_usb_jni.so
+system/lib/libem_wifi_jni.so
+system/lib64/libaudio_param_parser-sys.so
+system/lib64/libaudioutilmtk.so
+system/lib64/libem_aoltest_jni.so
+system/lib64/libem_audio_jni.so
+system/lib64/libem_audio_jni.so
+system/lib64/libem_support_jni.so
+system/lib64/libem_usb_jni.so
+system/lib64/libem_wifi_jni.so
+-system/priv-app/EngineerMode/EngineerMode.apk
+-system/priv-app/YGPS/YGPS.apk
+system_ext/lib/libaudiotoolkit.so
+system_ext/lib64/libaudiotoolkit.so
+vendor/bin/em_hidl
+vendor/etc/init/em_hidl_user.rc
+vendor/lib/libaudiotoolkit_vendor.so
+vendor/lib64/libaudiotoolkit_vendor.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.0.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.1.so
 vendor/lib64/vendor.mediatek.hardware.engineermode@1.2.so
