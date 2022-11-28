@@ -49,8 +49,6 @@ vendor/lib/vendor.mediatek.hardware.audio@7.1.so
 vendor/lib64/libmiStereoFactoryRemapLib.so
 
 # Audio configs
-vendor/etc/aurisys_config.xml
-vendor/etc/aurisys_config_hifi3.xml
 vendor/etc/apdb/APDB_MT6853_S01__W2145
 vendor/etc/apdb/APDB_MT6853_S01__W2145_ENUM
 vendor/etc/audio_param/AudioParamOptions.xml
@@ -169,6 +167,8 @@ vendor/etc/audio_param/Volume_ParamUnitDesc.xml
 vendor/etc/aurisys_param/AW_DSP.bin
 vendor/etc/aurisys_param/FV-SAM-MTKXX.dat
 vendor/etc/aurisys_param/Speech_AudioParam.xml
+vendor/etc/aurisys_config.xml
+vendor/etc/aurisys_config_hifi3.xml
 
 # AEE
 vendor/lib/libaedv.so
@@ -782,9 +782,9 @@ vendor/lib/egl/libMEOW_data.so
 vendor/lib/egl/libMEOW_gift.so
 vendor/lib/egl/libMEOW_qt.so
 vendor/lib/egl/libMEOW_trace.so
+vendor/lib/hw/memtrack.default.so:vendor/lib/hw/memtrack.mt6853.so
 vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
-vendor/lib/hw/memtrack.default.so:vendor/lib/hw/memtrack.mt6853.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so
 vendor/lib/hw/vulkan.mali.so
 vendor/lib/mt6853/libaiselector.so:vendor/lib/libaiselector.so
@@ -838,10 +838,10 @@ vendor/lib64/egl/libMEOW_data.so
 vendor/lib64/egl/libMEOW_gift.so
 vendor/lib64/egl/libMEOW_qt.so
 vendor/lib64/egl/libMEOW_trace.so
+vendor/lib64/hw/memtrack.default.so:vendor/lib64/hw/memtrack.mt6853.so
 vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
 vendor/lib64/hw/hwcomposer.mt6853.so
-vendor/lib64/hw/memtrack.default.so:vendor/lib64/hw/memtrack.mt6853.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.13-impl.so
 vendor/lib64/hw/vulkan.mali.so
 vendor/lib64/mt6853/libaiselector.so:vendor/lib64/libaiselector.so
@@ -1485,9 +1485,9 @@ vendor/etc/init/mtk_agpsd_p.rc
 -vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
 vendor/etc/mpe.conf
 vendor/etc/slp_conf
+vendor/lib64/hw/gps.default.so:vendor/lib64/hw/gps.mt6853.so
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
-vendor/lib64/hw/gps.default.so:vendor/lib64/hw/gps.mt6853.so
 vendor/lib64/lbs_hidl_service-impl.so
 vendor/lib64/libDR.so
 vendor/lib64/libapmonitor_vendor.so
