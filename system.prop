@@ -2,7 +2,6 @@
 persist.audio.button_jack.profile=volume
 persist.audio.button_jack.switch=0
 ro.audio.silent=0
-ro.config.vc_call_vol_steps=7
 vendor.audio.spkcal.copy.inhal=true
 
 # Dex
