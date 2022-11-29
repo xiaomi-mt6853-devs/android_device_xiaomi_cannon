@@ -1,12 +1,19 @@
-# Allow mtk_camera_hal to set and get vendor_oem_camera_prop
+# Allow mtk_camera_hal to set and get vendor_camera_prop
 set_prop(mtk_hal_camera, vendor_camera_prop)
 get_prop(mtk_hal_camera, vendor_camera_prop)
 
 # Allow mtk_hal_camera to rw camera device
 allow mtk_hal_camera camera_device:chr_file rw_file_perms;
-allow mtk_hal_camera apusys_device:chr_file rw_file_perms;
 
 binder_call(mtk_hal_camera, mtk_hal_neuralnetworks)
 
-get_prop(mtk_hal_camera, mtk_pq_prop)
-get_prop(mtk_hal_camera, mtk_pq_ro_prop)
+# Allow mtk_hal_camera to read camera persist files
+allow mtk_hal_camera camera_persist_file:dir search;
+allow mtk_hal_camera camera_persist_file:file { getattr open read };
+
+# Allow mtk_hal_camera to access camera data files
+allow mtk_hal_camera camera_vendor_data_file:dir create_dir_perms;
+allow mtk_hal_camera camera_vendor_data_file:file create_file_perms;
+
+get_prop(mtk_hal_camera, vendor_mtk_pq_prop)
+get_prop(mtk_hal_camera, vendor_mtk_pq_ro_prop)

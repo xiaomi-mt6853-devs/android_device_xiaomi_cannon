@@ -4,8 +4,10 @@
 /dev/camera_eeprom2                                u:object_r:camera_device:s0
 /dev/camera_eeprom3                                u:object_r:camera_device:s0
 
+/mnt/vendor/persist/camera(/.*)?                   u:object_r:camera_persist_file:s0
+/data/vendor/camera(/.*)?                          u:object_r:camera_vendor_data_file:s0
+
 # Fingerprint
-/dev/goodix_fp                                     u:object_r:vendor_fingerprint_device:s0
 /mnt/vendor/persist/goodix(/.*)?                   u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor/fpc(/.*)?                             u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor/goodix(/.*)?                          u:object_r:vendor_fingerprint_data_file:s0
@@ -14,6 +16,7 @@
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
 
 # NFC
+/dev/nq-nci                                                    u:object_r:nfc_device:s0
 /dev/p73                                                       u:object_r:nfc_device:s0
 /vendor/bin/hw/vendor\.nxp\.hardware\.nfc@1\.2-service         u:object_r:hal_nfc_default_exec:s0
 
@@ -25,7 +28,6 @@
 
 # Thermals
 /vendor/bin/mi_thermald       u:object_r:mi_thermald_exec:s0
-/data/vendor/thermal(/.*)?    u:object_r:thermal_data_file:s0
 
 # Mlipay
 /vendor/bin/mlipayd@1\.1                                                u:object_r:hal_mlipay_default_exec:s0

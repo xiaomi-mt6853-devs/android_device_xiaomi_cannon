@@ -1,1 +1,5 @@
+# Allow vendor_init to read vts_status_prop
 get_prop(vendor_init, vts_status_prop)
+
+# Allow vendor_init to read and write fingerprint node
+allow vendor_init vendor_fingerprint_device:file rw_file_perms;

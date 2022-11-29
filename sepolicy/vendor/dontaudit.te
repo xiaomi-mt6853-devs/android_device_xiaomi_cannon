@@ -1,4 +1,4 @@
 # Apps are no longer allowed open access to /dev/ashmem, unless they
 # target API level < Q.
 dontaudit untrusted_app ashmem_device:chr_file open;
-dontaudit untrusted_app debug_mtk_gpud_prop:file read;
+dontaudit untrusted_app vendor_mtk_gpu_prop:file read;
