@@ -1,10 +1,6 @@
 # Camera
 vendor.camera.sensor.                                   u:object_r:vendor_camera_prop:s0
 persist.vendor.camera.                                  u:object_r:vendor_camera_prop:s0
-demo.hole                                               u:object_r:vendor_camera_prop:s0
-demo.near                                               u:object_r:vendor_camera_prop:s0
-demo.far                                                u:object_r:vendor_camera_prop:s0
-demo.fb                                                 u:object_r:vendor_camera_prop:s0
 
 # Fingerprint
 persist.vendor.sys.fp.                                  u:object_r:vendor_fingerprint_prop:s0
