@@ -8,8 +8,8 @@ allow mtk_hal_camera camera_device:chr_file rw_file_perms;
 binder_call(mtk_hal_camera, mtk_hal_neuralnetworks)
 
 # Allow mtk_hal_camera to read camera persist files
-allow mtk_hal_camera camera_persist_file:dir search;
-allow mtk_hal_camera camera_persist_file:file { getattr open read };
+allow mtk_hal_camera camera_persist_file:dir rw_dir_perms;
+allow mtk_hal_camera camera_persist_file:file create_file_perms;
 
 # Allow mtk_hal_camera to access camera data files
 allow mtk_hal_camera camera_vendor_data_file:dir create_dir_perms;
