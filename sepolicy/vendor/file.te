@@ -4,7 +4,7 @@ type camera_vendor_data_file, data_file_type, file_type;
 
 # Fingerprint
 type vendor_fingerprint_data_file, data_file_type, file_type;
-type vendor_fingerprint_device, dev_type;
+type vendor_fingerprint_device, fs_type, sysfs_type;
 
 # Panel
 type vendor_sysfs_panel, fs_type, sysfs_type;

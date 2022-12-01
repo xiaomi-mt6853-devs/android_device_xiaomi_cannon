@@ -1,9 +1,6 @@
 # Allow vendor_init to read vts_status_prop
 get_prop(vendor_init, vts_status_prop)
 
-# Allow vendor_init to read and write fingerprint node
-allow vendor_init vendor_fingerprint_device:file { rw_file_perms setattr };
-
 # Allow vendor_init to create NFC dirs
 allow vendor_init nfc_data_vendor_file:dir { r_dir_perms create_dir_perms };
 
