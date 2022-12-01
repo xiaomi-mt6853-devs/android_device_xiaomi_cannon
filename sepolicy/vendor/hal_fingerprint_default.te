@@ -15,3 +15,6 @@ set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
 
 # Allow fingerprint HAL to create netlink_socket
 allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
+
+# Allow fingerprint HAL to write sysfs wakeup nodes
+allow hal_fingerprint_default sysfs_wakeup:file w_file_perms;
