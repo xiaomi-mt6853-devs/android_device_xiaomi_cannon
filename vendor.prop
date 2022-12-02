@@ -233,8 +233,6 @@ ro.vendor.mtk_zsdhdr_support=1
 ro.vendor.num_md_protocol=2
 ro.vendor.radio.5g=3
 ro.vendor.radio.features_common=2
-ro.vendor.radio.max.multisim=dsds
-telephony.active_modems.max_count=2
 
 # Fingerprint
 ro.hardware.fp.sideCap=true
@@ -252,7 +250,6 @@ ro.vendor.mtk_widevine_drm_l1_support=1
 ro.vendor.mtk_config_max_dram_size=0x800000000
 
 # Secure Element
-ro.vendor.se.type=HCE,UICC
 ro.vendor.sim_me_lock_mode=3
 
 # NFC
