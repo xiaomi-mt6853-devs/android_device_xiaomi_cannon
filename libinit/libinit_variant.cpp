@@ -44,4 +44,19 @@ void set_variant_props(const variant_info_t variant) {
 
     if (variant.nfc)
         property_override(SKU_PROP, "nfc");
+
+    if (variant.multisim) {
+        property_override("persist.vendor.mims_support", "2");
+        property_override("persist.radio.multisim.config", "dsds");
+        property_override("persist.vendor.radio.msimmode", "dsds");
+        property_override("persist.vendor.radio.smart.data.switch", "1");
+        property_override("ro.vendor.mtk_data_config", "1");
+    } else {
+        property_override("persist.vendor.mims_support", "1");
+        property_override("persist.radio.multisim.config", "ss");
+        property_override("persist.vendor.radio.msimmode", "ss");
+        property_override("persist.vendor.radio.smart.data.switch", "0");
+        property_override("ro.vendor.mtk_data_config", "0");
+    }
+
 }

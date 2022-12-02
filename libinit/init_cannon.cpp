@@ -18,6 +18,7 @@ static const variant_info_t cannon_info = {
     .model = "M2007J22C",
     .build_fingerprint = "Redmi/cannon/cannon:12/SP1A.210812.016/V13.0.3.0.SJECNXM:user/release-keys",
 
+    .multisim = true,
     .nfc = false,
 };
 
@@ -30,6 +31,7 @@ static const variant_info_t cannong_info = {
     .model = "M2007J22G",
     .build_fingerprint = "Redmi/cannong_global/cannong:12/SP1A.210812.016/V13.0.3.0.SJEMIXM:user/release-keys",
 
+    .multisim = true,
     .nfc = true,
 };
 
@@ -42,6 +44,7 @@ static const variant_info_t cannong_jp_info = {
     .model = "A001XM",
     .build_fingerprint = "Redmi/A001XM/cannong:12/SP1A.210812.016/V13.0.2.0.SJEJPSB:user/release-keys",
 
+    .multisim = false,
     .nfc = true,
 };
 

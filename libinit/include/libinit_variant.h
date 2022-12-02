@@ -19,6 +19,7 @@ typedef struct variant_info {
     std::string model;
     std::string build_fingerprint;
 
+    bool multisim;
     bool nfc;
 } variant_info_t;
 
