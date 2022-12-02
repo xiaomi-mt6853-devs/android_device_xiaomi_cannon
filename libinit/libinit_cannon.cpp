@@ -53,6 +53,9 @@ void vendor_load_properties()
     } else if (region == "CN") {
         device = "cannon";
         model = "M2007J22C";
+    } else if (region == "JP") {
+        device = "cannong"
+        model = "A001XM"
     } else {
         // default to cannon
         device = "cannon";
@@ -103,8 +106,12 @@ void vendor_load_properties()
     if (region == "GL") {
         property_override("ro.boot.hardware.sku", "cannong");
         property_override("ro.boot.product.hardware.sku", "nfc");
-    } else if (region == "CN")
+    } else if (region == "CN") {
         property_override("ro.boot.hardware.sku", "cannon");
+    } else if (region == "JP") {
+        property_override("ro.boot.hardware.sku", "cannong_jp");
+        property_override("ro.boot.product.hardware.sku", "nfc");
+    }
 
     // Set camera model for EXIF data
     property_override("persist.vendor.camera.model", model);
