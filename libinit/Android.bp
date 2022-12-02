@@ -1,17 +1,25 @@
 //
-// Copyright (c) 2021, StatiXOS
-//           (c) 2021, Vaisakh Murali
-//           (c) 2022, LineageOS
-// SPDX-License-Identifer: GPL-2.0-only
+// Copyright (C) 2021 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
 //
 
 cc_library_static {
     name: "libinit_cannon",
-    recovery_available: true,
-    srcs: ["libinit_cannon.cpp"],
-    include_dirs: [
-        "system/libbase/include",
-        "system/core/init"
+    srcs: [
+        "libinit_dalvik_heap.cpp",
+        "libinit_variant.cpp",
+        "libinit_utils.cpp",
     ],
-    shared_libs: ["libbase"]
+    whole_static_libs: ["libbase"],
+    export_include_dirs: ["include"],
+    recovery_available: true,
+}
+
+cc_library_static {
+    name: "init_cannon",
+    srcs: ["init_cannon.cpp"],
+    whole_static_libs: ["libinit_cannon"],
+    include_dirs: ["system/core/init"],
+    recovery_available: true,
 }
