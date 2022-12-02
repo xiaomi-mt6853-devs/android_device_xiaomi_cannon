@@ -15,7 +15,6 @@ static const variant_info_t cannon_info = {
 
     .brand = "Xiaomi",
     .device = "cannon",
-    .marketname = "Redmi Note 9 5G",
     .model = "M2007J22C",
     .build_fingerprint = "Redmi/cannon/cannon:12/SP1A.210812.016/V13.0.3.0.SJECNXM:user/release-keys",
 
@@ -28,7 +27,6 @@ static const variant_info_t cannong_info = {
 
     .brand = "Xiaomi",
     .device = "cannong",
-    .marketname = "Redmi Note 9T",
     .model = "M2007J22G",
     .build_fingerprint = "Redmi/cannong_global/cannong:12/SP1A.210812.016/V13.0.3.0.SJEMIXM:user/release-keys",
 
@@ -41,7 +39,6 @@ static const variant_info_t cannong_jp_info = {
 
     .brand = "Xiaomi",
     .device = "cannong",
-    .marketname = "Redmi Note 9T",
     .model = "A001XM",
     .build_fingerprint = "Redmi/A001XM/cannong:12/SP1A.210812.016/V13.0.2.0.SJEJPSB:user/release-keys",
 
