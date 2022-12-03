@@ -31,15 +31,6 @@ on post-fs-data
     chown bluetooth bluetooth /dev/ttyGS2
     chmod 0660 /dev/ttyGS2
 
-on property:vendor.connsys.driver.ready=yes && property:persist.vendor.connsys.coredump.mode=*
-    write /proc/driver/wmt_user_proc "0x1 ${persist.vendor.connsys.coredump.mode}"
-
-on property:vendor.connsys.driver.ready=yes && property:debug.vendor.connsys.suspend.alarm=*
-    write /proc/driver/wmt_user_proc "0x2 ${debug.vendor.connsys.suspend.alarm}"
-
-on property:persist.vendor.em.dy.debug=1
-    setprop persist.vendor.connsys.coredump.mode 0
-
 #
 # Connectivity related device nodes & configuration (end)
 #
