@@ -353,7 +353,8 @@ PRODUCT_PACKAGES += \
 # GNSS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl \
-    android.hardware.gnss@2.1.vendor
+    android.hardware.gnss@2.1.vendor \
+    android.hardware.gnss-V1-ndk_platform.vendor
 
 # Public libraries
 PRODUCT_COPY_FILES += \
