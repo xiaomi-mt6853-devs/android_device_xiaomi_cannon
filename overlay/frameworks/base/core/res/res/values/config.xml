@@ -32,15 +32,6 @@
     <!-- Display cutout configuration -->
      <string name="config_mainBuiltInDisplayCutout">M -939,0 H -1080 V 99 H -939 V 0 Z@right</string>
 
-    <!-- boolean indicating whether the WiFi chipset has 5GHz band support.
-         Note: This config is replacing the config_wifi_dual_band_support
-         since more bands may now be supported (such as 6GHz), the naming dual_band
-         is no longer indicative, and a separate config now exists for each band -->
-    <bool name="config_wifi_dual_band_support">true</bool>
-
-    <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
-    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
-
      <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
