@@ -458,8 +458,8 @@ PRODUCT_PACKAGES += \
     libkeystore-engine-wifi-hidl
 
 PRODUCT_PACKAGES += \
-    WifiResCommon \
-    TetheringResCommon
+    WifiResOverlay \
+    TetheringResOverlay
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
