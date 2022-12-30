@@ -177,7 +177,6 @@ vendor/lib64/libaedv.so
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
-vendor/etc/init/init.bt_drv.rc
 vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
@@ -1212,7 +1211,6 @@ vendor/etc/init/init.bip_ap.rc
 vendor/etc/init/init.cccimdinit.rc
 vendor/etc/init/init.cccirpcd.rc
 vendor/etc/init/init.connfem.rc
-vendor/etc/init/init.wmt_drv.rc
 vendor/etc/init/ipsec_mon.rc
 vendor/etc/init/md_monitor.rc
 vendor/etc/init/mtk_pkm_service.rc
@@ -1344,7 +1342,6 @@ vendor/etc/virtual-spn-conf-by-imsi.xml
 
 # FM Radio
 -system_ext/lib64/libfmjni.so:system/lib64/libfmjni.so
-vendor/etc/init/init.fmradio_drv.rc
 
 # Sensors
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
@@ -1416,7 +1413,6 @@ vendor/bin/wlan_assistant
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
 vendor/etc/init/android.hardware.wifi.supplicant-service.rc
-vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/tetheroffloadservice.rc
 vendor/etc/init/wlan_assistant.rc
 -vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
@@ -1594,14 +1590,3 @@ vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
 vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
-
-# Prebuilt kernel modules
-vendor/lib/modules/bt_drv_connac1x.ko
-vendor/lib/modules/connfem.ko
-vendor/lib/modules/fmradio_drv_mt6631_6635.ko
-vendor/lib/modules/fpsgo.ko
-vendor/lib/modules/gps_drv.ko
-vendor/lib/modules/met.ko
-vendor/lib/modules/wlan_drv_gen4m.ko
-vendor/lib/modules/wmt_chrdev_wifi.ko
-vendor/lib/modules/wmt_drv.ko

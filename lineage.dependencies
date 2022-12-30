@@ -1,6 +1,11 @@
 [
   {
     "remote": "github",
+    "repository": "xiaomi-mt6853-devs/android_kernel_xiaomi_cannon",
+    "target_path": "kernel/xiaomi/cannon"
+  },
+  {
+    "remote": "github",
     "repository": "xiaomi-mt6853-devs/android_packages_apps_FMRadio",
     "target_path": "packages/apps/FMRadio"
   },
