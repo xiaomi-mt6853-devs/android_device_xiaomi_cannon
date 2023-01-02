@@ -28,9 +28,9 @@
     <Param path="BT" param_id="2"/>
     <Param path="MISC" param_id="2"/>
     <Param path="HEARING_AID" param_id="0"/>
-    <Param path="NB,RCV,GSM" param_id="7"/>
-    <Param path="WB,RCV,GSM" param_id="8"/>
-    <Param path="SWB,RCV,GSM" param_id="9"/>
+    <Param path="NB,RCV,GSM" param_id="0"/>
+    <Param path="WB,RCV,GSM" param_id="0"/>
+    <Param path="SWB,RCV,GSM" param_id="0"/>
     <Param path="SWB,HS,GSM" param_id="2"/>
     <Param path="SWB,BT,GSM" param_id="2"/>
     <Param path="WB,BT,GSM" param_id="2"/>
@@ -69,21 +69,6 @@
     <ParamUnit param_id="6">
       <Param name="dl_gain" value="48,33,25,19,13,6,0"/>
       <Param name="ul_gain" value="0"/>
-      <Param name="stf_gain" value="0"/>
-    </ParamUnit>
-    <ParamUnit param_id="7">
-      <Param name="dl_gain" value="8,8,8,8,8,8,8"/>
-      <Param name="ul_gain" value="23"/>
-      <Param name="stf_gain" value="0"/>
-    </ParamUnit>
-    <ParamUnit param_id="8">
-      <Param name="dl_gain" value="8,8,8,8,8,8,8"/>
-      <Param name="ul_gain" value="23"/>
-      <Param name="stf_gain" value="0"/>
-    </ParamUnit>
-    <ParamUnit param_id="9">
-      <Param name="dl_gain" value="8,8,8,8,8,8,8"/>
-      <Param name="ul_gain" value="23"/>
       <Param name="stf_gain" value="0"/>
     </ParamUnit>
   </ParamUnitPool>
