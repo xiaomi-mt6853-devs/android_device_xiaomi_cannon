@@ -1,3 +1,8 @@
+#
+# Copyright (C) 2023 The LineageOS Project
+# SPDX-License-Identifier: GPL-2.0-only
+#
+
 #change partition permission
 # eMMC only
 /dev/block/mmcblk0                               0660    root    system

@@ -1,4 +1,7 @@
-# MTK platform .rc configure
+#
+# Copyright (C) 2023 The LineageOS Project
+# SPDX-License-Identifier: GPL-2.0-only
+#
 
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6853.usb.rc

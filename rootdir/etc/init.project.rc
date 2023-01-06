@@ -1,4 +1,7 @@
-# MTK project .rc configure
+#
+# Copyright (C) 2023 The LineageOS Project
+# SPDX-License-Identifier: GPL-2.0-only
+#
 
 import /vendor/etc/init/init.mi_thermald.rc
 

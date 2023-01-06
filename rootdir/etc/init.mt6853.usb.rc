@@ -1,3 +1,8 @@
+#
+# Copyright (C) 2023 The LineageOS Project
+# SPDX-License-Identifier: GPL-2.0-only
+#
+
 on early-init
     write /sys/module/musb_hdrc/parameters/kernel_init_done 1
 

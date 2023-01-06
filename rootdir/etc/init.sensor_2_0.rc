@@ -1,4 +1,8 @@
-# MTK platform .rc configure
+#
+# Copyright (C) 2023 The LineageOS Project
+# SPDX-License-Identifier: GPL-2.0-only
+#
+
 on post-fs-data
     # calibration
     mkdir /data/vendor/sensor 0774 system system

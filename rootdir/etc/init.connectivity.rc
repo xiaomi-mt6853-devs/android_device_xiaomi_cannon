@@ -1,4 +1,7 @@
-# MTK connectivity .rc configure
+#
+# Copyright (C) 2023 The LineageOS Project
+# SPDX-License-Identifier: GPL-2.0-only
+#
 
 #
 # Connectivity related device nodes & configuration (begin)
