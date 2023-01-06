@@ -1,7 +1,5 @@
 # MTK project .rc configure
 
-import /vendor/etc/init/init.batteryd.rc
-import /vendor/etc/init/init.charge_logger.rc
 import /vendor/etc/init/init.mi_thermald.rc
 
 on init

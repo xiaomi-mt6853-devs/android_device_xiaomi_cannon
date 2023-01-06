@@ -11,7 +11,6 @@ import /vendor/etc/init/hw/init.modem.rc
 # *** DO NOT import the new rc file after this line ***
 
 on early-init
-    write /proc/bootprof "INIT:early-init"
     # boot perf. tune
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "0 0 0 0"
     write /sys/devices/platform/boot_dramboost/dramboost/dramboost 1
@@ -22,7 +21,6 @@ on early-init
     setprop vendor.all.modules.ready 1
 
 on init
-    write /proc/bootprof "INIT:init"
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
 
@@ -42,8 +40,7 @@ on init
     write /dev/cpuset/top-app/cpus 0-7
 
 on late-init
-    write /proc/bootprof "INIT:late-init"
-# enable rcu_expedited
+    # enable rcu_expedited
     write /sys/kernel/rcu_expedited 1
 
 # mount different fs start
@@ -91,24 +88,12 @@ on charger
 
     start vendor.light-default
 
-    # Stop bootprof
-    write /proc/bootprof "0"
-
-on early-fs
-    write /proc/bootprof "INIT:early-fs"
-
 on fs
-    write /proc/bootprof "INIT:fs"
-
-    start vendor.boot-hal-1-2
-
     # mount fstab
-    write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/tracing/trace_marker "B|1|Mount"
     mount_all --early
     exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/by-name/userdata
     write /sys/kernel/tracing/trace_marker "E"
-    write /proc/bootprof "INIT:Mount_END"
 
     write /sys/block/zram0/comp_algorithm lz4
     write /proc/sys/vm/page-cluster 0
@@ -118,18 +103,12 @@ on fs
     chmod 0666 /dev/xlog
 
 on late-fs
-    write /proc/bootprof "INIT:late-fs"
     wait_for_prop hwservicemanager.ready "true"
-
-    write /proc/bootprof "INIT:Mount_START --late"
     write /sys/kernel/tracing/trace_marker "B|1|Mount late"
     mount_all --late
     write /sys/kernel/tracing/trace_marker "E"
-    write /proc/bootprof "INIT:Mount_END --late"
 
 on post-fs
-    write /proc/bootprof "INIT:post-fs"
-
     # boot perf. tune
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "0 100"
     write /proc/perfmgr/boost_ctrl/eas_ctrl/boot_boost "1 100"
@@ -178,11 +157,6 @@ on post-fs
     symlink /dev/block/mapper/pl_b /dev/block/platform/bootdevice/by-name/preloader_raw_b
 
 # change owner
-    chown system system /proc/bootprof
-    chmod 0664 /proc/bootprof
-    chown root system /proc/mtprof/cputime
-    chown root system /proc/mtprof/reboot_pid
-
     chown system system /mnt/vendor/protect_f
     chmod 0770 /mnt/vendor/protect_f
 
@@ -194,10 +168,6 @@ on post-fs
     chown root system /proc/ccci_dump
 
 on post-fs-data
-    write /proc/bootprof "INIT:post-fs-data"
-    wait_for_prop vendor.all.modules.ready 1
-    write /proc/bootprof "modprobe: Load_Module_DONE"
-
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
@@ -728,16 +698,10 @@ on post-fs-data
 # End of adding by MTK drivers
 # -----------------------
 
-on zygote-start
-    write /proc/bootprof "INIT:zygote-start"
-
 on early-boot
-    write /proc/bootprof "INIT:early-boot"
     verity_update_state
 
 on boot
-    write /proc/bootprof "INIT:boot"
-
     write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
 
@@ -960,9 +924,6 @@ on property:sys.boot_completed=1
     # switch to sched-dvfs
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedplus"
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "schedplus"
-
-    # stop bootprof
-    write /proc/bootprof 0
 
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
