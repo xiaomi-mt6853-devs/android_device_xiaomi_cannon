@@ -9,7 +9,7 @@
     <overlay
         android:isStatic="true"
         android:priority="850"
-        android:requiredSystemPropertyName="ro.boot.hwc"
-        android:requiredSystemPropertyValue="GL,JP"
+        android:requiredSystemPropertyName="ro.boot.hardware.sku"
+        android:requiredSystemPropertyValue="cannong"
         android:targetPackage="com.android.providers.settings" />
 </manifest>

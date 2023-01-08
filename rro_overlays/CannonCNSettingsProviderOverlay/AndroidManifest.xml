@@ -9,7 +9,7 @@
     <overlay
         android:isStatic="true"
         android:priority="850"
-        android:requiredSystemPropertyName="ro.boot.hwc"
-        android:requiredSystemPropertyValue="CN"
+        android:requiredSystemPropertyName="ro.boot.hardware.sku"
+        android:requiredSystemPropertyValue="cannon"
         android:targetPackage="com.android.providers.settings" />
 </manifest>
