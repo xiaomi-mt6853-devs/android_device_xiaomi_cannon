@@ -91,6 +91,9 @@ on charger
 
     start vendor.light-default
 
+on early-fs
+    start vold
+
 on fs
     # mount fstab
     write /sys/kernel/tracing/trace_marker "B|1|Mount"
