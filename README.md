@@ -2,9 +2,9 @@
 
 The Redmi Note 9 5G (codenamed _"cannon"_) and Redmi Note 9T (codenamed _"cannong"_) are mid-range smartphones from Xiaomi.
 
-Copyright (C) 2022 StatiX
+Copyright (C) 2023 LineageOS
 
-Copyright (C) 2022 LineageOS
+Copyright (C) 2022 StatiX
 
 ## Specsheets
 
