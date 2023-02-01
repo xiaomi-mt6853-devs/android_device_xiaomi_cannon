@@ -202,8 +202,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     Tag \
     vendor.nxp.nxpese@1.0 \
-    vendor.nxp.nxpnfc@1.0 \
-    vendor.nxp.hardware.nfc@1.1.vendor
+    vendor.nxp.nxpnfc@1.0
 
 # Media
 PRODUCT_COPY_FILES += \
