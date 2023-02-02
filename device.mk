@@ -141,9 +141,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-impl:64 \
     android.hardware.graphics.composer@2.1-service \
-    android.hardware.graphics.composer@2.1-resources \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0-impl
 
@@ -220,7 +218,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcodec2_hidl@1.1.vendor \
     libcodec2_hidl@1.2.vendor \
-    libcodec2_hidl_plugin.vendor \
+    libcodec2_hidl_plugin \
     libstagefright_softomx_plugin.vendor \
     libsfplugin_ccodec_utils.vendor \
     libcodec2_soft_common.vendor \
@@ -290,7 +288,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/power/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml
 
 PRODUCT_PACKAGES += \
-    android.hardware.power-V1.vendor \
     android.hardware.power-service-mediatek \
     android.hardware.power@1.0.vendor \
     android.hardware.power@1.1.vendor \
@@ -352,7 +349,6 @@ PRODUCT_PACKAGES += \
 
 # GNSS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1-impl \
     android.hardware.gnss@2.1.vendor \
     android.hardware.gnss-V1-ndk_platform.vendor
 
@@ -363,8 +359,7 @@ PRODUCT_COPY_FILES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl:64 \
-    android.hardware.health@2.0-impl-2.1:64
+    android.hardware.health@2.1-impl:64
 
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -459,7 +454,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     hostapd \
     android.hardware.wifi@1.0-service-lazy \
-    android.hardware.wifi@1.3-impl \
     android.hardware.wifi.supplicant@1.0.vendor \
     android.hardware.wifi.supplicant@1.1.vendor \
     android.hardware.wifi.supplicant@1.2.vendor \
