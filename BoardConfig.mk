@@ -156,8 +156,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # WiFi
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_HOSTAPD_DRIVER := NL80211
 
 # Inherit the proprietary files
 include vendor/xiaomi/cannon/BoardConfigVendor.mk
