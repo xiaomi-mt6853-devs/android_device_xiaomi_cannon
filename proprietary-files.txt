@@ -1311,7 +1311,7 @@ system/lib64/libsignal.so
 system/lib64/libsink.so
 system/lib64/libsource.so
 system/lib64/libvt_avsync.so
--system/priv-app/ImsService/ImsService.apk
+-system/priv-app/ImsService/ImsService.apk|6746e3d153c31eaaee468314ad618a7bfdeaa198|3b7b10f639e2aa4d91387ce0f58503d69e8be595
 system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/bin/hw/vtservice_hidl
