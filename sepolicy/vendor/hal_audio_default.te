@@ -19,6 +19,6 @@ allow hal_audio_default sysfs_boot_mode:file r_file_perms;
 set_prop(hal_audio_default, vendor_mtk_audiohal_prop)
 get_prop(hal_audio_default, vendor_mtk_audiohal_prop)
 get_prop(hal_audio_default, vendor_mtk_default_prop)
-get_prop(hal_audio_default, vendor_audio_prop)
-set_prop(hal_audio_default, vendor_audio_prop)
+get_prop(hal_audio_default, vendor_mtk_audio_prop)
+set_prop(hal_audio_default, vendor_mtk_audio_prop)
 get_prop(hal_audio_default, vendor_mtk_wmt_prop)
