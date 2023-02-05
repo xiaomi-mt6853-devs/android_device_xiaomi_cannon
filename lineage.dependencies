@@ -5,18 +5,15 @@
     "target_path": "kernel/xiaomi/cannon"
   },
   {
-    "remote": "github",
-    "repository": "xiaomi-mt6853-devs/android_packages_apps_FMRadio",
-    "target_path": "packages/apps/FMRadio"
-  },
-  {
-    "remote": "github",
-    "repository": "xiaomi-mt6853-devs/android_device_mediatek_sepolicy_vndr",
+    "repository": "android_device_mediatek_sepolicy_vndr",
     "target_path": "device/mediatek/sepolicy_vndr"
   },
   {
-    "remote": "github",
-    "repository": "LineageOS/android_hardware_xiaomi",
+    "repository": "android_packages_apps_MtkFMRadio",
+    "target_path": "packages/apps/MtkFMRadio"
+  },
+  {
+    "repository": "android_hardware_xiaomi",
     "target_path": "hardware/xiaomi"
   }
 ]
