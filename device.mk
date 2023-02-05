@@ -216,12 +216,8 @@ PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service
 
 PRODUCT_PACKAGES += \
-    libcodec2_hidl@1.1.vendor \
-    libcodec2_hidl@1.2.vendor \
-    libcodec2_hidl_plugin \
     libstagefright_softomx_plugin.vendor \
     libsfplugin_ccodec_utils.vendor \
-    libcodec2_soft_common.vendor \
     libavservices_minijail \
     libavservices_minijail_vendor
 

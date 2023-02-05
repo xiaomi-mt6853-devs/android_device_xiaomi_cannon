@@ -1014,9 +1014,13 @@ vendor/lib/libOpenCL.so
 vendor/lib/libadpcmdec_mtk.so
 vendor/lib/libalacdec_mtk.so
 vendor/lib/libbwc.so
+vendor/lib/libcodec2_hidl@1.1.so
+vendor/lib/libcodec2_hidl@1.2.so
+vendor/lib/libcodec2_hidl_plugin.so
 vendor/lib/libcodec2_mtk_c2store.so
 vendor/lib/libcodec2_mtk_vdec.so
 vendor/lib/libcodec2_mtk_venc.so
+vendor/lib/libcodec2_soft_common.so
 vendor/lib/libcodec2_soft_mtk_alacdec.so
 vendor/lib/libcodec2_soft_mtk_apedec.so
 vendor/lib/libcodec2_soft_mtk_imaadpcmdec.so
@@ -1056,9 +1060,13 @@ vendor/lib64/libOpenCL.so
 vendor/lib64/libadpcmdec_mtk.so
 vendor/lib64/libalacdec_mtk.so
 vendor/lib64/libbwc.so
+vendor/lib64/libcodec2_hidl@1.1.so
+vendor/lib64/libcodec2_hidl@1.2.so
+vendor/lib64/libcodec2_hidl_plugin.so
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
 vendor/lib64/libcodec2_mtk_venc.so
+vendor/lib64/libcodec2_soft_common.so
 vendor/lib64/libcodec2_soft_mtk_alacdec.so
 vendor/lib64/libcodec2_soft_mtk_apedec.so
 vendor/lib64/libcodec2_soft_mtk_imaadpcmdec.so
