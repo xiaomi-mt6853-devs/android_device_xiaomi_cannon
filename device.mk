@@ -315,7 +315,7 @@ PRODUCT_COPY_FILES += \
 
 # FM Radio
 PRODUCT_PACKAGES += \
-    FMRadio
+    MtkFMRadio
 
 # Fingerprint
 PRODUCT_PACKAGES += \
