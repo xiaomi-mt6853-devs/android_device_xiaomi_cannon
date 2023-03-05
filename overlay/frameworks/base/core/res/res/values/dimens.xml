@@ -20,9 +20,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Height of the status bar -->
-    <dimen name="status_bar_height_default">111.0px</dimen>
-    <dimen name="status_bar_height_portrait">111.0px</dimen>
-    <dimen name="status_bar_height_landscape">111.0px</dimen>
+    <dimen name="status_bar_height_default">37dp</dimen>
+    <dimen name="status_bar_height_portrait">111px</dimen>
+    <dimen name="status_bar_height_landscape">37dp</dimen>
 
     <!-- Radius of the software rounded corners at the top of the display in its natural
         orientation. If zero, the value of rounded_corner_radius is used. -->
