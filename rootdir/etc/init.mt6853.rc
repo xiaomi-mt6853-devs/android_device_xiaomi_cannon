@@ -888,6 +888,9 @@ on boot
 #Power Manager
     write /sys/power/pm_freeze_timeout 2000
 
+# Default country code
+    setprop ro.boot.wificountrycode 00
+
 # Disable serial console
     stop console
 
