@@ -202,10 +202,6 @@ vendor/lib64/libbt-vendor.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
-# Bluetooth (AptX)
-system/lib64/libaptXHD_encoder.so:system_ext/lib64/libaptXHD_encoder.so
-system/lib64/libaptX_encoder.so:system_ext/lib64/libaptX_encoder.so
-
 # Camera
 vendor/bin/hw/camerahalserver
 vendor/bin/rttv
