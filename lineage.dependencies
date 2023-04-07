@@ -9,10 +9,6 @@
     "target_path": "device/mediatek/sepolicy_vndr"
   },
   {
-    "repository": "android_packages_apps_MtkFMRadio",
-    "target_path": "packages/apps/MtkFMRadio"
-  },
-  {
     "repository": "android_hardware_xiaomi",
     "target_path": "hardware/xiaomi"
   }
