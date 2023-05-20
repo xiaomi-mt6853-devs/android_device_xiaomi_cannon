@@ -1187,7 +1187,6 @@ vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 
 # Radio
 vendor/bin/hw/mtkfusionrild
-vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
 vendor/bin/bip_ap
 vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
@@ -1213,7 +1212,6 @@ vendor/etc/init/mtk_pkm_service.rc
 vendor/etc/init/mtkrild.rc
 vendor/etc/init/netdagent.rc
 vendor/etc/init/networksetting.rc
-vendor/etc/init/vendor.mediatek.hardware.nwk_opt@1.0-service.rc
 vendor/etc/init/volte_clientapi_ua.rc
 vendor/etc/init/volte_rcs_ua.rc
 vendor/lib/libasn1c_core.so
@@ -1233,7 +1231,6 @@ vendor/lib/libmtkcutils.so
 vendor/lib/libmtkhardware_legacy.so
 vendor/lib/libmtkproperty.so
 vendor/lib/libmtkrillog.so
-vendor/lib/libnwk_opt_halwrap_vendor.so
 vendor/lib/libpkm.so
 vendor/lib/librcs_interface.so
 vendor/lib/librcs_volte_core.so
@@ -1244,7 +1241,6 @@ vendor/lib/libtranslator_mapi_v3.0.so
 vendor/lib/libtranslator_mdmi_v2.8.2.so
 vendor/lib/libtranslator_utils.so
 vendor/lib/libvt_custom.so
-vendor/lib/vendor.mediatek.hardware.nwk_opt@1.0.so
 vendor/lib64/libacdk.so
 vendor/lib64/libasn1c_core.so
 vendor/lib64/libasn1c_mapi.so
@@ -1272,7 +1268,6 @@ vendor/lib64/libmtkproperty.so
 vendor/lib64/libmtkrillog.so
 vendor/lib64/libmtkrilutils.so
 vendor/lib64/libmtkutils.so
-vendor/lib64/libnwk_opt_halwrap_vendor.so
 vendor/lib64/libpkm.so
 vendor/lib64/libratconfig.so
 vendor/lib64/librilfusion.so
@@ -1286,10 +1281,8 @@ vendor/lib64/libtranslator_utils.so
 vendor/lib64/libtrm.so
 vendor/lib64/libvia-ril.so
 vendor/lib64/libviamipc-ril.so
-vendor/lib64/nwk_opt_imp.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
-vendor/lib64/vendor.mediatek.hardware.nwk_opt@1.0.so
 
 # Radio (IMS)
 system/bin/vtservice
