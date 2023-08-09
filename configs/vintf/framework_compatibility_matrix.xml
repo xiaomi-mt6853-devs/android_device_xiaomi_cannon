@@ -31,11 +31,11 @@
         <instance>default</instance>
     </interface>
 </hal>
-<hal format="hidl" optional="true">
+<hal format="aidl" optional="true">
     <name>android.hardware.bluetooth.audio</name>
-    <version>2.0-1</version>
+    <version>2</version>
     <interface>
-        <name>IBluetoothAudioProvidersFactory</name>
+        <name>IBluetoothAudioProviderFactory</name>
         <instance>default</instance>
     </interface>
 </hal>
@@ -55,17 +55,22 @@
         <instance>default</instance>
     </interface>
 </hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.drm</name>
+    <interface>
+        <name>IDrmFactory</name>
+        <instance>clearkey</instance>
+    </interface>
+</hal>
 <hal format="hidl" optional="true">
     <name>android.hardware.drm</name>
     <version>1.0-4</version>
     <interface>
         <name>ICryptoFactory</name>
-        <instance>clearkey</instance>
         <instance>widevine</instance>
     </interface>
     <interface>
         <name>IDrmFactory</name>
-        <instance>clearkey</instance>
         <instance>widevine</instance>
     </interface>
 </hal>
@@ -227,7 +232,7 @@
 </hal>
 <hal format="hidl" optional="true">
     <name>android.hardware.wifi</name>
-    <version>1.0-5</version>
+    <version>1.0-6</version>
     <interface>
         <name>IWifi</name>
         <instance>default</instance>
