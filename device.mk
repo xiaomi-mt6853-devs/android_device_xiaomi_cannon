@@ -360,9 +360,6 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    init.insmod.sh
-
-PRODUCT_PACKAGES += \
     fstab.mt6853 \
     init.cannon.rc \
     init.connectivity.rc \
