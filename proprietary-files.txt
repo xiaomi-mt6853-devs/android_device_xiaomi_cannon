@@ -747,6 +747,11 @@ vendor/firmware/soc2_0_ram_wifi_3d_1_hdr.bin
 vendor/firmware/txpowerctrl.cfg
 vendor/firmware/wifi.cfg
 
+# Firmware - from a32xxx-user 13 TP1A.220624.014 A326BXXU6CWF5 release-keys
+vendor/firmware/BT_FW.cfg|d5fad1b77ae4bddd2e244339377f7756f55173d0
+vendor/firmware/soc2_0_ram_bt_3c_1_hdr.bin|a6ae3a39b82a970254beb4fe75b4451483295bbc
+vendor/firmware/soc2_0_ram_bt_3d_1_hdr.bin|9c2ed2937ba77a2d03b9c490faee21c552da710f
+
 # ConsumerIr
 vendor/lib64/hw/consumerir.common.so
 
