@@ -629,7 +629,6 @@ vendor/etc/camera/vidhance_calibration
 vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
 
 # Firmware
-vendor/firmware/BT_FW.cfg
 vendor/firmware/FT8719_J22_TestINI.ini
 vendor/firmware/FT8720M_J22_TestINI.ini
 vendor/firmware/NT36xxx_MP_Setting_Criteria_593A.csv
@@ -738,14 +737,17 @@ vendor/firmware/mt6635_fm_v1_patch.bin
 vendor/firmware/remoteproc_scp
 vendor/firmware/soc2_0_patch_mcu_3c_1_hdr.bin
 vendor/firmware/soc2_0_patch_mcu_3d_1_hdr.bin
-vendor/firmware/soc2_0_ram_bt_3c_1_hdr.bin
-vendor/firmware/soc2_0_ram_bt_3d_1_hdr.bin
 vendor/firmware/soc2_0_ram_mcu_3c_1_hdr.bin
 vendor/firmware/soc2_0_ram_mcu_3d_1_hdr.bin
 vendor/firmware/soc2_0_ram_wifi_3c_1_hdr.bin
 vendor/firmware/soc2_0_ram_wifi_3d_1_hdr.bin
 vendor/firmware/txpowerctrl.cfg
 vendor/firmware/wifi.cfg
+
+# Firmware - from a32xxx-user 13 TP1A.220624.014 A326BXXU6CWF5 release-keys
+vendor/firmware/BT_FW.cfg|d5fad1b77ae4bddd2e244339377f7756f55173d0
+vendor/firmware/soc2_0_ram_bt_3c_1_hdr.bin|a6ae3a39b82a970254beb4fe75b4451483295bbc
+vendor/firmware/soc2_0_ram_bt_3d_1_hdr.bin|9c2ed2937ba77a2d03b9c490faee21c552da710f
 
 # ConsumerIr
 vendor/lib64/hw/consumerir.common.so
