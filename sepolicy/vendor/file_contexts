@@ -26,6 +26,9 @@
 # Lights
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.cannon                          u:object_r:hal_light_default_exec:s0
 
+# Power
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.xiaomi-libperfmgr                     u:object_r:hal_power_default_exec:s0
+
 # Sensors
 /vendor/bin/hw/android\.hardware\.sensors@2.1-service\.cannon-multihal                           u:object_r:mtk_hal_sensors_exec:s0
 
