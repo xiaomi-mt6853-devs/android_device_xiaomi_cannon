@@ -90,7 +90,6 @@ on charger
     chown system system /sys/class/leds/white/brightness
 
     start vendor.light-default
-    start mi_thermald
 
 on early-fs
     start vold
@@ -976,3 +975,4 @@ service charger /system/bin/charger
     #seclabel u:r:charger:s0
     group system graphics
     seclabel u:r:healthd:s0
+
