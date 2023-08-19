@@ -16,9 +16,6 @@ allow hal_power_default self:capability sys_nice;
 # Set scheduling info for system_server (for adpf)
 allow hal_power_default system_server:process setsched;
 
-# Set CPU frequency
-allow hal_power_default sysfs_mtk_cpufreq:file rw_file_perms;
-
 # Set GPU frequency
 allow hal_power_default sysfs_mtk_gpufreq:file rw_file_perms;
 allow hal_power_default sysfs_mali:dir r_dir_perms;
