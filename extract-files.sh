@@ -55,9 +55,6 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-    vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service)
-        "${PATCHELF}" --replace-needed "android.hardware.power-V2-ndk_platform.so" "android.hardware.power-V2-ndk.so" "${2}"
-        ;;
     vendor/bin/hw/android.hardware.thermal@2.0-service.mtk)
         "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
         ;;
