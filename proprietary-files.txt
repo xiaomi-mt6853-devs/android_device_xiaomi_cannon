@@ -1429,6 +1429,9 @@ vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
 vendor/lib/libfgauge_gm30.so
 
+# GPS (System)
+-system/priv-app/LPPeService/LPPeService.apk|d4e0f15ad412dd4f57b7c354047cd9048922d129|3fb4c0e395662138b93717ec75cd8dc6097e8c00
+
 # GPS
 vendor/bin/hw/android.hardware.gnss-service.mediatek
 vendor/bin/lbs_hidl_service
