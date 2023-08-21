@@ -234,7 +234,8 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
 
 PRODUCT_PACKAGES += \
-    libtextclassifier_hash.vendor
+    libtextclassifier_hash.vendor \
+    libflatbuffers-cpp.vendor
 
 # HIDL
 PRODUCT_PACKAGES += \
