@@ -356,6 +356,9 @@ PRODUCT_PACKAGES += \
     android.hardware.light-service.cannon
 
 # GNSS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gnss/agps_profiles_conf2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/agps_profiles_conf2.xml
+
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor \
     android.hardware.gnss-V1-ndk_platform.vendor
