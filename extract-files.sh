@@ -66,9 +66,15 @@ function blob_fixup() {
         ;;
     vendor/lib*/hw/vendor.mediatek.hardware.pq@2.13-impl.so)
         "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+        "${PATCHELF}" --add-needed "libshim_sensors.so" "${2}"
         ;;
     vendor/lib64/libmtkcam_featurepolicy.so)
         sed -i "s|\xE8\x87\x40\xB9|\x28\x02\x80\x52|g" "${2}"
+        ;;
+    vendor/bin/mnld|\
+    vendor/lib64/libaalservice.so|\
+    vendor/lib64/libcam.utils.sensorprovider.so)
+        "${PATCHELF}" --add-needed "libshim_sensors.so" "${2}"
         ;;
     esac
 }
