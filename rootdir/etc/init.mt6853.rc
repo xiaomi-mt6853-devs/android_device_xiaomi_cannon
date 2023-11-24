@@ -82,6 +82,10 @@ on charger
     start fuelgauged
     start fuelgauged_nvram
 
+    # Turn backlight on and switch to backlight trigger
+    write /sys/class/leds/lcd-backlight/brightness "1000"
+    write /sys/class/leds/lcd-backlight/trigger "backlight"
+
 on early-fs
     start vold
 
