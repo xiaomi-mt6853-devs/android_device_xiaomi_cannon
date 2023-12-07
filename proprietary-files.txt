@@ -1279,7 +1279,7 @@ system/lib64/libsignal.so
 system/lib64/libsink.so
 system/lib64/libsource.so
 system/lib64/libvt_avsync.so
--system/priv-app/ImsService/ImsService.apk|6746e3d153c31eaaee468314ad618a7bfdeaa198|3b7b10f639e2aa4d91387ce0f58503d69e8be595
+-system/priv-app/ImsService/ImsService.apk|6746e3d153c31eaaee468314ad618a7bfdeaa198|0d75f5de1610e5cdea7cc45d9efc24d54d9cdfdd
 system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/bin/hw/vtservice_hidl
@@ -1417,7 +1417,7 @@ vendor/etc/init/fuelgauged_nvram_init.rc
 vendor/lib/libfgauge_gm30.so
 
 # GPS (System)
--system/priv-app/LPPeService/LPPeService.apk|d4e0f15ad412dd4f57b7c354047cd9048922d129|3fb4c0e395662138b93717ec75cd8dc6097e8c00
+-system/priv-app/LPPeService/LPPeService.apk|d4e0f15ad412dd4f57b7c354047cd9048922d129|e968a4055b133f89335380a010ea7a9a4900f0bf
 
 # GPS
 vendor/bin/hw/android.hardware.gnss-service.mediatek
