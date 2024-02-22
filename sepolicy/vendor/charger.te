@@ -1,0 +1,5 @@
+# DRM / DRI GPU driver required
+allow charger gpu_device:dir search;
+
+# Add permission for DRM in animation
+allow charger dri_device:chr_file rw_file_perms;
