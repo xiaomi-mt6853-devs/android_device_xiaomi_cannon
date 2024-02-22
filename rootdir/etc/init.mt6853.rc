@@ -82,15 +82,6 @@ on charger
     start fuelgauged
     start fuelgauged_nvram
 
-    chmod 0664 /sys/class/leds/lcd-backlight/brightness
-    chown system system /sys/class/leds/lcd-backlight/brightness
-    chmod 0664 /sys/class/leds/lcd-backlight/max_brightness
-    chown system system /sys/class/leds/lcd-backlight/max_brightness
-    chmod 0664 /sys/class/leds/white/brightness
-    chown system system /sys/class/leds/white/brightness
-
-    start vendor.light-default
-
 on early-fs
     start vold
 
@@ -912,7 +903,6 @@ on property:sys.boot_completed=1
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
 
-
 # start EAS+
 on property:sys.boot_completed=1
 
@@ -969,10 +959,6 @@ on property:vendor.camera.bokeh.disable=1
 on property:vendor.camera.bokeh.disable=0
     setprop vendor.camera.bokeh 0
 
-# FPSGO FBT Game
-on boot
-    insmod /vendor/lib/modules/fpsgo.ko
-
 # add this link for cust mount
 on init
     symlink /dev/block/platform/bootdevice /dev/block/bootdevice
@@ -983,4 +969,3 @@ service charger /system/bin/charger
     #seclabel u:r:charger:s0
     group system graphics
     seclabel u:r:healthd:s0
-
