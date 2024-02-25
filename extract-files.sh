@@ -61,6 +61,8 @@ function blob_fixup() {
         ;;
     vendor/bin/hw/camerahalserver)
         "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+        "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
+        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
         ;;
     vendor/bin/mtk_agpsd)
        "$PATCHELF" --replace-needed "libcrypto.so" "libcrypto-v32.so" "$2"
