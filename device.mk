@@ -252,6 +252,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libpcap.vendor
 
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
