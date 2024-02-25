@@ -99,6 +99,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_BOARD_PLATFORM := mt6853
 BOARD_HAS_MTK_HARDWARE := true
 BOARD_HAVE_MTK_FM := true
+BOARD_VENDOR := xiaomi
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
