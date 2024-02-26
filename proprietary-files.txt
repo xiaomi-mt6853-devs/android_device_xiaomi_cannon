@@ -1259,6 +1259,7 @@ vendor/lib64/libtranslator_utils.so
 vendor/lib64/libtrm.so
 vendor/lib64/libvia-ril.so
 vendor/lib64/libviamipc-ril.so
+vendor/lib64/libwpfa.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 
@@ -1365,23 +1366,12 @@ vendor/lib64/hw/vibrator.mt6853.so
 
 # Wi-Fi
 vendor/bin/hw/tetheroffloadservice
-vendor/bin/hw/wpa_supplicant
 vendor/bin/wlan_assistant
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
-vendor/etc/init/android.hardware.wifi.supplicant-service.rc
 vendor/etc/init/tetheroffloadservice.rc
 vendor/etc/init/wlan_assistant.rc
--vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
-vendor/lib/libwapi.so
-vendor/lib/meta_wifi_data.so
 vendor/lib64/libforkexecwrap.so
-vendor/lib64/libwapi.so
-vendor/lib64/libwifi-hal.so
-vendor/lib64/libwifitest.so
-vendor/lib64/libwpa_client.so
-vendor/lib64/libwpfa.so
-vendor/lib64/meta_wifi_data.so
 
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service

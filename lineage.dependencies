@@ -13,6 +13,11 @@
     "target_path": "hardware/mediatek"
   },
   {
+    "remote": "github",
+    "repository": "xiaomi-mt6853-devs/android_hardware_mediatek_wlan",
+    "target_path": "hardware/mediatek/wlan"
+  },
+  {
     "repository": "android_hardware_xiaomi",
     "target_path": "hardware/xiaomi"
   }
