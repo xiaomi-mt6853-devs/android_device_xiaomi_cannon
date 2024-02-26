@@ -1500,7 +1500,7 @@ vendor/lib64/vendor.mediatek.hardware.engineermode@1.3.so
 -system/framework/mediatek-ims-extension-plugin.jar
 -system/framework/mediatek-services.jar
 -system/framework/mediatek-telecom-common.jar
--system/framework/mediatek-telephony-base.jar
+-system/framework/mediatek-telephony-base.jar|be2f4bedeebd77dfdd39a491a4bb1f8d3b886d73|96bbadfadf9c495b34944565fbba6cb926cb66df
 -system/framework/mediatek-telephony-common.jar
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
 vendor/bin/dconfig
