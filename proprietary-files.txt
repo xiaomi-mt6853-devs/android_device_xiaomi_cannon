@@ -1263,7 +1263,7 @@ vendor/lib64/libwpfa.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 
-# Radio (IMS)
+# Radio (IMS) - from TECNO-U-64-ARMV82-230626V601DevT
 -system/priv-app/ImsService/ImsService.apk|6746e3d153c31eaaee468314ad618a7bfdeaa198|3261322b1d025007a490e4ad6d6493a212e60ea0
 system_ext/bin/vtservice|59adc81ee1ad1f3fb4942cd6e8e7100325002eb2
 system_ext/etc/init/init.vtservice.rc|50a2249906edc06059b443513db47a2ddc0490dc
