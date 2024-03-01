@@ -15,9 +15,6 @@
 
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
 
-# Latency
-/dev/cpu_dma_latency                                           u:object_r:latency_device:s0
-
 # NFC
 /dev/nq-nci                                                    u:object_r:nfc_device:s0
 /dev/p73                                                       u:object_r:nfc_device:s0
@@ -25,9 +22,6 @@
 
 # Lights
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.cannon                          u:object_r:hal_light_default_exec:s0
-
-# Power
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.xiaomi-libperfmgr                     u:object_r:hal_power_default_exec:s0
 
 # Sensors
 /vendor/bin/hw/android\.hardware\.sensors@2.1-service\.cannon-multihal                           u:object_r:mtk_hal_sensors_exec:s0
