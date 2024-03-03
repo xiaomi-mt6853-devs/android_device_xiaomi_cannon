@@ -4,6 +4,9 @@ persist.audio.button_jack.switch=0
 ro.audio.silent=0
 vendor.audio.spkcal.copy.inhal=true
 
+# Charger
+ro.charger.enable_suspend=true
+
 # Dex
 persist.bg.dexopt.enable=true
 

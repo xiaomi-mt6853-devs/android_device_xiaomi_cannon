@@ -68,9 +68,6 @@ vendor.camera.mdp.dre.enable=1
 vendor.camera.mdp.hfg.enable=1
 vendor.mtk.camera.app.fd.video=1
 
-# Charger
-ro.charger.enable_suspend=true
-
 # Display
 debug.mediatek.appgamepq_compress=1
 debug.mediatek.disp_decompress=1
