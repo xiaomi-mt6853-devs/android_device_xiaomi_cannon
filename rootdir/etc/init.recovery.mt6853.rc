@@ -7,5 +7,5 @@ on init
     setprop sys.usb.configfs 1
 
 on fs
-    wait /dev/block/platform/bootdevice/
-    symlink /dev/block/platform/bootdevice/ /dev/block/bootdevice
+    wait /dev/block/by-name
+    symlink /dev/block /dev/block/bootdevice
